@@ -70,6 +70,14 @@
     width: 200px;
     border-radius: 10px;
 }
+
+#result-count {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #666;
+}
+        
     </style>
 </head>
 <body>
@@ -106,16 +114,16 @@
     
 <script src="videos.js"></script>
 <script>
-const searchInput = document.querySelector(".search-box");
-const resultArea = document.getElementById("results");
-const resultCount = document.getElementById("result-count");
+    const searchInput = document.querySelector(".search-box");
+    const resultArea = document.getElementById("results");
+    const resultCount = document.getElementById("result-count");
   function showResults(keyword) {
     resultArea.innerHTML = "";
 
-    if (!keyword) {
-  return;
-　　}
-
+      if (!keyword)  {
+        resultCount.innerHTML = "";
+        return;
+    }
     const results = videos.filter(video => {
       const text = [
         video.title,
@@ -128,10 +136,18 @@ const resultCount = document.getElementById("result-count");
     });
 
     if (results.length === 0) {
-      resultArea.innerHTML = "<p>見つかりませんでした。</p>";
-      return;
-    }
+        resultCount.innerHTML =
+    `「${keyword}」の検索結果：0件`;
 
+        resultArea.innerHTML =
+            "<p>見つかりませんでした。</p>";
+
+    return;
+}
+
+resultCount.innerHTML =
+  `「${keyword}」の検索結果：${results.length}件`;
+      
   results.forEach(video => {
   const card = document.createElement("div");
   card.className = "video-card";
