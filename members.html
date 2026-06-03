@@ -47,19 +47,47 @@
     }
 
     .video-card {
-      display: flex;
-      gap: 18px;
-      padding: 18px;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      margin-top: 15px;
-      background: white;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 22px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    margin-top: 16px;
+    background: white;
+    align-items: start;
+}
+
+    .thumbnail {
+    width: 220px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+    .video-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.video-card p {
+    margin: 8px 0;
+}
+
+    @media (max-width: 768px) {
+    .video-card {
+        grid-template-columns: 1fr;
     }
 
     .thumbnail {
-      width: 200px;
-      border-radius: 10px;
+        width: 100%;
     }
+
+    .member-list,
+    .menu {
+        grid-template-columns: 1fr;
+    }
+}
   </style>
 </head>
 
