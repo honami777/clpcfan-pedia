@@ -163,7 +163,11 @@ resultCount.innerHTML =
 </a>
 
 <div>
-  <h3>${video.title}</h3>
+  <h3>
+    <a href="${video.url}" target="_blank">
+    ${video.title}
+  　</a>
+  </h3>
   <p>メンバー：${video.members.join("、")}</p>
   <p>シリーズ：${video.series}</p>
   <p>コラボ：${video.collab || "なし"}</p>
