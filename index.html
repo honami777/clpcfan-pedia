@@ -49,6 +49,17 @@
             color: gray;
             font-size: 14px;
         }
+        .results {
+    margin-top: 20px;
+}
+
+.video-card {
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin-top: 15px;
+    background: white;
+}
     </style>
 </head>
 <body>
@@ -76,6 +87,56 @@
     <footer>
         ※当サイトはカラフルピーチの非公式ファンサイトです。
     </footer>
+<script src="videos.js"></script>
+<script>
+  const searchInput = document.querySelector(".search-box");
+  const resultArea = document.createElement("div");
+  resultArea.className = "results";
+  searchInput.after(resultArea);
 
+  function showResults(keyword) {
+    resultArea.innerHTML = "";
+
+    if (!keyword) {
+      resultArea.innerHTML = "<p>キーワードを入力すると動画が表示されます。</p>";
+      return;
+    }
+
+    const results = videos.filter(video => {
+      const text = [
+        video.title,
+        video.members.join(" "),
+        video.series,
+        video.collab
+      ].join(" ");
+
+      return text.includes(keyword);
+    });
+
+    if (results.length === 0) {
+      resultArea.innerHTML = "<p>見つかりませんでした。</p>";
+      return;
+    }
+
+    results.forEach(video => {
+      const card = document.createElement("div");
+      card.className = "video-card";
+      card.innerHTML = `
+        <h3>${video.title}</h3>
+        <p>メンバー：${video.members.join("、")}</p>
+        <p>シリーズ：${video.series}</p>
+        <p>コラボ：${video.collab || "なし"}</p>
+        <a href="${video.url}" target="_blank">動画を見る</a>
+      `;
+      resultArea.appendChild(card);
+    });
+  }
+
+  searchInput.addEventListener("input", () => {
+    showResults(searchInput.value.trim());
+  });
+
+  showResults("");
+</script>
 </body>
 </html>
