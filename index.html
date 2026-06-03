@@ -105,9 +105,8 @@
     resultArea.innerHTML = "";
 
     if (!keyword) {
-      resultArea.innerHTML = "<p>キーワードを入力すると動画が表示されます。</p>";
-      return;
-    }
+  return;
+}
 
     const results = videos.filter(video => {
       const text = [
