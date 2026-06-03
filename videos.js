@@ -4,7 +4,7 @@ const videos = [
     members: ["じゃぱぱ", "のあ"],
     series: "スパイ大作戦",
     collab: "",
-   videoId: "SH20RpKuNH0",
+    videoId: "SH20RpKuNH0",
     url: "https://www.youtube.com/watch?v=SH20RpKuNH0&t=1676s"
   },
   {
@@ -13,6 +13,6 @@ const videos = [
     series: "コラボ",
     collab: "ドズル社",
     videoId: "hI-oMaMHuBs",
-    url: https://www.youtube.com/watch?v=hI-oMaMHuBs"
+    url: "https://www.youtube.com/watch?v=hI-oMaMHuBs"
   }
 ];
