@@ -87,6 +87,9 @@
         placeholder="動画を検索"
     />
 
+    <div id="result-count"></div>
+    
+    <div id="results"></div>
 
     
     <div id="results"></div>
@@ -99,11 +102,13 @@
     <footer>
         ※当サイトはカラフルピーチの非公式ファンサイトです。
     </footer>
+
+    
 <script src="videos.js"></script>
 <script>
-  const searchInput = document.querySelector(".search-box");
-  const resultArea = document.getElementById("results");
-
+const searchInput = document.querySelector(".search-box");
+const resultArea = document.getElementById("results");
+const resultCount = document.getElementById("result-count");
   function showResults(keyword) {
     resultArea.innerHTML = "";
 
