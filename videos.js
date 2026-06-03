@@ -4,13 +4,15 @@ const videos = [
     members: ["じゃぱぱ", "のあ"],
     series: "マイクラ",
     collab: "",
-    url: "https://www.youtube.com/"
+   videoId: "dQw4w9WgXcQ",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     title: "ドズル社コラボ サンプル",
     members: ["じゃぱぱ", "たっつん"],
     series: "コラボ",
     collab: "ドズル社",
-    url: "https://www.youtube.com/"
+    videoId: "dQw4w9WgXcQ",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   }
 ];
