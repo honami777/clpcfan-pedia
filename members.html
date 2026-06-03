@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メンバー検索 | ぴちペディア</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px;
+      background: #fffdf7;
+    }
+
+    h1 {
+      color: #ff8c42;
+    }
+
+    .member-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .member-button {
+      padding: 18px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background: white;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .member-button:hover {
+      background: #fff2e8;
+    }
+
+    #result-count {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #666;
+    }
+
+    .video-card {
+      display: flex;
+      gap: 18px;
+      padding: 18px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      margin-top: 15px;
+      background: white;
+    }
+
+    .thumbnail {
+      width: 200px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>👤 メンバー検索</h1>
+
+  <p>メンバーを選ぶと、そのメンバーが出演している動画を表示します。</p>
+
+  <div class="member-list">
+    <a href="members.html?member=じゃぱぱ" class="member-button">じゃぱぱ</a>
+    <a href="#" class="member-button">のあ</a>
+    <a href="#" class="member-button">たっつん</a>
+    <a href="#" class="member-button">ゆあんくん</a>
+    <a href="#" class="member-button">シヴァ</a>
+    <a href="#" class="member-button">どぬく</a>
+    <a href="#" class="member-button">うり</a>
+    <a href="#" class="member-button">えと</a>
+    <a href="#" class="member-button">ヒロ</a>
+    <a href="#" class="member-button">なおきり</a>
+    <a href="#" class="member-button">もふ</a>
+    <a href="#" class="member-button">るな</a>
+  </div>
+
+  <div id="result-count"></div>
+  <div id="results"></div>
+
+  <p><a href="index.html">トップページに戻る</a></p>
+
+  <script src="videos.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const selectedMember = params.get("member");
+
+    const resultCount = document.getElementById("result-count");
+    const resultArea = document.getElementById("results");
+
+    if (selectedMember) {
+      const results = videos.filter(video =>
+        video.members.includes(selectedMember)
+      );
+
+      resultCount.innerHTML =
+        `「${selectedMember}」の出演動画：${results.length}件`;
+
+      if (results.length === 0) {
+        resultArea.innerHTML = "<p>動画が見つかりませんでした。</p>";
+      }
+
+      results.forEach(video => {
+        const card = document.createElement("div");
+        card.className = "video-card";
+
+        card.innerHTML = `
+          <a href="${video.url}" target="_blank">
+            <img
+              src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
+              alt="${video.title}"
+              class="thumbnail"
+            >
+          </a>
+
+          <div>
+            <h3>
+              <a href="${video.url}" target="_blank">
+                ${video.title}
+              </a>
+            </h3>
+            <p>メンバー：${video.members.join("、")}</p>
+            <p>シリーズ：${video.series}</p>
+            <p>コラボ：${video.collab || "なし"}</p>
+            <a href="${video.url}" target="_blank">動画を見る</a>
+          </div>
+        `;
+
+        resultArea.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
