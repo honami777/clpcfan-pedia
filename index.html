@@ -123,27 +123,27 @@
       return;
     }
 
-    results.forEach(video => {
-      const card = document.createElement("div");
-      card.className = "video-card";
-      card.innerHTML = `
-      card.innerHTML = `
-  <img
-    src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
-    alt="${video.title}"
-    class="thumbnail"
-  >
-  <div>
-    <h3>${video.title}</h3>
-    <p>メンバー：${video.members.join("、")}</p>
-    <p>シリーズ：${video.series}</p>
-    <p>コラボ：${video.collab || "なし"}</p>
-    <a href="${video.url}" target="_blank">動画を見る</a>
-  </div>
-`;
-      `;
-      resultArea.appendChild(card);
-    });
+  results.forEach(video => {
+  const card = document.createElement("div");
+  card.className = "video-card";
+
+  card.innerHTML = `
+    <img
+      src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
+      alt="${video.title}"
+      class="thumbnail"
+    >
+    <div>
+      <h3>${video.title}</h3>
+      <p>メンバー：${video.members.join("、")}</p>
+      <p>シリーズ：${video.series}</p>
+      <p>コラボ：${video.collab || "なし"}</p>
+      <a href="${video.url}" target="_blank">動画を見る</a>
+    </div>
+  `;
+
+  resultArea.appendChild(card);
+});
   }
 
   searchInput.addEventListener("input", () => {
