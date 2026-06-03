@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ぴちペディア</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #fffdf7;
+        }
+
+        h1 {
+            color: #ff8c42;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .card:hover {
+            background: #fff2e8;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: gray;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🍑 ぴちペディア</h1>
+
+    <p>
+        カラフルピーチの動画・シリーズ・コラボ情報を検索できる
+        非公式ファンサイトです。
+    </p>
+
+    <input
+        type="text"
+        class="search-box"
+        placeholder="動画を検索（準備中）"
+    >
+
+    <div class="menu">
+        <a href="#" class="card">🎥 動画検索</a>
+        <a href="#" class="card">👤 メンバー検索</a>
+        <a href="#" class="card">🤝 コラボ検索</a>
+        <a href="#" class="card">📚 シリーズ一覧</a>
+    </div>
+
+    <footer>
+        ※当サイトはカラフルピーチの非公式ファンサイトです。
+    </footer>
+
+</body>
+</html>
