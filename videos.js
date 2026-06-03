@@ -5,7 +5,7 @@ const videos = [
     series: "マイクラ",
     collab: "",
    videoId: "SH20RpKuNH0",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    url: "https://www.youtube.com/watch?v=SH20RpKuNH0&t=1676s"
   },
   {
     title: "ドズル社コラボ サンプル",
