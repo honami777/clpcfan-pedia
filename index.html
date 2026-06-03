@@ -54,11 +54,18 @@
 }
 
 .video-card {
+    display: flex;
+    gap: 18px;
     padding: 18px;
     border: 1px solid #ddd;
     border-radius: 12px;
     margin-top: 15px;
     background: white;
+}
+
+.thumbnail {
+    width: 200px;
+    border-radius: 10px;
 }
     </style>
 </head>
@@ -120,11 +127,20 @@
       const card = document.createElement("div");
       card.className = "video-card";
       card.innerHTML = `
-        <h3>${video.title}</h3>
-        <p>メンバー：${video.members.join("、")}</p>
-        <p>シリーズ：${video.series}</p>
-        <p>コラボ：${video.collab || "なし"}</p>
-        <a href="${video.url}" target="_blank">動画を見る</a>
+      card.innerHTML = `
+  <img
+    src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
+    alt="${video.title}"
+    class="thumbnail"
+  >
+  <div>
+    <h3>${video.title}</h3>
+    <p>メンバー：${video.members.join("、")}</p>
+    <p>シリーズ：${video.series}</p>
+    <p>コラボ：${video.collab || "なし"}</p>
+    <a href="${video.url}" target="_blank">動画を見る</a>
+  </div>
+`;
       `;
       resultArea.appendChild(card);
     });
