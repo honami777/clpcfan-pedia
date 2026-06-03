@@ -154,22 +154,21 @@ resultCount.innerHTML =
   card.className = "video-card";
 
   card.innerHTML = `
-    <img
-      src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
-      alt="${video.title}"
-      class="thumbnail"
-    >
-    <div>
-      <h3>
-       <a href="${video.url}" target="_blank">
-    　　　${video.title}
-       </a>
-    </h3>
-      <p>メンバー：${video.members.join("、")}</p>
-      <p>シリーズ：${video.series}</p>
-      <p>コラボ：${video.collab || "なし"}</p>
-      <a href="${video.url}" target="_blank">動画を見る</a>
-    </div>
+<a href="${video.url}" target="_blank">
+  <img
+    src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
+    alt="${video.title}"
+    class="thumbnail"
+  >
+</a>
+
+<div>
+  <h3>${video.title}</h3>
+  <p>メンバー：${video.members.join("、")}</p>
+  <p>シリーズ：${video.series}</p>
+  <p>コラボ：${video.collab || "なし"}</p>
+  <a href="${video.url}" target="_blank">動画を見る</a>
+</div>
   `;
 
   resultArea.appendChild(card);
