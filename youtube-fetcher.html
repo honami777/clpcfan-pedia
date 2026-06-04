@@ -51,7 +51,7 @@
   <textarea id="output" placeholder="ここにCSVが出ます"></textarea>
 
   <script>
-    const API_KEY = "AIzaSyCFlCXiURvxkYmr2ZAjuADQTyWLSxEWQPM";
+    const API_KEY = "AIzaSyBYexKZyVxzr6AkWgLTmhYYe8TpJjpnxhg";
     const CHANNEL_ID = "UCh7bThzNArch6TgoHB1HVhA";
 
     async function fetchVideos() {
@@ -92,30 +92,27 @@
           pageToken = data.nextPageToken || "";
         } while (pageToken);
 
+        const videos = allItems.map(item => ({
+          title: item.snippet.title,
+          type: "動画",
+          videoId: item.id.videoId,
+          date: item.snippet.publishedAt.slice(0, 10)
+        }));
+
+        videos.sort((a, b) => a.date.localeCompare(b.date));
+
         const rows = [["title", "type", "videoId", "date"]];
 
-        allItems.forEach(item => {
-         const videos = allItems.map(item => ({
-  title: item.snippet.title,
-  type: "動画",
-  videoId: item.id.videoId,
-  date: item.snippet.publishedAt.slice(0, 10)
-}));
-
-videos.sort((a, b) => a.date.localeCompare(b.date));
-
-const rows = [["title", "type", "videoId", "date"]];
-
-videos.forEach(v => {
-  rows.push([v.title, v.type, v.videoId, v.date]);
-});
+        videos.forEach(v => {
+          rows.push([v.title, v.type, v.videoId, v.date]);
+        });
 
         const csv = rows.map(row =>
           row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
         ).join("\n");
 
         output.value = csv;
-        status.textContent = `${allItems.length}件取得できたよ！`;
+        status.textContent = `${videos.length}件取得できたよ！`;
       } catch (error) {
         console.error(error);
         status.textContent = "取得に失敗しました。APIキーや設定を確認してね。";
