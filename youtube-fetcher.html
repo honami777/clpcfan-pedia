@@ -95,13 +95,20 @@
         const rows = [["title", "type", "videoId", "date"]];
 
         allItems.forEach(item => {
-          rows.push([
-            item.snippet.title,
-            "動画",
-            item.id.videoId,
-            item.snippet.publishedAt.slice(0, 10)
-          ]);
-        });
+         const videos = allItems.map(item => ({
+  title: item.snippet.title,
+  type: "動画",
+  videoId: item.id.videoId,
+  date: item.snippet.publishedAt.slice(0, 10)
+}));
+
+videos.sort((a, b) => a.date.localeCompare(b.date));
+
+const rows = [["title", "type", "videoId", "date"]];
+
+videos.forEach(v => {
+  rows.push([v.title, v.type, v.videoId, v.date]);
+});
 
         const csv = rows.map(row =>
           row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
