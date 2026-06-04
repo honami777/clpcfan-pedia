@@ -105,11 +105,7 @@
 
   <p>シリーズを選ぶと、そのシリーズの動画・配信を表示します。</p>
 
-  <div class="series-list">
-    <a href="series.html?series=スパイ大作戦" class="series-button">スパイ大作戦</a>
-    <a href="series.html?series=コラボ" class="series-button">コラボ</a>
-    <a href="series.html?series=いちごマイクラ" class="series-button">いちごマイクラ</a>
-  </div>
+  <div class="series-list" id="series-list"></div>
 
   <div id="result-count"></div>
   <div id="results"></div>
@@ -123,6 +119,21 @@
 
     const resultCount = document.getElementById("result-count");
     const resultArea = document.getElementById("results");
+
+    const seriesList = document.getElementById("series-list");
+
+    const seriesNames = ["スパイ大作戦", "コラボ", "いちごマイクラ"];
+
+seriesNames.forEach(seriesName => {
+  const count = videos.filter(video => video.series === seriesName).length;
+
+  const link = document.createElement("a");
+  link.href = `series.html?series=${seriesName}`;
+  link.className = "series-button";
+  link.textContent = `${seriesName}（${count}）`;
+
+  seriesList.appendChild(link);
+});
 
     if (selectedSeries) {
       const results = videos.filter(video =>
