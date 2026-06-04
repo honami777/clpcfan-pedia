@@ -109,6 +109,22 @@ th:nth-child(6),
 td:nth-child(6) {
   width: 100px;
 }
+    .controls {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0 25px;
+  flex-wrap: wrap;
+}
+
+.controls button,
+.controls select {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  font-size: 15px;
+  cursor: pointer;
+}
     
   </style>
 </head>
@@ -123,6 +139,19 @@ td:nth-child(6) {
   <input
   type="text"
   id="search-box"
+
+    <div class="controls">
+  <button onclick="setFilter('all')">すべて</button>
+  <button onclick="setFilter('動画')">動画だけ</button>
+  <button onclick="setFilter('配信')">配信だけ</button>
+
+  <select id="sort-select">
+    <option value="default">登録順</option>
+    <option value="title">タイトル順</option>
+    <option value="series">シリーズ順</option>
+  </select>
+</div>
+    
   placeholder="タイトル・メンバー・シリーズ・コラボで検索"
   style="
     width:100%;
@@ -151,67 +180,95 @@ td:nth-child(6) {
 
   <script src="videos.js"></script>
   <script>
-    const table = document.getElementById("video-table");
-    const videoCount = document.getElementById("video-count");
-    const searchBox = document.getElementById("search-box");
+const table = document.getElementById("video-table");
+const videoCount = document.getElementById("video-count");
+const searchBox = document.getElementById("search-box");
+const sortSelect = document.getElementById("sort-select");
 
-    function showVideos(keyword = "") {
-      table.innerHTML = "";
+let currentFilter = "all";
 
-      const filtered = videos.filter(video => {
-        const text = [
-          video.title,
-          video.type,
-          video.members.join(" "),
-          video.series,
-          video.collab
-        ].join(" ");
+function setFilter(type) {
+  currentFilter = type;
+  showVideos(searchBox.value.trim());
+}
 
-        return text.includes(keyword);
-      });
+function showVideos(keyword = "") {
+  table.innerHTML = "";
 
-      videoCount.innerHTML = `登録件数：${filtered.length}件`;
+  let filtered = videos.filter(video => {
+    const text = [
+      video.title,
+      video.type,
+      video.members.join(" "),
+      video.series,
+      video.collab
+    ].join(" ");
 
-      filtered.forEach(video => {
-        const row = document.createElement("tr");
+    const keywordMatch = text.includes(keyword);
+    const typeMatch =
+      currentFilter === "all" || video.type === currentFilter;
 
-        row.innerHTML = `
-           <td>
-              <a href="${video.url}" target="_blank">
-      <img
-        src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
-        alt="${video.title}"
-        class="table-thumbnail"
-      >
-    </a>
-  </td>
+    return keywordMatch && typeMatch;
+  });
 
-  <td>
-    <a href="${video.url}" target="_blank">
-      ${video.title}
-    </a>
-  </td>
+  if (sortSelect.value === "title") {
+    filtered.sort((a, b) => a.title.localeCompare(b.title, "ja"));
+  }
 
-  <td>
-    <span class="badge">
-      ${video.type || "動画"}
-    </span>
-  </td>
+  if (sortSelect.value === "series") {
+    filtered.sort((a, b) => a.series.localeCompare(b.series, "ja"));
+  }
 
-  <td>${video.members.join("、")}</td>
-  <td>${video.series}</td>
-  <td>${video.collab || "なし"}</td>
-        `;
+  const videoTotal = filtered.filter(video => video.type === "動画").length;
+  const streamTotal = filtered.filter(video => video.type === "配信").length;
 
-        table.appendChild(row);
-      });
-    }
+  videoCount.innerHTML =
+    `表示件数：${filtered.length}件（動画：${videoTotal}件 / 配信：${streamTotal}件）`;
 
-    searchBox.addEventListener("input", () => {
-      showVideos(searchBox.value.trim());
-    });
+  filtered.forEach(video => {
+    const row = document.createElement("tr");
 
-    showVideos();
+    row.innerHTML = `
+      <td>
+        <a href="${video.url}" target="_blank">
+          <img
+            src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
+            alt="${video.title}"
+            class="table-thumbnail"
+          >
+        </a>
+      </td>
+
+      <td>
+        <a href="${video.url}" target="_blank">
+          ${video.title}
+        </a>
+      </td>
+
+      <td>
+        <span class="badge">
+          ${video.type || "動画"}
+        </span>
+      </td>
+
+      <td>${video.members.join("、")}</td>
+      <td>${video.series}</td>
+      <td>${video.collab || "なし"}</td>
+    `;
+
+    table.appendChild(row);
+  });
+}
+
+searchBox.addEventListener("input", () => {
+  showVideos(searchBox.value.trim());
+});
+
+sortSelect.addEventListener("change", () => {
+  showVideos(searchBox.value.trim());
+});
+
+showVideos();
     
   </script>
   <a href="index.html" class="home-button">🏠</a>
