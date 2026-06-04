@@ -3,86 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <title>🍑YouTube動画取得ツール</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background: #fffaf3;
+    }
+    h1 {
+      color: #ff7f3f;
+    }
+    button {
+      padding: 12px 24px;
+      margin: 8px 8px 8px 0;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      margin: 6px 0;
+    }
+    textarea {
+      width: 100%;
+      height: 420px;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+  </style>
 </head>
 <body>
   <h1>🍑YouTube動画取得ツール</h1>
 
-  <p>APIキー</p>
-  <input id="AIzaSyCFlCXiURvxkYmr2ZAjuADQTyWLSxEWQPM" type="text" style="width:500px">
-
-  <p>期間</p>
+  <p>取得期間</p>
   <input id="startDate" type="date" value="2026-01-01">
   〜
   <input id="endDate" type="date" value="2026-07-01">
 
   <br><br>
+
   <button onclick="fetchVideos()">取得</button>
   <button onclick="copyCsv()">コピー</button>
 
+  <p id="status"></p>
+
   <h2>CSV</h2>
-  <textarea id="output" style="width:100%;height:400px;"></textarea>
+  <textarea id="output" placeholder="ここにCSVが出ます"></textarea>
 
   <script>
+    const API_KEY = "AIzaSyCFlCXiURvxkYmr2ZAjuADQTyWLSxEWQPM";
+    const CHANNEL_ID = "UCh7bThzNArch6TgoHB1HVhA";
+
     async function fetchVideos() {
-      const apiKey = "AIzaSyCFlCXiURvxkYmr2ZAjuADQTyWLSxEWQPM";
-      const channelId = "UCh7bThzNArch6TgoHB1HVhA";
       const startDate = document.getElementById("startDate").value;
       const endDate = document.getElementById("endDate").value;
+      const status = document.getElementById("status");
+      const output = document.getElementById("output");
 
-      if (!apiKey || !channelId) {
-        alert("APIキーとチャンネルIDを入れてね");
-        return;
-      }
+      status.textContent = "取得中...";
+      output.value = "";
 
       let allItems = [];
       let pageToken = "";
 
-      do {
-        const url =
-          "https://www.googleapis.com/youtube/v3/search" +
-          "?part=snippet" +
-          "&channelId=" + encodeURIComponent(channelId) +
-          "&type=video" +
-          "&order=date" +
-          "&maxResults=50" +
-          "&publishedAfter=" + startDate + "T00:00:00Z" +
-          "&publishedBefore=" + endDate + "T00:00:00Z" +
-          "&key=" + encodeURIComponent(apiKey) +
-          (pageToken ? "&pageToken=" + pageToken : "");
+      try {
+        do {
+          const url =
+            "https://www.googleapis.com/youtube/v3/search" +
+            "?part=snippet" +
+            "&channelId=" + encodeURIComponent(CHANNEL_ID) +
+            "&type=video" +
+            "&order=date" +
+            "&maxResults=50" +
+            "&publishedAfter=" + startDate + "T00:00:00Z" +
+            "&publishedBefore=" + endDate + "T00:00:00Z" +
+            "&key=" + encodeURIComponent(API_KEY) +
+            (pageToken ? "&pageToken=" + pageToken : "");
 
-        const res = await fetch(url);
-        const data = await res.json();
+          const res = await fetch(url);
+          const data = await res.json();
 
-        if (data.error) {
-          console.error(data.error);
-          alert("エラー: " + data.error.message);
-          return;
-        }
+          if (data.error) {
+            status.textContent = "エラー: " + data.error.message;
+            return;
+          }
 
-        allItems = allItems.concat(data.items);
-        pageToken = data.nextPageToken || "";
-      } while (pageToken);
+          allItems = allItems.concat(data.items || []);
+          pageToken = data.nextPageToken || "";
+        } while (pageToken);
 
-      const rows = [["title", "type", "videoId", "date"]];
+        const rows = [["title", "type", "videoId", "date"]];
 
-      allItems.forEach(item => {
-        const title = item.snippet.title;
-        const videoId = item.id.videoId;
-        const date = item.snippet.publishedAt.slice(0, 10);
+        allItems.forEach(item => {
+          rows.push([
+            item.snippet.title,
+            "動画",
+            item.id.videoId,
+            item.snippet.publishedAt.slice(0, 10)
+          ]);
+        });
 
-        rows.push([
-          title,
-          "動画",
-          videoId,
-          date
-        ]);
-      });
+        const csv = rows.map(row =>
+          row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
+        ).join("\n");
 
-      const csv = rows.map(row =>
-        row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
-      ).join("\n");
-
-      document.getElementById("output").value = csv;
+        output.value = csv;
+        status.textContent = `${allItems.length}件取得できたよ！`;
+      } catch (error) {
+        console.error(error);
+        status.textContent = "取得に失敗しました。APIキーや設定を確認してね。";
+      }
     }
 
     function copyCsv() {
