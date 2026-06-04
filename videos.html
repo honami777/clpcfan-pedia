@@ -139,8 +139,19 @@ td:nth-child(6) {
   <input
   type="text"
   id="search-box"
+  placeholder="タイトル・メンバー・シリーズ・コラボで検索"
+  style="
+    width:100%;
+    padding:12px;
+    margin:20px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    box-sizing:border-box;
+  "
+>
 
-    <div class="controls">
+<div class="controls">
   <button onclick="setFilter('all')">すべて</button>
   <button onclick="setFilter('動画')">動画だけ</button>
   <button onclick="setFilter('配信')">配信だけ</button>
