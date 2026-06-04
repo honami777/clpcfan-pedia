@@ -121,64 +121,48 @@
     const table = document.getElementById("video-table");
     const videoCount = document.getElementById("video-count");
     const searchBox = document.getElementById("search-box");
-    videoCount.innerHTML = `登録件数：${videos.length}件`;
 
     function showVideos(keyword = "") {
+      table.innerHTML = "";
 
-  table.innerHTML = "";
+      const filtered = videos.filter(video => {
+        const text = [
+          video.title,
+          video.type,
+          video.members.join(" "),
+          video.series,
+          video.collab
+        ].join(" ");
 
-  const filtered = videos.filter(video => {
+        return text.includes(keyword);
+      });
 
-    const text = [
-      video.title,
-      video.type,
-      video.members.join(" "),
-      video.series,
-      video.collab
-    ].join(" ");
+      videoCount.innerHTML = `登録件数：${filtered.length}件`;
 
-    return text.includes(keyword);
+      filtered.forEach(video => {
+        const row = document.createElement("tr");
 
-  });
+        row.innerHTML = `
+          <td>
+            <a href="${video.url}" target="_blank">
+              ${video.title}
+            </a>
+          </td>
+          <td><span class="badge">${video.type || "動画"}</span></td>
+          <td>${video.members.join("、")}</td>
+          <td>${video.series}</td>
+          <td>${video.collab || "なし"}</td>
+        `;
 
-  videoCount.innerHTML =
-    `登録件数：${filtered.length}件`;
+        table.appendChild(row);
+      });
+    }
 
-  filtered.forEach(video => {
-
-    const row = document.createElement("tr");
-
-    row.innerHTML = `
-      <td>
-        <a href="${video.url}" target="_blank">
-          ${video.title}
-        </a>
-      </td>
-
-      <td>
-        <span class="badge">
-          ${video.type || "動画"}
-        </span>
-      </td>
-
-      <td>${video.members.join("、")}</td>
-      <td>${video.series}</td>
-      <td>${video.collab || "なし"}</td>
-    `;
-
-    table.appendChild(row);
-
-  });
-
-}
-
-      table.appendChild(row);
-    });
     searchBox.addEventListener("input", () => {
-  showVideos(searchBox.value.trim());
-});
+      showVideos(searchBox.value.trim());
+    });
 
-showVideos();
+    showVideos();
     
   </script>
   <a href="index.html" class="home-button">🏠</a>
