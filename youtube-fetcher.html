@@ -114,6 +114,7 @@
   v.videoId,
   v.date
 ]);
+        });
         const csv = rows.map(row =>
           row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
         ).join("\n");
