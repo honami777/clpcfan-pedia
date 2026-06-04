@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>動画一覧 | ぴちペディア</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px;
+      background: #fffdf7;
+    }
+
+    h1 {
+      color: #ff8c42;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      margin-top: 25px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #fff2e8;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fff2e8;
+      color: #666;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      table {
+        font-size: 13px;
+      }
+
+      th, td {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🎥 動画一覧</h1>
+
+  <p>登録されている動画・配信を一覧で表示します。</p>
+
+  <div id="video-count"></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>種別</th>
+        <th>メンバー</th>
+        <th>シリーズ</th>
+        <th>コラボ</th>
+      </tr>
+    </thead>
+    <tbody id="video-table"></tbody>
+  </table>
+
+  <p><a href="index.html">トップページに戻る</a></p>
+
+  <script src="videos.js"></script>
+  <script>
+    const table = document.getElementById("video-table");
+    const videoCount = document.getElementById("video-count");
+
+    videoCount.innerHTML = `登録件数：${videos.length}件`;
+
+    videos.forEach(video => {
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>
+          <a href="${video.url}" target="_blank">
+            ${video.title}
+          </a>
+        </td>
+        <td><span class="badge">${video.type || "動画"}</span></td>
+        <td>${video.members.join("、")}</td>
+        <td>${video.series}</td>
+        <td>${video.collab || "なし"}</td>
+      `;
+
+      table.appendChild(row);
+    });
+  </script>
+</body>
+</html>
