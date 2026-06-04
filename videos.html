@@ -86,6 +86,21 @@
 
   <div id="video-count"></div>
 
+  <input
+  type="text"
+  id="search-box"
+  placeholder="タイトル・メンバー・シリーズ・コラボで検索"
+  style="
+    width:100%;
+    padding:12px;
+    margin:20px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    box-sizing:border-box;
+  "
+>
+  
   <table>
     <thead>
       <tr>
@@ -105,26 +120,66 @@
   <script>
     const table = document.getElementById("video-table");
     const videoCount = document.getElementById("video-count");
-
+    const searchBox = document.getElementById("search-box");
     videoCount.innerHTML = `登録件数：${videos.length}件`;
 
-    videos.forEach(video => {
-      const row = document.createElement("tr");
+    function showVideos(keyword = "") {
 
-      row.innerHTML = `
-        <td>
-          <a href="${video.url}" target="_blank">
-            ${video.title}
-          </a>
-        </td>
-        <td><span class="badge">${video.type || "動画"}</span></td>
-        <td>${video.members.join("、")}</td>
-        <td>${video.series}</td>
-        <td>${video.collab || "なし"}</td>
-      `;
+  table.innerHTML = "";
+
+  const filtered = videos.filter(video => {
+
+    const text = [
+      video.title,
+      video.type,
+      video.members.join(" "),
+      video.series,
+      video.collab
+    ].join(" ");
+
+    return text.includes(keyword);
+
+  });
+
+  videoCount.innerHTML =
+    `登録件数：${filtered.length}件`;
+
+  filtered.forEach(video => {
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>
+        <a href="${video.url}" target="_blank">
+          ${video.title}
+        </a>
+      </td>
+
+      <td>
+        <span class="badge">
+          ${video.type || "動画"}
+        </span>
+      </td>
+
+      <td>${video.members.join("、")}</td>
+      <td>${video.series}</td>
+      <td>${video.collab || "なし"}</td>
+    `;
+
+    table.appendChild(row);
+
+  });
+
+}
 
       table.appendChild(row);
     });
+    searchBox.addEventListener("input", () => {
+  showVideos(searchBox.value.trim());
+});
+
+showVideos();
+    
   </script>
   <a href="index.html" class="home-button">🏠</a>
 </body>
