@@ -20,7 +20,9 @@ h1{
 button{
     padding:10px 20px;
     font-size:16px;
-    margin:10px 0;
+    margin:10px 5px 10px 0;
+    border-radius:8px;
+    cursor:pointer;
 }
 
 textarea{
@@ -39,6 +41,8 @@ textarea{
 <input type="file" id="csvFile" accept=".csv">
 <br>
 <button onclick="convertCSV()">変換</button>
+
+<button onclick="copyOutput()">コピー</button>
 
 <h2>videos.js</h2>
 
@@ -107,6 +111,25 @@ function convertCSV(){
     };
 
     reader.readAsText(file,"UTF-8");
+}
+    function copyOutput() {
+
+    const text =
+        document.getElementById("output").value;
+
+    if (text.trim() === "") {
+        alert("コピーする内容がありません！");
+        return;
+    }
+
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert("videos.js をコピーしました！");
+        })
+        .catch(() => {
+            alert("コピーに失敗しました。");
+        });
+
 }
 
 </script>
