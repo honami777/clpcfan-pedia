@@ -101,20 +101,27 @@
 
         videos.sort((a, b) => a.date.localeCompare(b.date));
 
-        const rows = [["title", "type", "members", "series",
- "collab", "videoId", "date" ]];
-      
-        videos.forEach(v => {
-        rows.push([
-  v.title,
-  v.type,
-  "",
-  "",
-  "",
-  v.videoId,
-  v.date
-]);
-        });
+        const rows = [[
+  "title",
+  "type",
+  "members",
+  "series",
+  "collab",
+  "videoId",
+  "date"
+]];
+
+videos.forEach(v => {
+  rows.push([
+    v.title,
+    v.type,
+    "",
+    "",
+    "",
+    v.videoId,
+    v.date
+  ]);
+});
         const csv = rows.map(row =>
           row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
         ).join("\n");
