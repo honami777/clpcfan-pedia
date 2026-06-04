@@ -76,6 +76,13 @@
 .home-button:hover {
     background: #ff7620;
 }
+
+    .table-thumbnail {
+  width: 120px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+}
   </style>
 </head>
 
@@ -104,9 +111,10 @@
   <table>
     <thead>
       <tr>
+        <th>サムネ</th>
         <th>タイトル</th>
-        <th>種別</th>
-        <th>メンバー</th>
+        <th>種別</th>  
+        <th>メンバー</th>  
         <th>シリーズ</th>
         <th>コラボ</th>
       </tr>
@@ -143,15 +151,31 @@
         const row = document.createElement("tr");
 
         row.innerHTML = `
-          <td>
-            <a href="${video.url}" target="_blank">
-              ${video.title}
-            </a>
-          </td>
-          <td><span class="badge">${video.type || "動画"}</span></td>
-          <td>${video.members.join("、")}</td>
-          <td>${video.series}</td>
-          <td>${video.collab || "なし"}</td>
+           <td>
+              <a href="${video.url}" target="_blank">
+      <img
+        src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
+        alt="${video.title}"
+        class="table-thumbnail"
+      >
+    </a>
+  </td>
+
+  <td>
+    <a href="${video.url}" target="_blank">
+      ${video.title}
+    </a>
+  </td>
+
+  <td>
+    <span class="badge">
+      ${video.type || "動画"}
+    </span>
+  </td>
+
+  <td>${video.members.join("、")}</td>
+  <td>${video.series}</td>
+  <td>${video.collab || "なし"}</td>
         `;
 
         table.appendChild(row);
