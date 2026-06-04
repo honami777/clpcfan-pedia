@@ -14,5 +14,15 @@ const videos = [
     collab: "ドズル社",
     videoId: "hI-oMaMHuBs",
     url: "https://www.youtube.com/watch?v=hI-oMaMHuBs"
+  },
+   {
+    title: "【 #いちごマイクラ 】目指せ億万長者！1億円行くぞ🔥 11日目",
+    members: ["じゃぱぱ","たっつん","シヴァ","どぬく","うり"],
+    series: "コラボ",
+    collab: "STPR　他",
+    videoId: "Ne_tJ98rXmk",
+    url: "https://www.youtube.com/watch?v=Ne_tJ98rXmk&t=3184s"
   }
+
+
 ];
