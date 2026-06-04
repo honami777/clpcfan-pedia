@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コラボ検索 | ぴちペディア</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px;
+      background: #fffdf7;
+    }
+
+    h1 {
+      color: #ff8c42;
+    }
+
+    .collab-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .collab-button {
+      padding: 18px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background: white;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .collab-button:hover {
+      background: #fff2e8;
+    }
+
+    #result-count {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #666;
+    }
+
+    .video-card {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 22px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      margin-top: 16px;
+      background: white;
+      align-items: start;
+    }
+
+    .thumbnail {
+      width: 220px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .video-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .video-card p {
+      margin: 8px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fff2e8;
+      font-size: 13px;
+      margin-bottom: 8px;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .collab-list {
+        grid-template-columns: 1fr;
+      }
+
+      .video-card {
+        grid-template-columns: 1fr;
+      }
+
+      .thumbnail {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🤝 コラボ検索</h1>
+
+  <p>コラボ相手を選ぶと、そのコラボ動画・配信を表示します。</p>
+
+  <div class="collab-list" id="collab-list"></div>
+
+  <div id="result-count"></div>
+  <div id="results"></div>
+
+  <p><a href="index.html">トップページに戻る</a></p>
+
+  <script src="videos.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const selectedCollab = params.get("collab");
+
+    const collabList = document.getElementById("collab-list");
+    const resultCount = document.getElementById("result-count");
+    const resultArea = document.getElementById("results");
+
+    const collabNames = [...new Set(
+      videos
+        .map(video => video.collab)
+        .filter(collab => collab)
+    )];
+
+    collabNames.forEach(collabName => {
+      const count = videos.filter(video => video.collab === collabName).length;
+
+      const link = document.createElement("a");
+      link.href = `collabs.html?collab=${collabName}`;
+      link.className = "collab-button";
+      link.textContent = `${collabName}（${count}）`;
+
+      collabList.appendChild(link);
+    });
+
+    if (selectedCollab) {
+      const results = videos.filter(video =>
+        video.collab === selectedCollab
+      );
+
+      resultCount.innerHTML =
+        `「${selectedCollab}」：${results.length}件`;
+
+      if (results.length === 0) {
+        resultArea.innerHTML = "<p>動画が見つかりませんでした。</p>";
+      }
+
+      results.forEach(video => {
+        const card = document.createElement("div");
+        card.className = "video-card";
+
+        card.innerHTML = `
+          <a href="${video.url}" target="_blank">
+            <img
+              src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
+              alt="${video.title}"
+              class="thumbnail"
+            >
+          </a>
+
+          <div>
+            <span class="badge">${video.type || "動画"}</span>
+            <h3>
+              <a href="${video.url}" target="_blank">
+                ${video.title}
+              </a>
+            </h3>
+            <p>メンバー：${video.members.join("、")}</p>
+            <p>シリーズ：${video.series}</p>
+            <p>コラボ：${video.collab || "なし"}</p>
+            <a href="${video.url}" target="_blank">動画を見る</a>
+          </div>
+        `;
+
+        resultArea.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
