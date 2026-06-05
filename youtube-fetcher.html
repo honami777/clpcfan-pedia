@@ -12,6 +12,19 @@
     label { display: block; margin-top: 12px; font-size: 16px; }
     .box { background: #fff; padding: 16px; border-radius: 12px; margin-top: 24px; border: 1px solid #ffd7bd; }
     .preview { background: #fffaf3; padding: 12px; border-radius: 8px; margin-top: 12px; white-space: pre-wrap; }
+
+    .member-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 160px);
+  gap: 8px 16px;
+  margin-top: 12px;
+}
+
+.member-grid label {
+  margin-top: 0;
+}
+  
+  
   </style>
 </head>
 <body>
@@ -70,7 +83,7 @@
 <button type="button" onclick="clearAllMembers()">全解除</button>
 
 <br><br>
-
+<div class="member-grid">
 <label><input type="checkbox" id="member_じゃぱぱ">じゃぱぱ</label>
 <label><input type="checkbox" id="member_のあ">のあ</label>
 <label><input type="checkbox" id="member_たっつん">たっつん</label>
@@ -84,7 +97,7 @@
 <label><input type="checkbox" id="member_なおきり">なおきり</label>
 <label><input type="checkbox" id="member_もふ">もふ</label>
 <label><input type="checkbox" id="member_るな">るな</label>
-
+</div>
     
     <p>series</p>
     <input id="manualSeries" type="text" style="width:90%;" placeholder="例：ポケモンコラボ">
@@ -454,7 +467,25 @@ const members = memberOrder
         `タイトル：${addedVideo.title}\n` +
         `公開日：${addedVideo.date}\n` +
         `collab：${addedVideo.collab || "未入力"}`;
+
+
+      document.querySelectorAll('[id^="member_"]').forEach(cb => {
+  cb.checked = false;
+});
+
+document.getElementById("manualSeries").value = "";
+document.getElementById("manualCollab").value = "";
+document.getElementById("manualUrl").value = "";
+
+manualPreviewVideo = null;
+
+manualPreviewVideo = null;
+     
     }
+
+
+
+    
 
     function copyOutput() {
       const output = document.getElementById("output");
