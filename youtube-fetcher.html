@@ -179,8 +179,16 @@
 
         if (excludeShorts) {
           excludedVideos = videos.filter(v => v.durationSeconds <= 60);
-          videos = videos.filter(v => v.durationSeconds > 60);
-        }
+          const limit =
+  Number(document.getElementById("shortLimit").value) || 60;
+
+excludedVideos = videos.filter(
+  v => v.durationSeconds <= limit
+);
+
+videos = videos.filter(
+  v => v.durationSeconds > limit
+);
 
         const rows = [[
           "title",
