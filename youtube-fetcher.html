@@ -27,10 +27,16 @@
     <option value="js">videos.js</option>
   </select>
 
-  <label>
-    <input id="excludeShorts" type="checkbox" checked>
-    ショート動画を除く（60秒以下を除外）
-  </label>
+<label>
+  <input id="excludeShorts" type="checkbox" checked>
+  ショート動画を除く
+</label>
+
+<label>
+  判定秒数：
+  <input id="shortLimit" type="number" value="60" min="1" style="width:80px;">
+  秒以下を除外
+</label>
 
   <br>
 
@@ -174,21 +180,15 @@
         }));
 
         videos.sort((a, b) => a.date.localeCompare(b.date));
+let excludedVideos = [];
 
-        let excludedVideos = [];
-
-        if (excludeShorts) {
-          excludedVideos = videos.filter(v => v.durationSeconds <= 60);
-          const limit =
+const shortLimit =
   Number(document.getElementById("shortLimit").value) || 60;
 
-excludedVideos = videos.filter(
-  v => v.durationSeconds <= limit
-);
-
-videos = videos.filter(
-  v => v.durationSeconds > limit
-);
+if (excludeShorts) {
+  excludedVideos = videos.filter(v => v.durationSeconds <= shortLimit);
+  videos = videos.filter(v => v.durationSeconds > shortLimit);
+}
 
         const rows = [[
           "title",
