@@ -107,7 +107,7 @@
         const url =
           "https://www.googleapis.com/youtube/v3/videos" +
           "?part=contentDetails" +
-          "&id=" + chunk.join(",") +
+          "&id=" + encodeURIComponent(chunk.join(",")) +
           "&key=" + encodeURIComponent(API_KEY);
 
         const res = await fetch(url);
@@ -254,10 +254,9 @@
         }
       } catch (error) {
         console.error(error);
-        status.textContent = "取得に失敗しました。APIキーや設定を確認してね。";
+        status.textContent = "取得に失敗しました: " + error.message;
       }
-    }
-
+    
     function copyOutput() {
       const output = document.getElementById("output");
       output.select();
