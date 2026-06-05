@@ -65,8 +65,27 @@
     <div id="manualPreview" class="preview">ここにプレビューが出ます</div>
 
     <p>members</p>
-    <input id="manualMembers" type="text" style="width:90%;" placeholder="例：じゃぱぱ,のあ">
 
+<button type="button" onclick="checkAllMembers()">全員</button>
+<button type="button" onclick="clearAllMembers()">全解除</button>
+
+<br><br>
+
+<label><input type="checkbox" id="member_じゃぱぱ">じゃぱぱ</label>
+<label><input type="checkbox" id="member_のあ">のあ</label>
+<label><input type="checkbox" id="member_たっつん">たっつん</label>
+<label><input type="checkbox" id="member_ゆあん">ゆあん</label>
+<label><input type="checkbox" id="member_シヴァ">シヴァ</label>
+<label><input type="checkbox" id="member_どぬく">どぬく</label>
+
+<label><input type="checkbox" id="member_えと">えと</label>
+<label><input type="checkbox" id="member_うり">うり</label>
+<label><input type="checkbox" id="member_ヒロ">ヒロ</label>
+<label><input type="checkbox" id="member_なおきり">なおきり</label>
+<label><input type="checkbox" id="member_もふ">もふ</label>
+<label><input type="checkbox" id="member_るな">るな</label>
+
+    
     <p>series</p>
     <input id="manualSeries" type="text" style="width:90%;" placeholder="例：ポケモンコラボ">
 
@@ -387,7 +406,27 @@
         return;
       }
 
-      const members = document.getElementById("manualMembers").value.trim();
+      const memberOrder = [
+  "じゃぱぱ",
+  "のあ",
+  "たっつん",
+  "ゆあん",
+  "シヴァ",
+  "どぬく",
+  "えと",
+  "うり",
+  "ヒロ",
+  "なおきり",
+  "もふ",
+  "るな"
+];
+
+const members = memberOrder
+  .filter(name =>
+    document.getElementById("member_" + name).checked
+  )
+  .join(",");
+      
       const series = document.getElementById("manualSeries").value.trim();
       const collab = document.getElementById("manualCollab").value.trim();
 
@@ -420,6 +459,19 @@
     function copyOutput() {
       const output = document.getElementById("output");
       output.select();
+
+      function checkAllMembers() {
+  document.querySelectorAll('[id^="member_"]').forEach(cb => {
+    cb.checked = true;
+  });
+}
+
+function clearAllMembers() {
+  document.querySelectorAll('[id^="member_"]').forEach(cb => {
+    cb.checked = false;
+  });
+}
+     
       document.execCommand("copy");
       alert("コピーしたよ！");
     }
