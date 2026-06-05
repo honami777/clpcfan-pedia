@@ -478,20 +478,18 @@ document.getElementById("manualCollab").value = "";
 document.getElementById("manualUrl").value = "";
 
 manualPreviewVideo = null;
-
-manualPreviewVideo = null;
      
     }
 
-
-
     
+function copyOutput() {
+  const output = document.getElementById("output");
+  output.select();
+  document.execCommand("copy");
+  alert("コピーしたよ！");
+}
 
-    function copyOutput() {
-      const output = document.getElementById("output");
-      output.select();
-
-      function checkAllMembers() {
+function checkAllMembers() {
   document.querySelectorAll('[id^="member_"]').forEach(cb => {
     cb.checked = true;
   });
@@ -502,10 +500,6 @@ function clearAllMembers() {
     cb.checked = false;
   });
 }
-     
-      document.execCommand("copy");
-      alert("コピーしたよ！");
-    }
   </script>
 </body>
 </html>
