@@ -12,19 +12,8 @@
     label { display: block; margin-top: 12px; font-size: 16px; }
     .box { background: #fff; padding: 16px; border-radius: 12px; margin-top: 24px; border: 1px solid #ffd7bd; }
     .preview { background: #fffaf3; padding: 12px; border-radius: 8px; margin-top: 12px; white-space: pre-wrap; }
-
-    .member-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 160px);
-  gap: 8px 16px;
-  margin-top: 12px;
-}
-
-.member-grid label {
-  margin-top: 0;
-}
-  
-  
+    .member-grid { display: grid; grid-template-columns: repeat(2, 160px); gap: 8px 16px; margin-top: 12px; }
+    .member-grid label { margin-top: 0; }
   </style>
 </head>
 <body>
@@ -42,10 +31,7 @@
     <option value="js">videos.js</option>
   </select>
 
-  <label>
-    <input id="excludeShorts" type="checkbox" checked>
-    ショート動画を除く
-  </label>
+  <label><input id="excludeShorts" type="checkbox" checked> ショート動画を除く</label>
 
   <label>
     判定秒数：
@@ -54,7 +40,6 @@
   </label>
 
   <br>
-
   <button onclick="fetchVideos()">取得</button>
   <button onclick="copyOutput()">コピー</button>
 
@@ -78,35 +63,48 @@
     <div id="manualPreview" class="preview">ここにプレビューが出ます</div>
 
     <p>members</p>
+    <button type="button" onclick="checkAllMembers()">全員</button>
+    <button type="button" onclick="clearAllMembers()">全解除</button>
 
-<button type="button" onclick="checkAllMembers()">全員</button>
-<button type="button" onclick="clearAllMembers()">全解除</button>
+    <div class="member-grid">
+      <label><input type="checkbox" id="member_じゃぱぱ">じゃぱぱ</label>
+      <label><input type="checkbox" id="member_のあ">のあ</label>
+      <label><input type="checkbox" id="member_たっつん">たっつん</label>
+      <label><input type="checkbox" id="member_ゆあん">ゆあん</label>
+      <label><input type="checkbox" id="member_シヴァ">シヴァ</label>
+      <label><input type="checkbox" id="member_どぬく">どぬく</label>
+      <label><input type="checkbox" id="member_うり">うり</label>
+      <label><input type="checkbox" id="member_えと">えと</label>
+      <label><input type="checkbox" id="member_ヒロ">ヒロ</label>
+      <label><input type="checkbox" id="member_なおきり">なおきり</label>
+      <label><input type="checkbox" id="member_もふ">もふ</label>
+      <label><input type="checkbox" id="member_るな">るな</label>
+    </div>
 
-<br><br>
-<div class="member-grid">
-<label><input type="checkbox" id="member_じゃぱぱ">じゃぱぱ</label>
-<label><input type="checkbox" id="member_のあ">のあ</label>
-<label><input type="checkbox" id="member_たっつん">たっつん</label>
-<label><input type="checkbox" id="member_ゆあん">ゆあん</label>
-<label><input type="checkbox" id="member_シヴァ">シヴァ</label>
-<label><input type="checkbox" id="member_どぬく">どぬく</label>
-
-<label><input type="checkbox" id="member_うり">うり</label>
-<label><input type="checkbox" id="member_えと">えと</label>
-<label><input type="checkbox" id="member_ヒロ">ヒロ</label>
-<label><input type="checkbox" id="member_なおきり">なおきり</label>
-<label><input type="checkbox" id="member_もふ">もふ</label>
-<label><input type="checkbox" id="member_るな">るな</label>
-</div>
-    
     <p>series</p>
     <input id="manualSeries" type="text" style="width:90%;" placeholder="例：ポケモンコラボ">
 
     <p>collab</p>
-    <input id="manualCollab" type="text" style="width:90%;" placeholder="例：ポケモン公式YouTubeチャンネル">
+    <select id="manualCollabSelect" onchange="toggleCollabOther()" style="width:90%;">
+      <option value="">選択してください</option>
+      <option value="ドズル社">ドズル社</option>
+      <option value="ポケモン公式">ポケモン公式</option>
+      <option value="日常組">日常組</option>
+      <option value="さんちゃんく！">さんちゃんく！</option>
+      <option value="主役は我々だ！">主役は我々だ！</option>
+      <option value="まいぜんシスターズ">まいぜんシスターズ</option>
+      <option value="その他">その他（手入力）</option>
+    </select>
+
+    <input id="manualCollabOther" type="text" style="width:90%; display:none;" placeholder="その他のコラボ先を入力">
 
     <br><br>
     <button onclick="addManualVideo()">この動画を追加</button>
+  </div>
+
+  <div class="box">
+    <h2>追加した動画プレビュー</h2>
+    <textarea id="addedPreviewOutput" placeholder="手動追加した動画がここに表示されます"></textarea>
   </div>
 
   <script>
@@ -116,6 +114,13 @@
     let currentVideos = [];
     let currentExcludedVideos = [];
     let manualPreviewVideo = null;
+    let manuallyAddedVideos = [];
+
+    const memberOrder = [
+      "じゃぱぱ", "のあ", "たっつん", "ゆあん",
+      "シヴァ", "どぬく", "うり", "えと",
+      "ヒロ", "なおきり", "もふ", "るな"
+    ];
 
     function decodeHtml(text) {
       let decoded = text;
@@ -264,7 +269,8 @@
           videos = videos.filter(v => v.durationSeconds > shortLimit);
         }
 
-        currentVideos = videos;
+        currentVideos = videos.concat(manuallyAddedVideos);
+        currentVideos.sort((a, b) => a.date.localeCompare(b.date));
         currentExcludedVideos = excludedVideos;
 
         renderOutputs();
@@ -281,26 +287,10 @@
     }
 
     function makeRows(videos) {
-      const rows = [[
-        "title",
-        "type",
-        "members",
-        "series",
-        "collab",
-        "videoId",
-        "date"
-      ]];
+      const rows = [["title", "type", "members", "series", "collab", "videoId", "date"]];
 
       videos.forEach(v => {
-        rows.push([
-          v.title,
-          v.type,
-          v.members,
-          v.series,
-          v.collab,
-          v.videoId,
-          v.date
-        ]);
+        rows.push([v.title, v.type, v.members, v.series, v.collab, v.videoId, v.date]);
       });
 
       return rows;
@@ -317,16 +307,12 @@
 
       if (format === "tsv") {
         outputTitle.textContent = "TSV（スプシ用）";
-        text = rows.map(row =>
-          row.map(value => String(value).replaceAll("\t", " ")).join("\t")
-        ).join("\n");
+        text = rows.map(row => row.map(value => String(value).replaceAll("\t", " ")).join("\t")).join("\n");
       }
 
       if (format === "csv") {
         outputTitle.textContent = "CSV";
-        text = rows.map(row =>
-          row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
-        ).join("\n");
+        text = rows.map(row => row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")).join("\n");
       }
 
       if (format === "js") {
@@ -350,12 +336,7 @@
         const excludedRows = [["title", "videoId", "date", "duration"]];
 
         currentExcludedVideos.forEach(v => {
-          excludedRows.push([
-            v.title,
-            v.videoId,
-            v.date,
-            formatSeconds(v.durationSeconds)
-          ]);
+          excludedRows.push([v.title, v.videoId, v.date, formatSeconds(v.durationSeconds)]);
         });
 
         excludedOutput.value = excludedRows.map(row =>
@@ -364,6 +345,27 @@
       } else {
         excludedOutput.value = "除外した動画はありません。";
       }
+
+      renderAddedPreview();
+    }
+
+    function renderAddedPreview() {
+      const addedPreviewOutput = document.getElementById("addedPreviewOutput");
+
+      if (manuallyAddedVideos.length === 0) {
+        addedPreviewOutput.value = "まだ手動追加した動画はありません。";
+        return;
+      }
+
+      const rows = [["title", "members", "series", "collab", "videoId", "date"]];
+
+      manuallyAddedVideos.forEach(v => {
+        rows.push([v.title, v.members, v.series, v.collab, v.videoId, v.date]);
+      });
+
+      addedPreviewOutput.value = rows.map(row =>
+        row.map(value => String(value).replaceAll("\t", " ")).join("\t")
+      ).join("\n");
     }
 
     async function previewManualVideo() {
@@ -411,6 +413,22 @@
       }
     }
 
+    function getSelectedMembers() {
+      return memberOrder
+        .filter(name => document.getElementById("member_" + name).checked)
+        .join(",");
+    }
+
+    function getSelectedCollab() {
+      const selectValue = document.getElementById("manualCollabSelect").value;
+
+      if (selectValue === "その他") {
+        return document.getElementById("manualCollabOther").value.trim();
+      }
+
+      return selectValue;
+    }
+
     function addManualVideo() {
       const preview = document.getElementById("manualPreview");
 
@@ -419,43 +437,24 @@
         return;
       }
 
-      const memberOrder = [
-  "じゃぱぱ",
-  "のあ",
-  "たっつん",
-  "ゆあん",
-  "シヴァ",
-  "どぬく",
-  "うり",
-  "えと",
-  "ヒロ",
-  "なおきり",
-  "もふ",
-  "るな"
-];
-
-const members = memberOrder
-  .filter(name =>
-    document.getElementById("member_" + name).checked
-  )
-  .join(",");
-      
-      const series = document.getElementById("manualSeries").value.trim();
-      const collab = document.getElementById("manualCollab").value.trim();
-
       const addedVideo = {
         ...manualPreviewVideo,
-        members,
-        series,
-        collab
+        members: getSelectedMembers(),
+        series: document.getElementById("manualSeries").value.trim(),
+        collab: getSelectedCollab()
       };
 
-      const alreadyExists = currentVideos.some(v => v.videoId === addedVideo.videoId);
+      const alreadyExists =
+        currentVideos.some(v => v.videoId === addedVideo.videoId) ||
+        manuallyAddedVideos.some(v => v.videoId === addedVideo.videoId);
 
       if (alreadyExists) {
         preview.textContent = "この動画はすでに追加されています。";
         return;
       }
+
+      manuallyAddedVideos.push(addedVideo);
+      manuallyAddedVideos.sort((a, b) => a.date.localeCompare(b.date));
 
       currentVideos.push(addedVideo);
       currentVideos.sort((a, b) => a.date.localeCompare(b.date));
@@ -466,40 +465,45 @@ const members = memberOrder
         `追加しました！\n` +
         `タイトル：${addedVideo.title}\n` +
         `公開日：${addedVideo.date}\n` +
+        `members：${addedVideo.members || "未入力"}\n` +
+        `series：${addedVideo.series || "未入力"}\n` +
         `collab：${addedVideo.collab || "未入力"}`;
 
-
-      document.querySelectorAll('[id^="member_"]').forEach(cb => {
-  cb.checked = false;
-});
-
-document.getElementById("manualSeries").value = "";
-document.getElementById("manualCollab").value = "";
-document.getElementById("manualUrl").value = "";
-
-manualPreviewVideo = null;
-     
+      clearManualForm();
     }
 
-    
-function copyOutput() {
-  const output = document.getElementById("output");
-  output.select();
-  document.execCommand("copy");
-  alert("コピーしたよ！");
-}
+    function clearManualForm() {
+      document.querySelectorAll('[id^="member_"]').forEach(cb => cb.checked = false);
+      document.getElementById("manualSeries").value = "";
+      document.getElementById("manualCollabSelect").value = "";
+      document.getElementById("manualCollabOther").value = "";
+      document.getElementById("manualCollabOther").style.display = "none";
+      document.getElementById("manualUrl").value = "";
+      manualPreviewVideo = null;
+    }
 
-function checkAllMembers() {
-  document.querySelectorAll('[id^="member_"]').forEach(cb => {
-    cb.checked = true;
-  });
-}
+    function toggleCollabOther() {
+      const selectValue = document.getElementById("manualCollabSelect").value;
+      const otherInput = document.getElementById("manualCollabOther");
+      otherInput.style.display = selectValue === "その他" ? "block" : "none";
+    }
 
-function clearAllMembers() {
-  document.querySelectorAll('[id^="member_"]').forEach(cb => {
-    cb.checked = false;
-  });
-}
+    function checkAllMembers() {
+      document.querySelectorAll('[id^="member_"]').forEach(cb => cb.checked = true);
+    }
+
+    function clearAllMembers() {
+      document.querySelectorAll('[id^="member_"]').forEach(cb => cb.checked = false);
+    }
+
+    function copyOutput() {
+      const output = document.getElementById("output");
+      output.select();
+      document.execCommand("copy");
+      alert("コピーしたよ！");
+    }
+
+    renderAddedPreview();
   </script>
 </body>
 </html>
