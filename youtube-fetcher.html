@@ -62,11 +62,17 @@
     const CHANNEL_ID = "UCh7bThzNArch6TgoHB1HVhA";
 
     function decodeHtml(text) {
-  const textarea = document.createElement("textarea");
-  textarea.innerHTML = text;
-  return textarea.value;
+  let result = text;
+
+  for (let i = 0; i < 3; i++) {
+    const textarea = document.createElement("textarea");
+    textarea.innerHTML = result;
+    result = textarea.value;
+  }
+
+  return result;
 }
-  
+ 
 
     async function fetchVideos() {
       const startDate = document.getElementById("startDate").value;
