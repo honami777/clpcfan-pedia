@@ -19,7 +19,7 @@
       border-radius: 8px;
       cursor: pointer;
     }
-    input {
+    input, select {
       padding: 8px;
       font-size: 16px;
       margin: 6px 0;
@@ -40,15 +40,22 @@
   〜
   <input id="endDate" type="date" value="2026-07-01">
 
+  <p>出力形式</p>
+  <select id="format">
+    <option value="tsv">TSV（スプシ用）</option>
+    <option value="csv">CSV</option>
+    <option value="js">videos.js</option>
+  </select>
+
   <br><br>
 
   <button onclick="fetchVideos()">取得</button>
-  <button onclick="copyCsv()">コピー</button>
+  <button onclick="copyOutput()">コピー</button>
 
   <p id="status"></p>
 
-  <h2>CSV</h2>
-  <textarea id="output" placeholder="ここにCSVが出ます"></textarea>
+  <h2 id="outputTitle">TSV</h2>
+  <textarea id="output" placeholder="ここに出力されます"></textarea>
 
   <script>
     const API_KEY = "AIzaSyBYexKZyVxzr6AkWgLTmhYYe8TpJjpnxhg";
@@ -57,8 +64,10 @@
     async function fetchVideos() {
       const startDate = document.getElementById("startDate").value;
       const endDate = document.getElementById("endDate").value;
+      const format = document.getElementById("format").value;
       const status = document.getElementById("status");
       const output = document.getElementById("output");
+      const outputTitle = document.getElementById("outputTitle");
 
       status.textContent = "取得中...";
       output.value = "";
@@ -95,6 +104,9 @@
         const videos = allItems.map(item => ({
           title: item.snippet.title,
           type: "動画",
+          members: "",
+          series: "",
+          collab: "",
           videoId: item.id.videoId,
           date: item.snippet.publishedAt.slice(0, 10)
         }));
@@ -102,31 +114,59 @@
         videos.sort((a, b) => a.date.localeCompare(b.date));
 
         const rows = [[
-  "title",
-  "type",
-  "members",
-  "series",
-  "collab",
-  "videoId",
-  "date"
-]];
+          "title",
+          "type",
+          "members",
+          "series",
+          "collab",
+          "videoId",
+          "date"
+        ]];
 
-videos.forEach(v => {
-  rows.push([
-    v.title,
-    v.type,
-    "",
-    "",
-    "",
-    v.videoId,
-    v.date
-  ]);
-});
-        const csv = rows.map(row =>
-          row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
-        ).join("\n");
+        videos.forEach(v => {
+          rows.push([
+            v.title,
+            v.type,
+            v.members,
+            v.series,
+            v.collab,
+            v.videoId,
+            v.date
+          ]);
+        });
 
-        output.value = csv;
+        let text = "";
+
+        if (format === "tsv") {
+          outputTitle.textContent = "TSV（スプシ用）";
+          text = rows.map(row =>
+            row.map(value => String(value).replaceAll("\t", " ")).join("\t")
+          ).join("\n");
+        }
+
+        if (format === "csv") {
+          outputTitle.textContent = "CSV";
+          text = rows.map(row =>
+            row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
+          ).join("\n");
+        }
+
+        if (format === "js") {
+          outputTitle.textContent = "videos.js";
+          const jsData = videos.map(v => ({
+            title: v.title,
+            type: v.type,
+            members: v.members,
+            series: v.series,
+            collab: v.collab,
+            videoId: v.videoId,
+            date: v.date
+          }));
+
+          text = "const videos = " + JSON.stringify(jsData, null, 2) + ";";
+        }
+
+        output.value = text;
         status.textContent = `${videos.length}件取得できたよ！`;
       } catch (error) {
         console.error(error);
@@ -134,7 +174,7 @@ videos.forEach(v => {
       }
     }
 
-    function copyCsv() {
+    function copyOutput() {
       const output = document.getElementById("output");
       output.select();
       document.execCommand("copy");
