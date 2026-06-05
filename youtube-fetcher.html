@@ -30,6 +30,11 @@
       font-size: 14px;
       margin-top: 16px;
     }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
@@ -47,7 +52,12 @@
     <option value="js">videos.js</option>
   </select>
 
-  <br><br>
+  <label>
+    <input id="excludeShorts" type="checkbox" checked>
+    ショート動画を除く（60秒以下を除外）
+  </label>
+
+  <br>
 
   <button onclick="fetchVideos()">取得</button>
   <button onclick="copyOutput()">コピー</button>
@@ -62,22 +72,66 @@
     const CHANNEL_ID = "UCh7bThzNArch6TgoHB1HVhA";
 
     function decodeHtml(text) {
-  let result = text;
+      let decoded = text;
 
-  for (let i = 0; i < 3; i++) {
-    const textarea = document.createElement("textarea");
-    textarea.innerHTML = result;
-    result = textarea.value;
-  }
+      for (let i = 0; i < 5; i++) {
+        const textarea = document.createElement("textarea");
+        textarea.innerHTML = decoded;
+        const next = textarea.value;
 
-  return result;
-}
- 
+        if (next === decoded) break;
+        decoded = next;
+      }
+
+      return decoded;
+    }
+
+    function parseDuration(duration) {
+      const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+
+      if (!match) return 0;
+
+      const hours = Number(match[1] || 0);
+      const minutes = Number(match[2] || 0);
+      const seconds = Number(match[3] || 0);
+
+      return hours * 3600 + minutes * 60 + seconds;
+    }
+
+    async function fetchVideoDetails(videoIds) {
+      const details = {};
+
+      for (let i = 0; i < videoIds.length; i += 50) {
+        const chunk = videoIds.slice(i, i + 50);
+
+        const url =
+          "https://www.googleapis.com/youtube/v3/videos" +
+          "?part=contentDetails" +
+          "&id=" + chunk.join(",") +
+          "&key=" + encodeURIComponent(API_KEY);
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (data.error) {
+          throw new Error(data.error.message);
+        }
+
+        data.items.forEach(item => {
+          details[item.id] = {
+            durationSeconds: parseDuration(item.contentDetails.duration)
+          };
+        });
+      }
+
+      return details;
+    }
 
     async function fetchVideos() {
       const startDate = document.getElementById("startDate").value;
       const endDate = document.getElementById("endDate").value;
       const format = document.getElementById("format").value;
+      const excludeShorts = document.getElementById("excludeShorts").checked;
       const status = document.getElementById("status");
       const output = document.getElementById("output");
       const outputTitle = document.getElementById("outputTitle");
@@ -114,15 +168,27 @@
           pageToken = data.nextPageToken || "";
         } while (pageToken);
 
-        const videos = allItems.map(item => ({
+        status.textContent = "動画の長さを確認中...";
+
+        const videoIds = allItems.map(item => item.id.videoId);
+        const details = await fetchVideoDetails(videoIds);
+
+        let videos = allItems.map(item => ({
           title: decodeHtml(item.snippet.title),
           type: "動画",
           members: "",
           series: "",
           collab: "",
           videoId: item.id.videoId,
-          date: item.snippet.publishedAt.slice(0, 10)
+          date: item.snippet.publishedAt.slice(0, 10),
+          durationSeconds: details[item.id.videoId]?.durationSeconds || 0
         }));
+
+        const beforeCount = videos.length;
+
+        if (excludeShorts) {
+          videos = videos.filter(v => v.durationSeconds > 60);
+        }
 
         videos.sort((a, b) => a.date.localeCompare(b.date));
 
@@ -180,7 +246,12 @@
         }
 
         output.value = text;
-        status.textContent = `${videos.length}件取得できたよ！`;
+
+        if (excludeShorts) {
+          status.textContent = `${videos.length}件取得できたよ！ショート候補を${beforeCount - videos.length}件除外したよ。`;
+        } else {
+          status.textContent = `${videos.length}件取得できたよ！`;
+        }
       } catch (error) {
         console.error(error);
         status.textContent = "取得に失敗しました。APIキーや設定を確認してね。";
