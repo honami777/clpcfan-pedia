@@ -10,6 +10,8 @@
     input, select { padding: 8px; font-size: 16px; margin: 6px 0; }
     textarea { width: 100%; height: 300px; font-size: 14px; margin-top: 16px; }
     label { display: block; margin-top: 12px; font-size: 16px; }
+    .box { background: #fff; padding: 16px; border-radius: 12px; margin-top: 24px; border: 1px solid #ffd7bd; }
+    .preview { background: #fffaf3; padding: 12px; border-radius: 8px; margin-top: 12px; white-space: pre-wrap; }
   </style>
 </head>
 <body>
@@ -21,22 +23,22 @@
   <input id="endDate" type="date" value="2026-07-01">
 
   <p>出力形式</p>
-  <select id="format">
+  <select id="format" onchange="renderOutputs()">
     <option value="tsv">TSV（スプシ用）</option>
     <option value="csv">CSV</option>
     <option value="js">videos.js</option>
   </select>
 
-<label>
-  <input id="excludeShorts" type="checkbox" checked>
-  ショート動画を除く
-</label>
+  <label>
+    <input id="excludeShorts" type="checkbox" checked>
+    ショート動画を除く
+  </label>
 
-<label>
-  判定秒数：
-  <input id="shortLimit" type="number" value="60" min="1" style="width:80px;">
-  秒以下を除外
-</label>
+  <label>
+    判定秒数：
+    <input id="shortLimit" type="number" value="60" min="1" style="width:80px;">
+    秒以下を除外
+  </label>
 
   <br>
 
@@ -51,9 +53,37 @@
   <h2>除外したショート候補</h2>
   <textarea id="excludedOutput" placeholder="ここに除外した動画が出ます"></textarea>
 
+  <div class="box">
+    <h2>🍑 手動追加（相互コラボ・企業案件用）</h2>
+
+    <p>YouTube URL</p>
+    <input id="manualUrl" type="text" style="width:90%;" placeholder="https://www.youtube.com/watch?v=...">
+
+    <br>
+    <button onclick="previewManualVideo()">動画情報を確認</button>
+
+    <div id="manualPreview" class="preview">ここにプレビューが出ます</div>
+
+    <p>members</p>
+    <input id="manualMembers" type="text" style="width:90%;" placeholder="例：じゃぱぱ,のあ">
+
+    <p>series</p>
+    <input id="manualSeries" type="text" style="width:90%;" placeholder="例：ポケモンコラボ">
+
+    <p>collab</p>
+    <input id="manualCollab" type="text" style="width:90%;" placeholder="例：ポケモン公式YouTubeチャンネル">
+
+    <br><br>
+    <button onclick="addManualVideo()">この動画を追加</button>
+  </div>
+
   <script>
     const API_KEY = "AIzaSyBYexKZyVxzr6AkWgLTmhYYe8TpJjpnxhg";
     const CHANNEL_ID = "UCh7bThzNArch6TgoHB1HVhA";
+
+    let currentVideos = [];
+    let currentExcludedVideos = [];
+    let manualPreviewVideo = null;
 
     function decodeHtml(text) {
       let decoded = text;
@@ -69,15 +99,38 @@
 
     function parseDuration(duration) {
       if (!duration) return 0;
-
       const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
       if (!match) return 0;
+      return Number(match[1] || 0) * 3600 + Number(match[2] || 0) * 60 + Number(match[3] || 0);
+    }
 
-      const hours = Number(match[1] || 0);
-      const minutes = Number(match[2] || 0);
-      const seconds = Number(match[3] || 0);
+    function formatSeconds(seconds) {
+      const min = Math.floor(seconds / 60);
+      const sec = seconds % 60;
+      return min === 0 ? `${sec}秒` : `${min}分${sec}秒`;
+    }
 
-      return hours * 3600 + minutes * 60 + seconds;
+    function extractVideoId(url) {
+      try {
+        const u = new URL(url);
+
+        if (u.hostname.includes("youtu.be")) {
+          return u.pathname.replace("/", "");
+        }
+
+        if (u.searchParams.get("v")) {
+          return u.searchParams.get("v");
+        }
+
+        const shortsMatch = u.pathname.match(/\/shorts\/([^/?]+)/);
+        if (shortsMatch) {
+          return shortsMatch[1];
+        }
+
+        return "";
+      } catch {
+        return "";
+      }
     }
 
     async function fetchVideoDetails(videoIds) {
@@ -88,7 +141,7 @@
 
         const url =
           "https://www.googleapis.com/youtube/v3/videos" +
-          "?part=contentDetails" +
+          "?part=snippet,contentDetails" +
           "&id=" + encodeURIComponent(chunk.join(",")) +
           "&key=" + encodeURIComponent(API_KEY);
 
@@ -101,6 +154,8 @@
 
         data.items.forEach(item => {
           details[item.id] = {
+            title: decodeHtml(item.snippet.title),
+            date: item.snippet.publishedAt.slice(0, 10),
             durationSeconds: parseDuration(item.contentDetails.duration)
           };
         });
@@ -109,26 +164,14 @@
       return details;
     }
 
-    function formatSeconds(seconds) {
-      const min = Math.floor(seconds / 60);
-      const sec = seconds % 60;
-
-      if (min === 0) {
-        return `${sec}秒`;
-      }
-
-      return `${min}分${sec}秒`;
-    }
-
     async function fetchVideos() {
       const startDate = document.getElementById("startDate").value;
       const endDate = document.getElementById("endDate").value;
-      const format = document.getElementById("format").value;
       const excludeShorts = document.getElementById("excludeShorts").checked;
+      const shortLimit = Number(document.getElementById("shortLimit").value) || 60;
       const status = document.getElementById("status");
       const output = document.getElementById("output");
       const excludedOutput = document.getElementById("excludedOutput");
-      const outputTitle = document.getElementById("outputTitle");
 
       status.textContent = "取得中...";
       output.value = "";
@@ -169,122 +212,209 @@
         const details = await fetchVideoDetails(videoIds);
 
         let videos = allItems.map(item => ({
-          title: decodeHtml(item.snippet.title),
+          title: details[item.id.videoId]?.title || decodeHtml(item.snippet.title),
           type: "動画",
           members: "",
           series: "",
           collab: "",
           videoId: item.id.videoId,
-          date: item.snippet.publishedAt.slice(0, 10),
+          date: details[item.id.videoId]?.date || item.snippet.publishedAt.slice(0, 10),
           durationSeconds: details[item.id.videoId]?.durationSeconds || 0
         }));
 
         videos.sort((a, b) => a.date.localeCompare(b.date));
-let excludedVideos = [];
 
-const shortLimit =
-  Number(document.getElementById("shortLimit").value) || 60;
-
-if (excludeShorts) {
-  excludedVideos = videos.filter(v => v.durationSeconds <= shortLimit);
-
-  excludedVideos.sort((a, b) =>
-    a.date.localeCompare(b.date)
-  );
-
-  videos = videos.filter(v => v.durationSeconds > shortLimit);
-}
-
-        
-        const rows = [[
-          "title",
-          "type",
-          "members",
-          "series",
-          "collab",
-          "videoId",
-          "date"
-        ]];
-
-        videos.forEach(v => {
-          rows.push([
-            v.title,
-            v.type,
-            v.members,
-            v.series,
-            v.collab,
-            v.videoId,
-            v.date
-          ]);
-        });
-
-        let text = "";
-
-        if (format === "tsv") {
-          outputTitle.textContent = "TSV（スプシ用）";
-          text = rows.map(row =>
-            row.map(value => String(value).replaceAll("\t", " ")).join("\t")
-          ).join("\n");
-        }
-
-        if (format === "csv") {
-          outputTitle.textContent = "CSV";
-          text = rows.map(row =>
-            row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
-          ).join("\n");
-        }
-
-        if (format === "js") {
-          outputTitle.textContent = "videos.js";
-          const jsData = videos.map(v => ({
-            title: v.title,
-            type: v.type,
-            members: v.members,
-            series: v.series,
-            collab: v.collab,
-            videoId: v.videoId,
-            date: v.date
-          }));
-
-          text = "const videos = " + JSON.stringify(jsData, null, 2) + ";";
-        }
-
-        output.value = text;
-
-        if (excludedVideos.length > 0) {
-          const excludedRows = [[
-            "title",
-            "videoId",
-            "date",
-            "duration"
-          ]];
-
-          excludedVideos.forEach(v => {
-            excludedRows.push([
-              v.title,
-              v.videoId,
-              v.date,
-              formatSeconds(v.durationSeconds)
-            ]);
-          });
-
-          excludedOutput.value = excludedRows.map(row =>
-            row.map(value => String(value).replaceAll("\t", " ")).join("\t")
-          ).join("\n");
-        } else {
-          excludedOutput.value = "除外した動画はありません。";
-        }
+        let excludedVideos = [];
 
         if (excludeShorts) {
-          status.textContent =
-          `${videos.length}件取得できたよ！(${shortLimit}秒以下を${excludedVideos.length}件除外したよ。)`;
+          excludedVideos = videos.filter(v => v.durationSeconds <= shortLimit);
+          excludedVideos.sort((a, b) => a.date.localeCompare(b.date));
+          videos = videos.filter(v => v.durationSeconds > shortLimit);
+        }
+
+        currentVideos = videos;
+        currentExcludedVideos = excludedVideos;
+
+        renderOutputs();
+
+        if (excludeShorts) {
+          status.textContent = `${currentVideos.length}件取得できたよ！(${shortLimit}秒以下を${currentExcludedVideos.length}件除外したよ。)`;
         } else {
-          status.textContent = `${videos.length}件取得できたよ！`;
+          status.textContent = `${currentVideos.length}件取得できたよ！`;
         }
       } catch (error) {
         console.error(error);
         status.textContent = "取得に失敗しました: " + error.message;
       }
+    }
+
+    function makeRows(videos) {
+      const rows = [[
+        "title",
+        "type",
+        "members",
+        "series",
+        "collab",
+        "videoId",
+        "date"
+      ]];
+
+      videos.forEach(v => {
+        rows.push([
+          v.title,
+          v.type,
+          v.members,
+          v.series,
+          v.collab,
+          v.videoId,
+          v.date
+        ]);
+      });
+
+      return rows;
+    }
+
+    function renderOutputs() {
+      const format = document.getElementById("format").value;
+      const output = document.getElementById("output");
+      const excludedOutput = document.getElementById("excludedOutput");
+      const outputTitle = document.getElementById("outputTitle");
+
+      const rows = makeRows(currentVideos);
+      let text = "";
+
+      if (format === "tsv") {
+        outputTitle.textContent = "TSV（スプシ用）";
+        text = rows.map(row =>
+          row.map(value => String(value).replaceAll("\t", " ")).join("\t")
+        ).join("\n");
+      }
+
+      if (format === "csv") {
+        outputTitle.textContent = "CSV";
+        text = rows.map(row =>
+          row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")
+        ).join("\n");
+      }
+
+      if (format === "js") {
+        outputTitle.textContent = "videos.js";
+        const jsData = currentVideos.map(v => ({
+          title: v.title,
+          type: v.type,
+          members: v.members,
+          series: v.series,
+          collab: v.collab,
+          videoId: v.videoId,
+          date: v.date
+        }));
+
+        text = "const videos = " + JSON.stringify(jsData, null, 2) + ";";
+      }
+
+      output.value = text;
+
+      if (currentExcludedVideos.length > 0) {
+        const excludedRows = [["title", "videoId", "date", "duration"]];
+
+        currentExcludedVideos.forEach(v => {
+          excludedRows.push([
+            v.title,
+            v.videoId,
+            v.date,
+            formatSeconds(v.durationSeconds)
+          ]);
+        });
+
+        excludedOutput.value = excludedRows.map(row =>
+          row.map(value => String(value).replaceAll("\t", " ")).join("\t")
+        ).join("\n");
+      } else {
+        excludedOutput.value = "除外した動画はありません。";
+      }
+    }
+
+    async function previewManualVideo() {
+      const url = document.getElementById("manualUrl").value.trim();
+      const preview = document.getElementById("manualPreview");
+      const videoId = extractVideoId(url);
+
+      manualPreviewVideo = null;
+
+      if (!videoId) {
+        preview.textContent = "動画URLからvideoIdを取得できませんでした。URLを確認してね。";
+        return;
+      }
+
+      preview.textContent = "動画情報を確認中...";
+
+      try {
+        const details = await fetchVideoDetails([videoId]);
+        const info = details[videoId];
+
+        if (!info) {
+          preview.textContent = "動画情報が取得できませんでした。URLや公開状態を確認してね。";
+          return;
+        }
+
+        manualPreviewVideo = {
+          title: info.title,
+          type: "動画",
+          members: "",
+          series: "",
+          collab: "",
+          videoId: videoId,
+          date: info.date,
+          durationSeconds: info.durationSeconds
+        };
+
+        preview.textContent =
+          `タイトル：${manualPreviewVideo.title}\n` +
+          `videoId：${manualPreviewVideo.videoId}\n` +
+          `公開日：${manualPreviewVideo.date}\n` +
+          `長さ：${formatSeconds(manualPreviewVideo.durationSeconds)}`;
+      } catch (error) {
+        console.error(error);
+        preview.textContent = "動画情報の取得に失敗しました: " + error.message;
+      }
+    }
+
+    function addManualVideo() {
+      const preview = document.getElementById("manualPreview");
+
+      if (!manualPreviewVideo) {
+        preview.textContent = "先に「動画情報を確認」を押してね。";
+        return;
+      }
+
+      const members = document.getElementById("manualMembers").value.trim();
+      const series = document.getElementById("manualSeries").value.trim();
+      const collab = document.getElementById("manualCollab").value.trim();
+
+      const addedVideo = {
+        ...manualPreviewVideo,
+        members,
+        series,
+        collab
+      };
+
+      const alreadyExists = currentVideos.some(v => v.videoId === addedVideo.videoId);
+
+      if (alreadyExists) {
+        preview.textContent = "この動画はすでに追加されています。";
+        return;
+      }
+
+      currentVideos.push(addedVideo);
+      currentVideos.sort((a, b) => a.date.localeCompare(b.date));
+
+      renderOutputs();
+
+      preview.textContent =
+        `追加しました！\n` +
+        `タイトル：${addedVideo.title}\n` +
+        `公開日：${addedVideo.date}\n` +
+        `collab：${addedVideo.collab || "未入力"}`;
     }
 
     function copyOutput() {
