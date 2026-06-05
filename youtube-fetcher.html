@@ -61,6 +61,13 @@
     const API_KEY = "AIzaSyBYexKZyVxzr6AkWgLTmhYYe8TpJjpnxhg";
     const CHANNEL_ID = "UCh7bThzNArch6TgoHB1HVhA";
 
+    function decodeHtml(text) {
+  const textarea = document.createElement("textarea");
+  textarea.innerHTML = text;
+  return textarea.value;
+}
+  
+
     async function fetchVideos() {
       const startDate = document.getElementById("startDate").value;
       const endDate = document.getElementById("endDate").value;
@@ -102,7 +109,7 @@
         } while (pageToken);
 
         const videos = allItems.map(item => ({
-          title: item.snippet.title,
+          title: decodeHtml(item.snippet.title),
           type: "動画",
           members: "",
           series: "",
