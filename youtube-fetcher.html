@@ -187,9 +187,15 @@ const shortLimit =
 
 if (excludeShorts) {
   excludedVideos = videos.filter(v => v.durationSeconds <= shortLimit);
+
+  excludedVideos.sort((a, b) =>
+    a.date.localeCompare(b.date)
+  );
+
   videos = videos.filter(v => v.durationSeconds > shortLimit);
 }
 
+        
         const rows = [[
           "title",
           "type",
@@ -270,7 +276,8 @@ if (excludeShorts) {
         }
 
         if (excludeShorts) {
-          status.textContent = `${videos.length}件取得できたよ！ショート候補を${excludedVideos.length}件除外したよ。`;
+          status.textContent =
+          `${videos.length}件取得できたよ！(${shortLimit}秒以下を${excludedVideos.length}件除外したよ。)`;
         } else {
           status.textContent = `${videos.length}件取得できたよ！`;
         }
