@@ -484,7 +484,7 @@
     function getSelectedMembers() {
       return memberOrder
         .filter(name => document.getElementById("member_" + name).checked)
-        .join(",");
+        .join("|");
     }
 
     function getSelectedCollab() {
