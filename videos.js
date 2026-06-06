@@ -592,5 +592,15 @@ const videos = [
     collab: "STPR 他",
     videoId: "Ne_tJ98rXmk",
     url: "https://www.youtube.com/watch?v=Ne_tJ98rXmk"
+  },
+    {
+    title: "死んでも復活する鬼！？リアル鬼ごっこサバイバル35【ドズル社×からぴち】",
+    type: "動画",
+    members: ["じゃぱぱ|たっつん|ゆあん|シヴァ|もふ"],
+    series: "リアル鬼ごっこサバイバル",
+    collab: "ドズル社",
+    videoId: "cd7777hX01Y",
+    url: "https://www.youtube.com/watch?v=cd7777hX01Y"
   }
+ 
 ];
