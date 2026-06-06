@@ -209,7 +209,7 @@ function showLatestVideos() {
   const latestVideos = [...videos]
     .filter(video => video.date)
     .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 5);
+    .slice(0, 2);
 
   latestVideos.forEach(video => {
     const card = document.createElement("a");
