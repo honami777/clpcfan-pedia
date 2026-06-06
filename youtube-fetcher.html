@@ -544,6 +544,8 @@ function editManualVideo(index) {
         return;
       }
 
+      const isEdit = editingManualIndex !== null;
+
       const addedVideo = {
         ...manualPreviewVideo,
         members: getSelectedMembers(),
@@ -560,21 +562,39 @@ function editManualVideo(index) {
         return;
       }
 
-      manuallyAddedVideos.push(addedVideo);
-      manuallyAddedVideos.sort((a, b) => a.date.localeCompare(b.date));
+      if (editingManualIndex !== null) {
 
-      currentVideos.push(addedVideo);
-      currentVideos.sort((a, b) => a.date.localeCompare(b.date));
+  manuallyAddedVideos[editingManualIndex] = addedVideo;
+  manuallyAddedVideos.sort((a, b) => a.date.localeCompare(b.date));
+
+  const target = currentVideos.findIndex(
+    v => v.videoId === addedVideo.videoId
+  );
+
+  if (target >= 0) {
+    currentVideos[target] = addedVideo;
+    currentVideos.sort((a, b) => a.date.localeCompare(b.date));
+  }
+
+  editingManualIndex = null;
+
+} else {
+
+  manuallyAddedVideos.push(addedVideo);
+  manuallyAddedVideos.sort((a, b) => a.date.localeCompare(b.date));
+
+  currentVideos.push(addedVideo);
+  currentVideos.sort((a, b) => a.date.localeCompare(b.date));
+
+}
 
       renderOutputs();
 
       preview.textContent =
-        `追加しました！\n` +
-        `タイトル：${addedVideo.title}\n` +
-        `公開日：${addedVideo.date}\n` +
-        `members：${addedVideo.members || "未入力"}\n` +
-        `series：${addedVideo.series || "未入力"}\n` +
-        `collab：${addedVideo.collab || "未入力"}`;
+  `${isEdit ? "更新しました！" : "追加しました！"}\n` +
+  `タイトル：${addedVideo.title}\n` +
+  `公開日：${addedVideo.date}\n` +
+  `collab：${addedVideo.collab || "未入力"}`;
 
       clearManualForm();
     }
