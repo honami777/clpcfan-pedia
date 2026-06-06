@@ -106,6 +106,56 @@
         grid-template-columns: 1fr;
     }
 }
+        .latest-list {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+.latest-card {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+    padding: 14px;
+    border: 1px solid #ffd7bd;
+    border-radius: 14px;
+    background: #fff;
+    text-decoration: none;
+    color: black;
+}
+
+.latest-card:hover {
+    background: #fff2e8;
+    transform: translateY(-2px);
+}
+
+.latest-card img {
+    width: 160px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.latest-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.latest-card p {
+    margin: 4px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .latest-card {
+        grid-template-columns: 1fr;
+    }
+
+    .latest-card img {
+        width: 100%;
+    }
+}
            
     </style>
 </head>
@@ -131,6 +181,9 @@
         <a href="series.html" class="card" target="_blank">📚 シリーズ一覧</a>
     </div>
 
+    <h2>🆕 最新追加動画</h2>
+    <div id="latest-videos" class="latest-list"></div>
+
     <div id="result-count"></div>
     
     <div id="results"></div>
@@ -147,6 +200,46 @@
     const searchInput = document.querySelector(".search-box");
     const resultArea = document.getElementById("results");
     const resultCount = document.getElementById("result-count");
+
+    const latestArea = document.getElementById("latest-videos");
+
+function showLatestVideos() {
+  latestArea.innerHTML = "";
+
+  const latestVideos = [...videos]
+    .filter(video => video.date)
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 5);
+
+  latestVideos.forEach(video => {
+    const card = document.createElement("a");
+    card.className = "latest-card";
+    card.href = video.url;
+    card.target = "_blank";
+
+    card.innerHTML = `
+      <img
+        src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
+        alt="${video.title}"
+      >
+
+      <div>
+        <h3>${video.title}</h3>
+        <p>📅 ${video.date}</p>
+        <p>📚 ${video.series || "シリーズなし"}</p>
+        <p>🤝 ${video.collab || "コラボなし"}</p>
+      </div>
+    `;
+
+    latestArea.appendChild(card);
+  });
+}
+
+
+
+
+
+    
   function showResults(keyword) {
     resultArea.innerHTML = "";
 
@@ -212,6 +305,7 @@ resultCount.innerHTML =
     showResults(searchInput.value.trim());
   });
 
+  showLatestVideos();
   showResults("");
 </script>
     
