@@ -142,13 +142,16 @@
 
     const seriesList = document.getElementById("series-list");
 
-    const seriesNames = ["スパイ大作戦", "コラボ", "いちごマイクラ"];
-
+    const seriesNames = [...new Set(
+  videos
+    .map(video => video.series)
+    .filter(series => series && series.trim() !== "")
+)].sort();
 seriesNames.forEach(seriesName => {
   const count = videos.filter(video => video.series === seriesName).length;
 
   const link = document.createElement("a");
-  link.href = `series.html?series=${seriesName}`;
+  link.href = `series.html?series=${encodeURIComponent(seriesName)}`;
   link.className = "series-button";
   link.textContent = `${seriesName}（${count}）`;
 
