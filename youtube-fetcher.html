@@ -138,6 +138,7 @@
     let currentExcludedVideos = [];
     let manualPreviewVideo = null;
     let manuallyAddedVideos = [];
+    let editingManualIndex = null;
 
     const memberOrder = [
       "じゃぱぱ", "のあ", "たっつん", "ゆあん",
@@ -392,6 +393,7 @@
       series：${v.series || "未入力"}<br>
       collab：${v.collab || "未入力"}<br>
       videoId：${v.videoId}<br><br>
+      <button onclick="editManualVideo(${index})">編集</button>
       <button onclick="deleteManualVideo(${index})">削除</button>
     `;
 
