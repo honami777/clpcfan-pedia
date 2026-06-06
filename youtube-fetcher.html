@@ -347,15 +347,16 @@ if (format === "js") {
       .map(name => name.trim())
       .filter(name => name !== "");
 
-    return `  {
-    title: ${JSON.stringify(v.title)},
-    type: ${JSON.stringify(v.type)},
-    members: ${JSON.stringify(membersArray)},
-    series: ${JSON.stringify(v.series || "")},
-    collab: ${JSON.stringify(v.collab || "")},
-    videoId: ${JSON.stringify(v.videoId)},
-    url: ${JSON.stringify("https://www.youtube.com/watch?v=" + v.videoId)}
-  }`;
+return `  {
+  title: ${JSON.stringify(v.title)},
+  type: ${JSON.stringify(v.type)},
+  members: ${JSON.stringify(membersArray)},
+  series: ${JSON.stringify(v.series || "")},
+  collab: ${JSON.stringify(v.collab || "")},
+  videoId: ${JSON.stringify(v.videoId)},
+  url: ${JSON.stringify("https://www.youtube.com/watch?v=" + v.videoId)},
+  date: ${JSON.stringify(v.date)}
+}`;
   });
 
   text = "const videos = [\n" + jsData.join(",\n") + "\n];";
