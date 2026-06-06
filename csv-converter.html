@@ -90,6 +90,7 @@ function convertCSV(){
             const members=(cols[2] || "")
              .split("|")
              .map(v=>v.trim())
+             .map(v=>v.replace(/^"|"$/g, ""))
              .filter(v=>v!="")
              .map(v=>`"${escapeJS(v)}"`)
              .join(", ");
