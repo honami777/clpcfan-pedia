@@ -94,19 +94,23 @@ function convertCSV(){
                 .map(v=>`"${escapeJS(v)}"`)
                 .join(", ");
 
-            const series=escapeJS(cols[3] || "");
-            const collab=escapeJS(cols[4] || "");
-            const videoId=escapeJS(cols[5] || "");
+           const series=escapeJS(cols[3] || "");
+           const collab=escapeJS(cols[4] || "");
+           const videoId=escapeJS(cols[5] || "");
+           const date = escapeJS(cols[6] || "");
 
-            output+=`  {
-    title: "${title}",
-    type: "${type}",
-    members: [${members}],
-    series: "${series}",
-    collab: "${collab}",
-    videoId: "${videoId}",
-    url: "https://www.youtube.com/watch?v=${videoId}"
-  }`;
+         output += `  {
+           title: "${title}",
+           type: "${type}",
+           members: [${members}],
+           series: "${series}",
+           collab: "${collab}",
+           videoId: "${videoId}",
+           url: "https://www.youtube.com/watch?v=${videoId}",
+           date: "${date}"
+}`;
+         
+         
 
             if(index < rows.length-1){
                 output+=",";
