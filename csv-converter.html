@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -38,10 +38,9 @@ textarea{
 
 <h1>🍑ぴちペディア データ変換ツール</h1>
 
-<input type="file" id="csvFile" accept=".csv">
+<input type="file" id="csvFile" accept=".tsv,.txt">
 <br>
 <button onclick="convertCSV()">変換</button>
-
 <button onclick="copyOutput()">コピー</button>
 
 <h2>videos.js</h2>
@@ -50,43 +49,56 @@ textarea{
 
 <script>
 
+function escapeJS(str){
+    return String(str)
+        .replace(/\\/g,"\\\\")
+        .replace(/"/g,'\\"');
+}
+
 function convertCSV(){
 
-    const file = document.getElementById("csvFile").files[0];
+    const file=document.getElementById("csvFile").files[0];
 
     if(!file){
-        alert("CSVファイルを選択してください");
+        alert("TSVファイルを選択してください");
         return;
     }
 
-    const reader = new FileReader();
+    const reader=new FileReader();
 
-    reader.onload = function(e){
+    reader.onload=function(e){
 
-        const text = e.target.result;
+        const text=e.target.result
+            .replace(/\r\n/g,"\n")
+            .replace(/\r/g,"\n");
 
-        const rows = text.trim().split("\n");
+        let rows=text.split("\n");
+
+        rows=rows.filter(r=>r.trim()!="");
 
         rows.shift(); // ヘッダー削除
 
-        let output = "const videos = [\n";
+        let output="const videos = [\n";
 
         rows.forEach((row,index)=>{
 
-            const cols = row.split(",");
+            const cols=row.split("\t");
 
-            const title = cols[0];
-            const type = cols[1];
-            const members = cols[2]
-                .split("|")
-                .map(name=>`"${name}"`)
+            const title=escapeJS(cols[0] || "");
+            const type=escapeJS(cols[1] || "");
+
+            const members=(cols[2] || "")
+                .split(",")
+                .map(v=>v.trim())
+                .filter(v=>v!="")
+                .map(v=>`"${escapeJS(v)}"`)
                 .join(", ");
 
-            const series = cols[3];
-            const collab = cols[4];
-            const videoId = cols[5];
+            const series=escapeJS(cols[3] || "");
+            const collab=escapeJS(cols[4] || "");
+            const videoId=escapeJS(cols[5] || "");
 
-            output += `  {
+            output+=`  {
     title: "${title}",
     type: "${type}",
     members: [${members}],
@@ -97,38 +109,38 @@ function convertCSV(){
   }`;
 
             if(index < rows.length-1){
-                output += ",";
+                output+=",";
             }
 
-            output += "\n";
+            output+="\n";
 
         });
 
-        output += "];";
+        output+="];";
 
-        document.getElementById("output").value = output;
+        document.getElementById("output").value=output;
 
     };
 
     reader.readAsText(file,"UTF-8");
 }
-    function copyOutput() {
 
-    const text =
-        document.getElementById("output").value;
+function copyOutput(){
 
-    if (text.trim() === "") {
+    const text=document.getElementById("output").value;
+
+    if(text.trim()==""){
         alert("コピーする内容がありません！");
         return;
     }
 
     navigator.clipboard.writeText(text)
-        .then(() => {
-            alert("videos.js をコピーしました！");
-        })
-        .catch(() => {
-            alert("コピーに失敗しました。");
-        });
+    .then(()=>{
+        alert("videos.js をコピーしました！");
+    })
+    .catch(()=>{
+        alert("コピーに失敗しました。");
+    });
 
 }
 
