@@ -372,7 +372,7 @@
 
       renderAddedPreview();
 
-      function renderManualVideoList() {
+function renderManualVideoList() {
   const list = document.getElementById("manualVideoList");
 
   if (manuallyAddedVideos.length === 0) {
@@ -401,22 +401,59 @@
   });
 }
 
-      function deleteManualVideo(index) {
-  const target = manuallyAddedVideos[index];
+function editManualVideo(index) {
+  const video = manuallyAddedVideos[index];
 
-  if (!target) return;
+  editingManualIndex = index;
+  manualPreviewVideo = { ...video };
 
-  const ok = confirm(`この動画を削除する？\n${target.title}`);
+  document.getElementById("manualUrl").value = video.url || "";
+  document.getElementById("manualSeries").value = video.series || "";
 
-  if (!ok) return;
+  const collabSelect = document.getElementById("manualCollabSelect");
+  const collabOther = document.getElementById("manualCollabOther");
 
-  manuallyAddedVideos.splice(index, 1);
+  if (collabSelect) {
+    const optionExists = [...collabSelect.options].some(
+      option => option.value === video.collab
+    );
 
-  currentVideos = currentVideos.filter(v => v.videoId !== target.videoId);
+    if (optionExists) {
+      collabSelect.value = video.collab || "";
+      if (collabOther) {
+        collabOther.value = "";
+        collabOther.style.display = "none";
+      }
+    } else {
+      collabSelect.value = "その他";
+      if (collabOther) {
+        collabOther.value = video.collab || "";
+        collabOther.style.display = "block";
+      }
+    }
+  }
 
-  renderOutputs();
-  renderManualVideoList();
+  document.querySelectorAll('[id^="member_"]').forEach(cb => {
+    cb.checked = false;
+  });
+
+  const members =
+    Array.isArray(video.members)
+      ? video.members
+      : String(video.members || "").split(",");
+
+  members.forEach(name => {
+    const cb = document.getElementById("member_" + name.trim());
+    if (cb) cb.checked = true;
+  });
+
+  document.getElementById("manualPreview").textContent =
+    "編集中：\n" +
+    "タイトル：" + video.title + "\n" +
+    "公開日：" + video.date;
 }
+    
+    ;}
     }
 
     function renderAddedPreview() {
