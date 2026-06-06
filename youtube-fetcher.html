@@ -452,7 +452,20 @@ function editManualVideo(index) {
     "タイトル：" + video.title + "\n" +
     "公開日：" + video.date;
 }
-    
+      function deleteManualVideo(index) {
+  const target = manuallyAddedVideos[index];
+
+  if (!target) return;
+
+  const ok = confirm(`この動画を削除する？\n${target.title}`);
+
+  if (!ok) return;
+
+  manuallyAddedVideos.splice(index, 1);
+  currentVideos = currentVideos.filter(v => v.videoId !== target.videoId);
+
+  renderOutputs();
+}
 
     function renderAddedPreview() {
       const addedPreviewOutput = document.getElementById("addedPreviewOutput");
