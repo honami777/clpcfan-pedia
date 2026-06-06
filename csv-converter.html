@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -88,11 +88,11 @@ function convertCSV(){
             const type=escapeJS(cols[1] || "");
 
             const members=(cols[2] || "")
-                .split(",")
-                .map(v=>v.trim())
-                .filter(v=>v!="")
-                .map(v=>`"${escapeJS(v)}"`)
-                .join(", ");
+             .split("|")
+             .map(v=>v.trim())
+             .filter(v=>v!="")
+             .map(v=>`"${escapeJS(v)}"`)
+             .join(", ");
 
            const series=escapeJS(cols[3] || "");
            const collab=escapeJS(cols[4] || "");
