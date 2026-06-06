@@ -537,67 +537,67 @@ function editManualVideo(index) {
     }
 
     function addManualVideo() {
-      const preview = document.getElementById("manualPreview");
+  const preview = document.getElementById("manualPreview");
 
-      if (!manualPreviewVideo) {
-        preview.textContent = "先に「動画情報を確認」を押してね。";
-        return;
-      }
+  if (!manualPreviewVideo) {
+    preview.textContent = "先に「動画情報を確認」を押してね。";
+    return;
+  }
 
-      const isEdit = editingManualIndex !== null;
+  const isEdit = editingManualIndex !== null;
 
-      const addedVideo = {
-        ...manualPreviewVideo,
-        members: getSelectedMembers(),
-        series: document.getElementById("manualSeries").value.trim(),
-        collab: getSelectedCollab()
-      };
+  const addedVideo = {
+    ...manualPreviewVideo,
+    members: getSelectedMembers(),
+    series: document.getElementById("manualSeries").value.trim(),
+    collab: getSelectedCollab()
+  };
 
-      const alreadyExists =
-        currentVideos.some(v => v.videoId === addedVideo.videoId) ||
-        manuallyAddedVideos.some(v => v.videoId === addedVideo.videoId);
+  const alreadyExists = manuallyAddedVideos.some((v, index) => {
+    if (isEdit && index === editingManualIndex) {
+      return false;
+    }
+    return v.videoId === addedVideo.videoId;
+  });
 
-      if (alreadyExists) {
-        preview.textContent = "この動画はすでに追加されています。";
-        return;
-      }
+  if (alreadyExists) {
+    preview.textContent = "この動画はすでに追加されています。";
+    return;
+  }
 
-      if (editingManualIndex !== null) {
+  if (isEdit) {
+    const oldVideoId = manuallyAddedVideos[editingManualIndex].videoId;
 
-  manuallyAddedVideos[editingManualIndex] = addedVideo;
-  manuallyAddedVideos.sort((a, b) => a.date.localeCompare(b.date));
+    manuallyAddedVideos[editingManualIndex] = addedVideo;
+    manuallyAddedVideos.sort((a, b) => a.date.localeCompare(b.date));
 
-  const target = currentVideos.findIndex(
-    v => v.videoId === addedVideo.videoId
-  );
+    currentVideos = currentVideos.filter(v => v.videoId !== oldVideoId);
+    currentVideos.push(addedVideo);
+    currentVideos.sort((a, b) => a.date.localeCompare(b.date));
 
-  if (target >= 0) {
-    currentVideos[target] = addedVideo;
+    editingManualIndex = null;
+  } else {
+    manuallyAddedVideos.push(addedVideo);
+    manuallyAddedVideos.sort((a, b) => a.date.localeCompare(b.date));
+
+    currentVideos.push(addedVideo);
     currentVideos.sort((a, b) => a.date.localeCompare(b.date));
   }
 
-  editingManualIndex = null;
+  renderOutputs();
 
-} else {
+  preview.textContent =
+    `${isEdit ? "更新しました！" : "追加しました！"}\n` +
+    `タイトル：${addedVideo.title}\n` +
+    `公開日：${addedVideo.date}\n` +
+    `members：${addedVideo.members || "未入力"}\n` +
+    `series：${addedVideo.series || "未入力"}\n` +
+    `collab：${addedVideo.collab || "未入力"}`;
 
-  manuallyAddedVideos.push(addedVideo);
-  manuallyAddedVideos.sort((a, b) => a.date.localeCompare(b.date));
-
-  currentVideos.push(addedVideo);
-  currentVideos.sort((a, b) => a.date.localeCompare(b.date));
-
+  clearManualForm();
 }
 
-      renderOutputs();
-
-      preview.textContent =
-  `${isEdit ? "更新しました！" : "追加しました！"}\n` +
-  `タイトル：${addedVideo.title}\n` +
-  `公開日：${addedVideo.date}\n` +
-  `collab：${addedVideo.collab || "未入力"}`;
-
-      clearManualForm();
-    }
+    
 
     function clearManualForm() {
       document.querySelectorAll('[id^="member_"]').forEach(cb => cb.checked = false);
