@@ -338,22 +338,28 @@
         outputTitle.textContent = "CSV";
         text = rows.map(row => row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(",")).join("\n");
       }
+if (format === "js") {
+  outputTitle.textContent = "videos.js";
 
-      if (format === "js") {
-        outputTitle.textContent = "videos.js";
-        const jsData = currentVideos.map(v => ({
-          title: v.title,
-          type: v.type,
-          members: v.members,
-          series: v.series,
-          collab: v.collab,
-          videoId: v.videoId,
-          date: v.date
-        }));
+  const jsData = currentVideos.map(v => {
+    const membersArray = String(v.members || "")
+      .split("|")
+      .map(name => name.trim())
+      .filter(name => name !== "");
 
-        text = "const videos = " + JSON.stringify(jsData, null, 2) + ";";
-      }
+    return `  {
+    title: ${JSON.stringify(v.title)},
+    type: ${JSON.stringify(v.type)},
+    members: ${JSON.stringify(membersArray)},
+    series: ${JSON.stringify(v.series || "")},
+    collab: ${JSON.stringify(v.collab || "")},
+    videoId: ${JSON.stringify(v.videoId)},
+    url: ${JSON.stringify("https://www.youtube.com/watch?v=" + v.videoId)}
+  }`;
+  });
 
+  text = "const videos = [\n" + jsData.join(",\n") + "\n];";
+}
       output.value = text;
 
       if (currentExcludedVideos.length > 0) {
