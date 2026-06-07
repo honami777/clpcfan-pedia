@@ -35,16 +35,27 @@
     th {
       background: #fff2e8;
     }
+    tbody tr {
+  transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #fff8f0;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
 
     .badge {
       display: inline-block;
       padding: 4px 10px;
       border-radius: 999px;
       background: #fff2e8;
-      color: #666;
+      color: #ff8c42;
       font-size: 13px;
+      font-weight: bold;
       white-space: nowrap;
     }
+
+    
 
     @media (max-width: 768px) {
       table {
@@ -77,13 +88,17 @@
     background: #ff7620;
 }
 
-    .table-thumbnail {
+.table-thumbnail {
   width: 140px;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
+tbody tr:hover .table-thumbnail {
+  transform: scale(1.03);
+}
     th:nth-child(3),
     td:nth-child(3) {
     text-align: center;
@@ -125,6 +140,16 @@ td:nth-child(6) {
   font-size: 15px;
   cursor: pointer;
 }
+
+    td a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+td a:hover {
+  color: #ff8c42;
+}
     
   </style>
 </head>
@@ -160,6 +185,8 @@ td:nth-child(6) {
     <option value="default">登録順</option>
     <option value="title">タイトル順</option>
     <option value="series">シリーズ順</option>
+
+        
   </select>
 </div>
      
