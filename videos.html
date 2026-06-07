@@ -295,7 +295,7 @@ function showVideos(keyword = "") {
       </td>
 
       <td>${video.members.join("、")}</td>
-      <td>${video.series}</td>
+      <td>${video.series || "-"}</td>
       <td>${video.collab || "-"}</td>
     `;
 
