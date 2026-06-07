@@ -139,6 +139,10 @@ td:nth-child(6) {
   background: white;
   font-size: 15px;
   cursor: pointer;
+.controls button:hover,
+.controls select:hover {
+  background: #fff2e8;
+  border-color: #ff8c42;
 }
 
     td a {
@@ -161,19 +165,11 @@ td a:hover {
 
   <div id="video-count"></div>
 
-  <input
+<input
   type="text"
   id="search-box"
+  class="search-box"
   placeholder="タイトル・メンバー・シリーズ・コラボで検索"
-  style="
-    width:100%;
-    padding:12px;
-    margin:20px 0;
-    border:1px solid #ddd;
-    border-radius:10px;
-    font-size:16px;
-    box-sizing:border-box;
-  "
 >
 
 <div class="controls">
