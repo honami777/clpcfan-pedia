@@ -610,16 +610,6 @@ const videos = [
            date: "2025-12-26"
 },
   {
-           title: "死んでも復活する鬼！？リアル鬼ごっこサバイバル35【ドズル社×からぴち】",
-           type: "動画",
-           members: ["じゃぱぱ|たっつん|ゆあん|シヴァ|もふ"],
-           series: "リアル鬼ごっこサバイバル",
-           collab: "ドズル社",
-           videoId: "cd7777hX01Y",
-           url: "https://www.youtube.com/watch?v=cd7777hX01Y",
-           date: "2025-12-26"
-},
-  {
            title: "チーム対抗ガチかくれんぼ！【からぴち×ドズル社】",
            type: "動画",
            members: ["どぬく", "ヒロ", "なおきり"],
