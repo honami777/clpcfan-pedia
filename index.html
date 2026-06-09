@@ -139,8 +139,8 @@
 }
 
 
-    @media (max-width: 768px) {
-    .video-card {
+@media (max-width: 768px) {
+    .member-list {
         grid-template-columns: 1fr;
     }
 
@@ -149,8 +149,9 @@
     }
 
     .member-list,
+   @media (min-width: 769px) {
     .menu {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
         .latest-list {
