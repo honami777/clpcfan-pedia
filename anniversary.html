@@ -366,5 +366,47 @@ h1 {
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<script>
+window.addEventListener("load", () => {
+    const duration = 3000;
+    const end = Date.now() + duration;
+
+    const interval = setInterval(() => {
+        confetti({
+            particleCount: 4,
+            startVelocity: 30,
+            spread: 70,
+            origin: {
+                x: Math.random(),
+                y: Math.random() * 0.4
+            colors: [
+    "#4CAF50", // 緑
+    "#FF69B4", // ピンク
+    "#FFD700", // 黄
+    "#F44336", // 赤
+    "#8BC34A", // 黄緑
+    "#FFFFFF", // 白
+    "#000000", // 黒
+    "#9E9E9E", // グレー
+    "#FF9800", // オレンジ
+    "#2196F3", // 青
+    "#9C27B0", // 紫
+    "#81D4FA"  // 水色
+]
+                    
+
+            }
+        });
+
+        if (Date.now() > end) {
+            clearInterval(interval);
+        }
+    }, 250);
+});
+</script>
+
+    
 </body>
 </html>
