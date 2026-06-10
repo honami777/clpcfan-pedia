@@ -12,7 +12,7 @@ const videos = [
   {
            title: "【鬼畜】キモすぎる「くち」に食われる世界でエンドラ討伐できるのか！？【からぴちマイクラ修行】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","ゆあん","シヴァ","えと","もふ"],
            series: "からぴちマイクラ修行",
            collab: "",
            videoId: "7kOKVFNoWwQ",
@@ -22,7 +22,7 @@ const videos = [
   {
            title: "楽園には気をつけろ！？リアル鬼ごっこサバイバル37【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","えと","ヒロ"],
            series: "リアル鬼ごっこサバイバル",
            collab: "",
            videoId: "iH1ghiTNHsQ",
@@ -32,7 +32,7 @@ const videos = [
   {
            title: "怖すぎるハンターから逃げろ！マイクラバーサス【じゃぱぱ視点】",
            type: "配信",
-           members: [],
+           members: ["じゃぱぱ"],
            series: "",
            collab: "",
            videoId: "GGXmcgKpJ3A",
@@ -42,7 +42,7 @@ const videos = [
   {
            title: "ゆびきりレイン / カラフルピーチ(Official Music Video)",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "MV",
            collab: "",
            videoId: "XBscJGQ-MvI",
@@ -52,7 +52,7 @@ const videos = [
   {
            title: "絶対に見逃さないでください",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "7G3bF6Twz2M",
@@ -62,7 +62,7 @@ const videos = [
   {
            title: "【春の運動会】何が起きるかわからない、波乱のクライマックスへ《⑤》",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "春の運動会",
            collab: "",
            videoId: "uoIJzC9zyyw",
@@ -72,7 +72,7 @@ const videos = [
   {
            title: "【春の運動会】最強の頭脳は誰だ？ポイント争奪戦《④》",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "春の運動会",
            collab: "",
            videoId: "TzdVv4mkfYo",
@@ -82,7 +82,7 @@ const videos = [
   {
            title: "【春の運動会】落ちたら死ぬ？命懸けの縄跳びが怖すぎた！《③》",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "春の運動会",
            collab: "",
            videoId: "Gy00sh9c1cA",
@@ -92,7 +92,7 @@ const videos = [
   {
            title: "【春の運動会】団長だーれ？白熱の当てっこバトル開幕！！＆〇〇騎馬戦が面白すぎたwww《②》",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "春の運動会",
            collab: "",
            videoId: "ESJwFw7CxbQ",
@@ -102,7 +102,7 @@ const videos = [
   {
            title: "【春の運動会】赤組vs白組の全てをかけた戦いが開幕！！最初から本気すぎる激闘に！？《①》",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり"],
            series: "春の運動会",
            collab: "",
            videoId: "UmfTQFlJkpo",
@@ -112,7 +112,7 @@ const videos = [
   {
            title: "【スペシャル】からぴちのボツ＆未公開動画いっぱい出しちゃいます！【カラフルピーチ】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "h3345OzeLSk",
@@ -122,7 +122,7 @@ const videos = [
   {
            title: "1位は誰だ？からぴちランキング展覧会",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "JvxqWT2fkWY",
@@ -132,7 +132,7 @@ const videos = [
   {
            title: "寝起きすぐの頭脳派 vs ぐっすり寝たおバカの勝負トントン説",
            type: "動画",
-           members: [],
+           members: ["のあ","たっつん","シヴァ","うり","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "OQFhJY29ueo",
@@ -142,7 +142,7 @@ const videos = [
   {
            title: "カメラを向けられたらポーズを決めろ！【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "X62N70-CNbA",
@@ -152,7 +152,7 @@ const videos = [
   {
            title: "おかしな宇宙人だらけの人狼ゲーム【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "d0_AyOGH7OE",
@@ -172,7 +172,7 @@ const videos = [
   {
            title: "嘘つきなBINGOが訳わからなすぎた",
            type: "動画",
-           members: [],
+           members: ["のあ","たっつん","どぬく","えと","ヒロ","もふ"],
            series: "",
            collab: "",
            videoId: "0Vrq5jNLMl0",
@@ -212,7 +212,7 @@ const videos = [
   {
            title: "見破れるか？モンスター心理戦",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","ゆあん","うり","えと"],
            series: "",
            collab: "",
            videoId: "Lc_qben6yLQ",
@@ -232,7 +232,7 @@ const videos = [
   {
            title: "売上No.1は誰だ！？ホストクラブ対決【Peach Night】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "ovCb86ZH-1g",
@@ -252,7 +252,7 @@ const videos = [
   {
            title: "今の、見られてたよな…？能力者人狼【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "人狼",
            collab: "",
            videoId: "ajhb_AcgZ9Q",
@@ -272,7 +272,7 @@ const videos = [
   {
            title: "頑張って作ったタワー vs 真実の口！！攻城戦ベッドウォーズ",
            type: "動画",
-           members: [],
+           members: ["のあ","たっつん","ゆあん","ヒロ","なおきり"],
            series: "攻城戦ベッドウォーズ",
            collab: "",
            videoId: "HT5ubDgwC0E",
@@ -282,7 +282,7 @@ const videos = [
   {
            title: "うさぎ vs 人間",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","シヴァ","どぬく","うり","えと"],
            series: "",
            collab: "",
            videoId: "yYqjwdj-3as",
@@ -292,7 +292,7 @@ const videos = [
   {
            title: "ピッタリできないと一生終わりません",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "sKW9FaynhWs",
@@ -302,7 +302,7 @@ const videos = [
   {
            title: "一生終わらないババ抜きが面白すぎるwwwww【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["たっつん","シヴァ","どぬく","うり","えと"],
            series: "",
            collab: "",
            videoId: "f8IsfmX8I68",
@@ -312,7 +312,7 @@ const videos = [
   {
            title: "絵文字だけで書かれたビンゴってできるの？",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","えと","もふ"],
            series: "BINGO",
            collab: "",
            videoId: "5S4NWMGYYog",
@@ -322,7 +322,7 @@ const videos = [
   {
            title: "虹のぼってみた【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["のあ","ゆあん","シヴァ","えと"],
            series: "",
            collab: "",
            videoId: "U1T9lgH9Wxg",
@@ -332,7 +332,7 @@ const videos = [
   {
            title: "【感動】1万人が選んだ\"好きなアイテム\"持ってくるまで終われま10【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "Tv_d3wlwGCo",
@@ -342,7 +342,7 @@ const videos = [
   {
            title: "怖すぎる！女の子が行く恐怖の初めてのおつかい【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","えと"],
            series: "",
            collab: "",
            videoId: "VLHTZ2ex0oA",
@@ -352,7 +352,7 @@ const videos = [
   {
            title: "仲間の中に“ドラキュラ”がいます。【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["のあ","シヴァ","どぬく","うり","えと","もふ"],
            series: "",
            collab: "",
            videoId: "9CK9MmlXJY4",
@@ -362,7 +362,7 @@ const videos = [
   {
            title: "【キャラ崩壊】パンツはいてない人は逮捕です！パンツ人狼【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "人狼",
            collab: "",
            videoId: "Oy6VBTeTAbU",
@@ -372,7 +372,7 @@ const videos = [
   {
            title: "なおきりを怖がらせろ！【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "zYTqgJtH6c4",
@@ -382,7 +382,7 @@ const videos = [
   {
            title: "空を守りきれ！天空の覇者【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","ゆあん","シヴァ","どぬく","うり"],
            series: "",
            collab: "",
            videoId: "5vMyuk2aRmw",
@@ -392,7 +392,7 @@ const videos = [
   {
            title: "クレープ屋さんごっこ【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","うり","えと"],
            series: "",
            collab: "",
            videoId: "gVAF7lmV0iA",
@@ -402,7 +402,7 @@ const videos = [
   {
            title: "天使には気を付けろ！？リアル鬼ごっこサバイバル36【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","どぬく","うり","なおきり"],
            series: "リアル鬼ごっこサバイバル",
            collab: "",
            videoId: "jNZlzaisXEM",
@@ -412,7 +412,7 @@ const videos = [
   {
            title: "ヤバい！爆発する【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","うり","えと"],
            series: "",
            collab: "",
            videoId: "u6eQt4r3Tzc",
@@ -422,7 +422,7 @@ const videos = [
   {
            title: "フォロワーを増やして対決するマインクラフト",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","たっつん","ゆあん","どぬく","ヒロ"],
            series: "",
            collab: "",
            videoId: "LCc2N2TWud0",
@@ -432,7 +432,7 @@ const videos = [
   {
            title: "知らない人に５連勝するまで終われないPVP【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","たっつん","ゆあん","どぬく","うり"],
            series: "",
            collab: "",
            videoId: "KsPNOkWAagM",
@@ -442,7 +442,7 @@ const videos = [
   {
            title: "世界を変えるガチャガチャ！？【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","うり","ヒロ","もふ"],
            series: "",
            collab: "",
            videoId: "adJZWuPRs3w",
@@ -452,7 +452,7 @@ const videos = [
   {
            title: "カラフルピーチ『君が思う以上に好きなの！』",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "MV",
            collab: "",
            videoId: "Km90jDUxKI0",
@@ -462,7 +462,7 @@ const videos = [
   {
            title: "とある学校のバレンタイン2【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "pmNNU3NXjsU",
@@ -472,7 +472,7 @@ const videos = [
   {
            title: "運がすべてだ！一番くじで大当たりを当てるPVP【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","ゆあん","シヴァ","どぬく","なおきり"],
            series: "",
            collab: "",
            videoId: "wTWiNX4uA_c",
@@ -482,7 +482,7 @@ const videos = [
   {
            title: "レインボータワー🌈の一番上に行けるのか！？タワーアタック&ディフェンス【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","どぬく","えと","なおきり","もふ"],
            series: "タワーアタック&ディフェンス",
            collab: "",
            videoId: "3A5kjZBj0OE",
@@ -492,7 +492,7 @@ const videos = [
   {
            title: "ボケたら爆破するネタ会議【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["たっつん","ゆあん","シヴァ","どぬく","ヒロ","なおきり","もふ"],
            series: "茶番",
            collab: "",
            videoId: "b5-sJDlvwN4",
@@ -502,7 +502,7 @@ const videos = [
   {
            title: "カワイイ家っちを育ててエンダードラゴンを倒す！？【マインクラフト】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","シヴァ","えと","ヒロ"],
            series: "",
            collab: "",
            videoId: "nKu9u6wxVdI",
@@ -512,7 +512,7 @@ const videos = [
   {
            title: "家っちを育てるマインクラフト",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","シヴァ","えと","ヒロ"],
            series: "",
            collab: "",
            videoId: "ycBbMnv9ng0",
@@ -522,7 +522,7 @@ const videos = [
   {
            title: "カラフルピーチ『Da-Cho』",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "MV",
            collab: "",
            videoId: "G38by-QErF0",
@@ -532,7 +532,7 @@ const videos = [
   {
            title: "【年越し配信】2026年の運を決める！？幸運の馬レース大会",
            type: "配信",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
            collab: "",
            videoId: "yD83DCiMCfk",
@@ -562,9 +562,9 @@ const videos = [
   {
            title: "おかしな遊園地で\"大事件\"に巻き込まれました....【ドズル社×からぴち】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: "ドズル社",
            videoId: "elbBHRv9KZI",
            url: "https://www.youtube.com/watch?v=elbBHRv9KZI",
            date: "2025-12-28"
@@ -582,7 +582,7 @@ const videos = [
   {
            title: "❤️1個のハートで生き残れ❤️バトルロイヤル【マイクラリレー2025】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり"],
            series: "マイクラリレー",
            collab: "",
            videoId: "KYmkNsYMg7E",
@@ -592,9 +592,9 @@ const videos = [
   {
            title: "死んでも復活する鬼！？リアル鬼ごっこサバイバル35【ドズル社×からぴち】",
            type: "動画",
-           members: [],
+           members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","もふ"],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: "ドズル社",
            videoId: "cd7777hX01Y",
            url: "https://www.youtube.com/watch?v=cd7777hX01Y",
            date: "2025-12-26"
@@ -648,15 +648,5 @@ const videos = [
            videoId: "WnQshQiSvEQ",
            url: "https://www.youtube.com/watch?v=WnQshQiSvEQ",
            date: "2025-12-22"
-},
-  {
-           title: "死んでも復活する鬼！？リアル鬼ごっこサバイバル35【ドズル社×からぴち】",
-           type: "動画",
-           members: ["じゃぱぱ", "たっつん", "ゆあん", "シヴァ", "もふ"],
-           series: "リアル鬼ごっこサバイバル",
-           collab: "ドズル社",
-           videoId: "cd7777hX01Y",
-           url: "https://www.youtube.com/watch?v=cd7777hX01Y",
-           date: "2025-12-26"
 }
 ];
