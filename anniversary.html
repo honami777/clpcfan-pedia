@@ -92,6 +92,89 @@ h1 {
     transform: translateY(-2px);
 }
 
+.journey {
+    margin-top: 45px;
+    text-align: left;
+}
+
+.journey h2 {
+    text-align: center;
+    color: #ff8c42;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.journey-lead {
+    text-align: center;
+    color: #666;
+    margin-bottom: 28px;
+}
+
+.timeline {
+    display: grid;
+    gap: 16px;
+}
+
+.station {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #ffd7bd;
+    position: relative;
+}
+
+.station::before {
+    content: "🚂";
+    position: absolute;
+    left: 26px;
+    top: -12px;
+    font-size: 20px;
+}
+
+.year {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff2e8;
+    color: #ff8c42;
+    border-radius: 999px;
+    font-weight: bold;
+    height: 42px;
+}
+
+.station h3 {
+    margin: 0 0 6px;
+    color: #444;
+}
+
+.station p {
+    margin: 0;
+    color: #666;
+    line-height: 1.7;
+}
+
+.station.final {
+    background: linear-gradient(135deg, #fff2e8, #f0fbff, #fff7d6);
+    border: 2px solid #ffc7a5;
+}
+
+@media (max-width: 768px) {
+    .station {
+        grid-template-columns: 1fr;
+    }
+
+    .year {
+        width: 90px;
+    }
+
+    .journey h2 {
+        font-size: 24px;
+    }
+}    
+
 footer {
     margin-top: 40px;
     color: #999;
@@ -139,6 +222,72 @@ footer {
         これからも素敵な物語と笑顔が続きますように。
     </div>
 
+    <section class="journey">
+  <h2>🚂 6年間の旅</h2>
+  <p class="journey-lead">
+    たくさんの動画と思い出を乗せて、ぴちペディアの小さな旅も出発進行！🌙✨
+  </p>
+
+  <div class="timeline">
+    <div class="station">
+      <span class="year">2020</span>
+      <div>
+        <h3>出発の年</h3>
+        <p>ここからカラフルピーチの物語が始まりました。</p>
+      </div>
+    </div>
+
+    <div class="station">
+      <span class="year">2021</span>
+      <div>
+        <h3>広がる物語</h3>
+        <p>いろいろな企画やシリーズが増えて、思い出もどんどん広がっていきます。</p>
+      </div>
+    </div>
+
+    <div class="station">
+      <span class="year">2022</span>
+      <div>
+        <h3>人気シリーズの旅</h3>
+        <p>何度も見返したくなる動画やシリーズが増えていきました。</p>
+      </div>
+    </div>
+
+    <div class="station">
+      <span class="year">2023</span>
+      <div>
+        <h3>たくさんの思い出</h3>
+        <p>笑ったり、驚いたり、感動したり。大切な思い出が積み重なった年。</p>
+      </div>
+    </div>
+
+    <div class="station">
+      <span class="year">2024</span>
+      <div>
+        <h3>さらに大きな一歩</h3>
+        <p>新しい企画や挑戦で、もっと楽しい世界が広がっていきました。</p>
+      </div>
+    </div>
+
+    <div class="station">
+      <span class="year">2025</span>
+      <div>
+        <h3>未来へ続く時間</h3>
+        <p>これからの旅にもつながる、たくさんのワクワクが生まれました。</p>
+      </div>
+    </div>
+
+    <div class="station final">
+      <span class="year">2026</span>
+      <div>
+        <h3>6周年・シンフォニーエクスプレスへ</h3>
+        <p>6年間の思い出を乗せて、これからも素敵な旅が続きますように🍑🚂🌈</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
     <a href="index.html" class="home-button">
         🏠 トップページへ戻る
     </a>
