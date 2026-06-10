@@ -32,7 +32,7 @@ const videos = [
   {
            title: "怖すぎるハンターから逃げろ！マイクラバーサス【じゃぱぱ視点】",
            type: "配信",
-           members: ["じゃぱぱ"],
+           members: ["じゃぱぱ","のあ","えと"],
            series: "",
            collab: "",
            videoId: "GGXmcgKpJ3A",
