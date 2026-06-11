@@ -244,8 +244,10 @@ function showVideos(keyword = "") {
       video.type,
       video.members.join(" "),
       video.series,
-      video.collab
-    ].join(" ");
+      Array.isArray(video.collab)
+      ? video.collab.join(" ")
+      : video.collab
+].join(" ");
 
     const keywordMatch = text.includes(keyword);
     const typeMatch =
