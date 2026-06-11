@@ -170,6 +170,17 @@
       const sec = seconds % 60;
       return min === 0 ? `${sec}秒` : `${min}分${sec}秒`;
     }
+    
+    function formatArray(text) {
+  if (!text || String(text).trim() === "" || String(text).trim() === "-") {
+    return [];
+  }
+
+  return String(text)
+    .split(/[、,・|]/)
+    .map(item => item.trim())
+    .filter(item => item !== "");
+}
 
     function extractVideoId(url) {
       try {
@@ -352,7 +363,7 @@ return `  {
   type: ${JSON.stringify(v.type)},
   members: ${JSON.stringify(membersArray)},
   series: ${JSON.stringify(v.series || "")},
-  collab: ${JSON.stringify(v.collab || "")},
+  collab: ${JSON.stringify(Array.isArray(v.collab) ? v.collab : formatArray(v.collab))},
   videoId: ${JSON.stringify(v.videoId)},
   url: ${JSON.stringify("https://www.youtube.com/watch?v=" + v.videoId)},
   date: ${JSON.stringify(v.date)}
@@ -400,7 +411,7 @@ function renderManualVideoList() {
       公開日：${v.date}<br>
       members：${v.members || "未入力"}<br>
       series：${v.series || "未入力"}<br>
-      collab：${v.collab || "未入力"}<br>
+      collab：${formatCollabText(v.collab) || "未入力"}<br>
       videoId：${v.videoId}<br><br>
       <button onclick="editManualVideo(${index})">編集</button>
       <button onclick="deleteManualVideo(${index})">削除</button>
@@ -523,7 +534,7 @@ function editManualVideo(index) {
           type: "動画",
           members: "",
           series: "",
-          collab: "",
+          collab: [],
           videoId: videoId,
           date: info.date,
           durationSeconds: info.durationSeconds
@@ -547,14 +558,14 @@ function editManualVideo(index) {
     }
 
     function getSelectedCollab() {
-      const selectValue = document.getElementById("manualCollabSelect").value;
+  const selectValue = document.getElementById("manualCollabSelect").value;
 
-      if (selectValue === "その他") {
-        return document.getElementById("manualCollabOther").value.trim();
-      }
+  if (selectValue === "その他") {
+    return formatArray(document.getElementById("manualCollabOther").value);
+  }
 
-      return selectValue;
-    }
+  return formatArray(selectValue);
+}
 
     function addManualVideo() {
   const preview = document.getElementById("manualPreview");
@@ -612,13 +623,20 @@ function editManualVideo(index) {
     `公開日：${addedVideo.date}\n` +
     `members：${addedVideo.members || "未入力"}\n` +
     `series：${addedVideo.series || "未入力"}\n` +
-    `collab：${addedVideo.collab || "未入力"}`;
+    `collab：${formatCollabText(addedVideo.collab) || "未入力"}`;
 
   clearManualForm();
 }
 
-    
+    function formatCollabText(collab) {
+  if (Array.isArray(collab)) {
+    return collab.length ? collab.join("、") : "";
+  }
 
+  return collab || "";
+}
+
+    
     function clearManualForm() {
       document.querySelectorAll('[id^="member_"]').forEach(cb => cb.checked = false);
       document.getElementById("manualSeries").value = "";
