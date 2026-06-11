@@ -96,7 +96,7 @@ function convertCSV(){
              .join(", ");
 
            const series=escapeJS(cols[3] || "");
-           const collab=escapeJS(cols[4] || "");
+           const collab=cols[4] || "";
            const videoId=escapeJS(cols[5] || "");
            const date = escapeJS(cols[6] || "");
 
@@ -155,7 +155,7 @@ function copyOutput(){
   }
 
   const items = text
-    .split(/[、,・]/)
+    .split(/[、,・|]/)
     .map(item => item.trim())
     .filter(item => item !== "");
 
