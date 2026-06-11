@@ -413,7 +413,9 @@ function showLatestVideos() {
         video.title,
         video.members.join(" "),
         video.series,
-        video.collab
+        Array.isArray(video.collab)
+    ? video.collab.join(" ")
+    : video.collab
       ].join(" ");
 
       return text.includes(keyword);
@@ -458,7 +460,13 @@ resultCount.innerHTML =
 
   <p>メンバー：${video.members.join("、")}</p>
   <p>シリーズ：${video.series || "-"}</p>
-  <p>コラボ：${video.collab || "-"}</p>
+  <p>コラボ：${
+  Array.isArray(video.collab)
+    ? (video.collab.length
+        ? video.collab.join("、")
+        : "-")
+    : (video.collab || "-")
+}</p>
 
   <a href="${video.url}" target="_blank">
     動画を見る
