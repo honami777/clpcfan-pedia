@@ -100,22 +100,25 @@
     <input id="manualSeries" type="text" style="width:90%;" placeholder="例：ポケモンコラボ">
 
     <p>collab</p>
-    <select id="manualCollabSelect" onchange="toggleCollabOther()" style="width:90%;">
-      <option value="">選択してください</option>
-      <option value="ドズル社">ドズル社</option>
-      <option value="いんく">いんく</option>
-      <option value="ぷちひなフレンズ">ぷちひなフレンズ</option>
-      <option value="TAMAchan">TAMAchan</option>
-      <option value="ポケモン公式">ポケモン公式</option>
-      <option value="日常組">日常組</option>
-      <option value="さんちゃんく！">さんちゃんく！</option>
-      <option value="主役は我々だ！">主役は我々だ！</option>
-      <option value="まいぜんシスターズ">まいぜんシスターズ</option>
-      <option value="その他">その他（手入力）</option>
-    </select>
 
-    <input id="manualCollabOther" type="text" style="width:90%; display:none;" placeholder="その他のコラボ先を入力">
+<div class="member-grid">
+  <label><input type="checkbox" id="collab_ドズル社" value="ドズル社">ドズル社</label>
+  <label><input type="checkbox" id="collab_いんく" value="いんく">いんく</label>
+  <label><input type="checkbox" id="collab_ぷちひなフレンズ" value="ぷちひなフレンズ">ぷちひなフレンズ</label>
+  <label><input type="checkbox" id="collab_TAMAchan" value="TAMAchan">TAMAchan</label>
+  <label><input type="checkbox" id="collab_ポケモン公式" value="ポケモン公式">ポケモン公式</label>
+  <label><input type="checkbox" id="collab_日常組" value="日常組">日常組</label>
+  <label><input type="checkbox" id="collab_さんちゃんく！" value="さんちゃんく！">さんちゃんく！</label>
+  <label><input type="checkbox" id="collab_主役は我々だ！" value="主役は我々だ！">主役は我々だ！</label>
+  <label><input type="checkbox" id="collab_まいぜんシスターズ" value="まいぜんシスターズ">まいぜんシスターズ</label>
+</div>
 
+<input
+  id="manualCollabOther"
+  type="text"
+  style="width:90%;"
+  placeholder="その他のコラボ先を入力（複数は「|」で区切る）"
+>
     <br><br>
     <button onclick="addManualVideo()">この動画を追加</button>
   </div>
@@ -557,14 +560,14 @@ function editManualVideo(index) {
         .join("|");
     }
 
-    function getSelectedCollab() {
-  const selectValue = document.getElementById("manualCollabSelect").value;
+   function getSelectedCollab() {
+  const selected = [...document.querySelectorAll('[id^="collab_"]:checked')]
+    .map(cb => cb.value);
 
-  if (selectValue === "その他") {
-    return formatArray(document.getElementById("manualCollabOther").value);
-  }
+  const otherText = document.getElementById("manualCollabOther").value.trim();
+  const others = formatArray(otherText);
 
-  return formatArray(selectValue);
+  return [...selected, ...others];
 }
 
     function addManualVideo() {
@@ -626,6 +629,8 @@ function editManualVideo(index) {
     `collab：${formatCollabText(addedVideo.collab) || "未入力"}`;
 
   clearManualForm();
+      document.querySelectorAll('[id^="collab_"]').forEach(cb => cb.checked = false);
+    
 }
 
     function formatCollabText(collab) {
@@ -640,17 +645,9 @@ function editManualVideo(index) {
     function clearManualForm() {
       document.querySelectorAll('[id^="member_"]').forEach(cb => cb.checked = false);
       document.getElementById("manualSeries").value = "";
-      document.getElementById("manualCollabSelect").value = "";
       document.getElementById("manualCollabOther").value = "";
-      document.getElementById("manualCollabOther").style.display = "none";
       document.getElementById("manualUrl").value = "";
       manualPreviewVideo = null;
-    }
-
-    function toggleCollabOther() {
-      const selectValue = document.getElementById("manualCollabSelect").value;
-      const otherInput = document.getElementById("manualCollabOther");
-      otherInput.style.display = selectValue === "その他" ? "block" : "none";
     }
 
     function checkAllMembers() {
