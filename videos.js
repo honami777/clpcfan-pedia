@@ -904,7 +904,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: [],
+           collab: ["ぷちひなフレンズ","いんく","TAMAchan"],
            videoId: "yyDHI58stwc",
            url: "https://www.youtube.com/watch?v=yyDHI58stwc",
            date: "2025-08-29"
@@ -994,7 +994,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "人狼",
-           collab: [],
+           collab: ["ぷちひなフレンズ","いんく","TAMAchan"],
            videoId: "FAb0-N_AmMo",
            url: "https://www.youtube.com/watch?v=FAb0-N_AmMo",
            date: "2025-08-22"
@@ -1094,7 +1094,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: [],
+           collab: ["ぷちひなフレンズ","いんく","TAMAchan"],
            videoId: "OKXhV7DumSQ",
            url: "https://www.youtube.com/watch?v=OKXhV7DumSQ",
            date: "2025-08-15"
@@ -1194,7 +1194,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: [],
+           collab: ["ぷちひなフレンズ","いんく","TAMAchan"],
            videoId: "GbWdTkKvbyg",
            url: "https://www.youtube.com/watch?v=GbWdTkKvbyg",
            date: "2025-08-08"
@@ -1274,7 +1274,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","どぬく","えと"],
            series: "",
-           collab: [],
+           collab: ["ぷちひなフレンズ","いんく","TAMAchan"],
            videoId: "k-5d7qwb8Z0",
            url: "https://www.youtube.com/watch?v=k-5d7qwb8Z0",
            date: "2025-08-01"
@@ -1284,7 +1284,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: [],
+           collab: ["ぷちひなフレンズ","いんく","TAMAchan"],
            videoId: "CSyKD1eWweo",
            url: "https://www.youtube.com/watch?v=CSyKD1eWweo",
            date: "2025-07-31"
