@@ -105,7 +105,7 @@ function convertCSV(){
            type: "${type}",
            members: [${members}],
            series: "${series}",
-           collab: "${collab}",
+           collab: ${formatArray(collab)},
            videoId: "${videoId}",
            url: "https://www.youtube.com/watch?v=${videoId}",
            date: "${date}"
@@ -147,6 +147,19 @@ function copyOutput(){
         alert("コピーに失敗しました。");
     });
 
+}
+
+    function formatArray(text) {
+  if (!text || text.trim() === "" || text.trim() === "-") {
+    return "[]";
+  }
+
+  const items = text
+    .split(/[、,・]/)
+    .map(item => item.trim())
+    .filter(item => item !== "");
+
+  return JSON.stringify(items);
 }
 
 </script>
