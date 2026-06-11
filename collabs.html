@@ -141,8 +141,7 @@
     const resultArea = document.getElementById("results");
 
     const collabNames = [...new Set(
-      videos
-        .map(video => video.collab)
+      videos.flatMap(v => v.collab)
         .filter(collab => collab)
     )];
 
