@@ -4,7 +4,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "スパイ大作戦",
-           collab: "",
+           collab: [],
            videoId: "SH20RpKuNH0",
            url: "https://www.youtube.com/watch?v=SH20RpKuNH0",
            date: "2026-05-29"
@@ -14,7 +14,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","ゆあん","シヴァ","えと","もふ"],
            series: "からぴちマイクラ修行",
-           collab: "",
+           collab: [],
            videoId: "7kOKVFNoWwQ",
            url: "https://www.youtube.com/watch?v=7kOKVFNoWwQ",
            date: "2026-05-22"
@@ -24,7 +24,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","えと","ヒロ"],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "iH1ghiTNHsQ",
            url: "https://www.youtube.com/watch?v=iH1ghiTNHsQ",
            date: "2026-05-15"
@@ -34,7 +34,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","のあ","えと"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "GGXmcgKpJ3A",
            url: "https://www.youtube.com/watch?v=GGXmcgKpJ3A",
            date: "2026-05-06"
@@ -44,7 +44,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "MV",
-           collab: "",
+           collab: [],
            videoId: "XBscJGQ-MvI",
            url: "https://www.youtube.com/watch?v=XBscJGQ-MvI",
            date: "2026-05-06"
@@ -54,7 +54,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "7G3bF6Twz2M",
            url: "https://www.youtube.com/watch?v=7G3bF6Twz2M",
            date: "2026-05-05"
@@ -64,7 +64,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "春の運動会",
-           collab: "",
+           collab: [],
            videoId: "uoIJzC9zyyw",
            url: "https://www.youtube.com/watch?v=uoIJzC9zyyw",
            date: "2026-05-05"
@@ -74,7 +74,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "春の運動会",
-           collab: "",
+           collab: [],
            videoId: "TzdVv4mkfYo",
            url: "https://www.youtube.com/watch?v=TzdVv4mkfYo",
            date: "2026-05-04"
@@ -84,7 +84,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "春の運動会",
-           collab: "",
+           collab: [],
            videoId: "Gy00sh9c1cA",
            url: "https://www.youtube.com/watch?v=Gy00sh9c1cA",
            date: "2026-05-03"
@@ -94,7 +94,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "春の運動会",
-           collab: "",
+           collab: [],
            videoId: "ESJwFw7CxbQ",
            url: "https://www.youtube.com/watch?v=ESJwFw7CxbQ",
            date: "2026-05-02"
@@ -104,7 +104,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり"],
            series: "春の運動会",
-           collab: "",
+           collab: [],
            videoId: "UmfTQFlJkpo",
            url: "https://www.youtube.com/watch?v=UmfTQFlJkpo",
            date: "2026-05-01"
@@ -114,7 +114,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "h3345OzeLSk",
            url: "https://www.youtube.com/watch?v=h3345OzeLSk",
            date: "2026-04-18"
@@ -124,7 +124,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "JvxqWT2fkWY",
            url: "https://www.youtube.com/watch?v=JvxqWT2fkWY",
            date: "2026-04-05"
@@ -134,7 +134,7 @@ const videos = [
            type: "動画",
            members: ["のあ","たっつん","シヴァ","うり","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "OQFhJY29ueo",
            url: "https://www.youtube.com/watch?v=OQFhJY29ueo",
            date: "2026-04-04"
@@ -144,7 +144,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "X62N70-CNbA",
            url: "https://www.youtube.com/watch?v=X62N70-CNbA",
            date: "2026-04-03"
@@ -154,7 +154,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "d0_AyOGH7OE",
            url: "https://www.youtube.com/watch?v=d0_AyOGH7OE",
            date: "2026-04-02"
@@ -164,7 +164,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ"],
            series: "すごいサバイバル",
-           collab: "",
+           collab: [],
            videoId: "ACDXLaSskyc",
            url: "https://www.youtube.com/watch?v=ACDXLaSskyc",
            date: "2026-04-01"
@@ -174,7 +174,7 @@ const videos = [
            type: "動画",
            members: ["のあ","たっつん","どぬく","えと","ヒロ","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "0Vrq5jNLMl0",
            url: "https://www.youtube.com/watch?v=0Vrq5jNLMl0",
            date: "2026-04-01"
@@ -184,7 +184,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ"],
            series: "すごいサバイバル",
-           collab: "",
+           collab: [],
            videoId: "73j56AuhQzk",
            url: "https://www.youtube.com/watch?v=73j56AuhQzk",
            date: "2026-03-31"
@@ -194,7 +194,7 @@ const videos = [
            type: "動画",
            members: ["のあ", "たっつん", "シヴァ", "どぬく"],
            series: "実写",
-           collab: "ポケモン公式",
+           collab: ["ポケモン公式"],
            videoId: "sM0mNNVrmUY",
            url: "https://www.youtube.com/watch?v=sM0mNNVrmUY",
            date: "2026-03-31"
@@ -204,7 +204,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ"],
            series: "すごいサバイバル",
-           collab: "",
+           collab: [],
            videoId: "tr-WbNTs00M",
            url: "https://www.youtube.com/watch?v=tr-WbNTs00M",
            date: "2026-03-30"
@@ -214,7 +214,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","ゆあん","うり","えと"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "Lc_qben6yLQ",
            url: "https://www.youtube.com/watch?v=Lc_qben6yLQ",
            date: "2026-03-30"
@@ -224,7 +224,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ"],
            series: "すごいサバイバル",
-           collab: "",
+           collab: [],
            videoId: "dpx9_UBVxXs",
            url: "https://www.youtube.com/watch?v=dpx9_UBVxXs",
            date: "2026-03-29"
@@ -234,7 +234,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "ovCb86ZH-1g",
            url: "https://www.youtube.com/watch?v=ovCb86ZH-1g",
            date: "2026-03-29"
@@ -244,7 +244,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ"],
            series: "すごいサバイバル",
-           collab: "",
+           collab: [],
            videoId: "qcyy6uONSBI",
            url: "https://www.youtube.com/watch?v=qcyy6uONSBI",
            date: "2026-03-28"
@@ -254,7 +254,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "人狼",
-           collab: "",
+           collab: [],
            videoId: "ajhb_AcgZ9Q",
            url: "https://www.youtube.com/watch?v=ajhb_AcgZ9Q",
            date: "2026-03-28"
@@ -264,7 +264,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ"],
            series: "すごいサバイバル",
-           collab: "",
+           collab: [],
            videoId: "Jct770cQLMA",
            url: "https://www.youtube.com/watch?v=Jct770cQLMA",
            date: "2026-03-27"
@@ -274,7 +274,7 @@ const videos = [
            type: "動画",
            members: ["のあ","たっつん","ゆあん","ヒロ","なおきり"],
            series: "攻城戦ベッドウォーズ",
-           collab: "",
+           collab: [],
            videoId: "HT5ubDgwC0E",
            url: "https://www.youtube.com/watch?v=HT5ubDgwC0E",
            date: "2026-03-27"
@@ -284,7 +284,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","シヴァ","どぬく","うり","えと"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "yYqjwdj-3as",
            url: "https://www.youtube.com/watch?v=yYqjwdj-3as",
            date: "2026-03-26"
@@ -294,7 +294,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "sKW9FaynhWs",
            url: "https://www.youtube.com/watch?v=sKW9FaynhWs",
            date: "2026-03-25"
@@ -304,7 +304,7 @@ const videos = [
            type: "動画",
            members: ["たっつん","シヴァ","どぬく","うり","えと"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "f8IsfmX8I68",
            url: "https://www.youtube.com/watch?v=f8IsfmX8I68",
            date: "2026-03-24"
@@ -314,7 +314,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","えと","もふ"],
            series: "BINGO",
-           collab: "",
+           collab: [],
            videoId: "5S4NWMGYYog",
            url: "https://www.youtube.com/watch?v=5S4NWMGYYog",
            date: "2026-03-23"
@@ -324,7 +324,7 @@ const videos = [
            type: "動画",
            members: ["のあ","ゆあん","シヴァ","えと"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "U1T9lgH9Wxg",
            url: "https://www.youtube.com/watch?v=U1T9lgH9Wxg",
            date: "2026-03-22"
@@ -334,7 +334,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "Tv_d3wlwGCo",
            url: "https://www.youtube.com/watch?v=Tv_d3wlwGCo",
            date: "2026-03-21"
@@ -344,7 +344,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","えと"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "VLHTZ2ex0oA",
            url: "https://www.youtube.com/watch?v=VLHTZ2ex0oA",
            date: "2026-03-20"
@@ -354,7 +354,7 @@ const videos = [
            type: "動画",
            members: ["のあ","シヴァ","どぬく","うり","えと","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "9CK9MmlXJY4",
            url: "https://www.youtube.com/watch?v=9CK9MmlXJY4",
            date: "2026-03-19"
@@ -364,7 +364,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "人狼",
-           collab: "",
+           collab: [],
            videoId: "Oy6VBTeTAbU",
            url: "https://www.youtube.com/watch?v=Oy6VBTeTAbU",
            date: "2026-03-18"
@@ -374,7 +374,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "zYTqgJtH6c4",
            url: "https://www.youtube.com/watch?v=zYTqgJtH6c4",
            date: "2026-03-17"
@@ -384,7 +384,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","ゆあん","シヴァ","どぬく","うり"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "5vMyuk2aRmw",
            url: "https://www.youtube.com/watch?v=5vMyuk2aRmw",
            date: "2026-03-16"
@@ -394,7 +394,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","うり","えと"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "gVAF7lmV0iA",
            url: "https://www.youtube.com/watch?v=gVAF7lmV0iA",
            date: "2026-03-15"
@@ -404,7 +404,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","どぬく","うり","なおきり"],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "jNZlzaisXEM",
            url: "https://www.youtube.com/watch?v=jNZlzaisXEM",
            date: "2026-03-14"
@@ -414,7 +414,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","うり","えと"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "u6eQt4r3Tzc",
            url: "https://www.youtube.com/watch?v=u6eQt4r3Tzc",
            date: "2026-03-06"
@@ -424,7 +424,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","たっつん","ゆあん","どぬく","ヒロ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "LCc2N2TWud0",
            url: "https://www.youtube.com/watch?v=LCc2N2TWud0",
            date: "2026-02-27"
@@ -434,7 +434,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","たっつん","ゆあん","どぬく","うり"],
            series: "PVP",
-           collab: "",
+           collab: [],
            videoId: "KsPNOkWAagM",
            url: "https://www.youtube.com/watch?v=KsPNOkWAagM",
            date: "2026-02-22"
@@ -444,7 +444,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","うり","ヒロ","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "adJZWuPRs3w",
            url: "https://www.youtube.com/watch?v=adJZWuPRs3w",
            date: "2026-02-20"
@@ -454,7 +454,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "MV",
-           collab: "",
+           collab: [],
            videoId: "Km90jDUxKI0",
            url: "https://www.youtube.com/watch?v=Km90jDUxKI0",
            date: "2026-02-14"
@@ -464,7 +464,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "pmNNU3NXjsU",
            url: "https://www.youtube.com/watch?v=pmNNU3NXjsU",
            date: "2026-02-13"
@@ -474,7 +474,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","ゆあん","シヴァ","どぬく","なおきり"],
            series: "PVP",
-           collab: "",
+           collab: [],
            videoId: "wTWiNX4uA_c",
            url: "https://www.youtube.com/watch?v=wTWiNX4uA_c",
            date: "2026-02-06"
@@ -484,7 +484,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","どぬく","えと","なおきり","もふ"],
            series: "タワーアタック&ディフェンス",
-           collab: "",
+           collab: [],
            videoId: "3A5kjZBj0OE",
            url: "https://www.youtube.com/watch?v=3A5kjZBj0OE",
            date: "2026-01-30"
@@ -494,7 +494,7 @@ const videos = [
            type: "動画",
            members: ["たっつん","ゆあん","シヴァ","どぬく","ヒロ","なおきり","もふ"],
            series: "茶番",
-           collab: "",
+           collab: [],
            videoId: "b5-sJDlvwN4",
            url: "https://www.youtube.com/watch?v=b5-sJDlvwN4",
            date: "2026-01-23"
@@ -504,7 +504,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","シヴァ","えと","ヒロ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "nKu9u6wxVdI",
            url: "https://www.youtube.com/watch?v=nKu9u6wxVdI",
            date: "2026-01-16"
@@ -514,7 +514,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","シヴァ","えと","ヒロ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "ycBbMnv9ng0",
            url: "https://www.youtube.com/watch?v=ycBbMnv9ng0",
            date: "2026-01-09"
@@ -524,7 +524,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "MV",
-           collab: "",
+           collab: [],
            videoId: "G38by-QErF0",
            url: "https://www.youtube.com/watch?v=G38by-QErF0",
            date: "2026-01-01"
@@ -534,7 +534,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "yD83DCiMCfk",
            url: "https://www.youtube.com/watch?v=yD83DCiMCfk",
            date: "2025-12-31"
@@ -544,7 +544,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "殺人ピエロ",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "hI-oMaMHuBs",
            url: "https://www.youtube.com/watch?v=hI-oMaMHuBs",
            date: "2025-12-29"
@@ -554,7 +554,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ", "のあ", "たっつん", "ゆあん", "うり", "もふ"],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "gKWQjokTB-I",
            url: "https://www.youtube.com/watch?v=gKWQjokTB-I",
            date: "2025-12-29"
@@ -564,7 +564,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "elbBHRv9KZI",
            url: "https://www.youtube.com/watch?v=elbBHRv9KZI",
            date: "2025-12-28"
@@ -574,7 +574,7 @@ const videos = [
            type: "動画",
            members: ["ゆあん", "シヴァ", "どぬく"],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "sUafsxrB-jM",
            url: "https://www.youtube.com/watch?v=sUafsxrB-jM",
            date: "2025-12-28"
@@ -584,7 +584,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり"],
            series: "マイクラリレー",
-           collab: "",
+           collab: [],
            videoId: "KYmkNsYMg7E",
            url: "https://www.youtube.com/watch?v=KYmkNsYMg7E",
            date: "2025-12-27"
@@ -594,7 +594,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","もふ"],
            series: "リアル鬼ごっこサバイバル",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "cd7777hX01Y",
            url: "https://www.youtube.com/watch?v=cd7777hX01Y",
            date: "2025-12-26"
@@ -604,7 +604,7 @@ const videos = [
            type: "動画",
            members: ["のあ", "えと", "うり"],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "tkAu2KP6MCo",
            url: "https://www.youtube.com/watch?v=tkAu2KP6MCo",
            date: "2025-12-26"
@@ -614,7 +614,7 @@ const videos = [
            type: "動画",
            members: ["どぬく", "ヒロ", "なおきり"],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "U8TNdzAuyWA",
            url: "https://www.youtube.com/watch?v=U8TNdzAuyWA",
            date: "2025-12-25"
@@ -624,7 +624,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ", "どぬく", "うり"],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "x_LDDuyhKRk",
            url: "https://www.youtube.com/watch?v=x_LDDuyhKRk",
            date: "2025-12-24"
@@ -634,7 +634,7 @@ const videos = [
            type: "動画",
            members: ["ゆあん", "えと", "ヒロ"],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "_4MPgu1ZfPI",
            url: "https://www.youtube.com/watch?v=_4MPgu1ZfPI",
            date: "2025-12-23"
@@ -644,7 +644,7 @@ const videos = [
            type: "動画",
            members: ["のあ", "たっつん", "シヴァ", "なおきり", "もふ"],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "WnQshQiSvEQ",
            url: "https://www.youtube.com/watch?v=WnQshQiSvEQ",
            date: "2025-12-22"
@@ -654,7 +654,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "8-E3Z09aajM",
            url: "https://www.youtube.com/watch?v=8-E3Z09aajM",
            date: "2025-12-25"
@@ -664,7 +664,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "1u8gQ9s31TQ",
            url: "https://www.youtube.com/watch?v=1u8gQ9s31TQ",
            date: "2025-12-24"
@@ -674,7 +674,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "PVP",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "DMP44Jv5kBc",
            url: "https://www.youtube.com/watch?v=DMP44Jv5kBc",
            date: "2025-12-23"
@@ -684,7 +684,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "KdlIYo1slbo",
            url: "https://www.youtube.com/watch?v=KdlIYo1slbo",
            date: "2025-12-22"
@@ -694,7 +694,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "歌ってみた",
-           collab: "いれいす",
+           collab: ["いれいす"],
            videoId: "DKWdmJ1uxBc",
            url: "https://www.youtube.com/watch?v=DKWdmJ1uxBc",
            date: "2025-12-19"
@@ -704,7 +704,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "vir6wJSJttI",
            url: "https://www.youtube.com/watch?v=vir6wJSJttI",
            date: "2025-12-12"
@@ -714,7 +714,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "HwNhQyD4_80",
            url: "https://www.youtube.com/watch?v=HwNhQyD4_80",
            date: "2025-12-05"
@@ -724,7 +724,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "7qIqHoMEBiw",
            url: "https://www.youtube.com/watch?v=7qIqHoMEBiw",
            date: "2025-11-28"
@@ -734,7 +734,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "YjfvM6lbiVs",
            url: "https://www.youtube.com/watch?v=YjfvM6lbiVs",
            date: "2025-11-21"
@@ -744,7 +744,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "ROBLOX",
-           collab: "",
+           collab: [],
            videoId: "LGuFEzLo3ss",
            url: "https://www.youtube.com/watch?v=LGuFEzLo3ss",
            date: "2025-11-14"
@@ -754,7 +754,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "MV",
-           collab: "",
+           collab: [],
            videoId: "tCJ8AotS4jg",
            url: "https://www.youtube.com/watch?v=tCJ8AotS4jg",
            date: "2025-11-07"
@@ -764,7 +764,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "実写",
-           collab: "",
+           collab: [],
            videoId: "tX37ek-2vE4",
            url: "https://www.youtube.com/watch?v=tX37ek-2vE4",
            date: "2025-11-07"
@@ -774,7 +774,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "殺人ピエロ",
-           collab: "",
+           collab: [],
            videoId: "WQ6CYmUDz9c",
            url: "https://www.youtube.com/watch?v=WQ6CYmUDz9c",
            date: "2025-10-31"
@@ -784,7 +784,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "マイクラ肝試し",
-           collab: "",
+           collab: [],
            videoId: "cfcq45wgIIc",
            url: "https://www.youtube.com/watch?v=cfcq45wgIIc",
            date: "2025-10-24"
@@ -794,7 +794,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "EvDSmxWReLE",
            url: "https://www.youtube.com/watch?v=EvDSmxWReLE",
            date: "2025-10-17"
@@ -804,7 +804,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "ROBLOX",
-           collab: "",
+           collab: [],
            videoId: "vub_z5ggFxI",
            url: "https://www.youtube.com/watch?v=vub_z5ggFxI",
            date: "2025-10-10"
@@ -814,7 +814,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "実写",
-           collab: "",
+           collab: [],
            videoId: "x6ANrBwJdpU",
            url: "https://www.youtube.com/watch?v=x6ANrBwJdpU",
            date: "2025-10-04"
@@ -824,7 +824,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "KbU0FpoNSD4",
            url: "https://www.youtube.com/watch?v=KbU0FpoNSD4",
            date: "2025-10-03"
@@ -834,7 +834,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "4VvE1OqVWb4",
            url: "https://www.youtube.com/watch?v=4VvE1OqVWb4",
            date: "2025-09-26"
@@ -844,7 +844,7 @@ const videos = [
            type: "配信",
            members: [],
            series: "マイクラ肝試し",
-           collab: "",
+           collab: [],
            videoId: "JCWZLSzMjBk",
            url: "https://www.youtube.com/watch?v=JCWZLSzMjBk",
            date: "2025-09-23"
@@ -854,7 +854,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "_sFBxNOh16A",
            url: "https://www.youtube.com/watch?v=_sFBxNOh16A",
            date: "2025-09-19"
@@ -864,7 +864,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "BINGO",
-           collab: "",
+           collab: [],
            videoId: "AeLDfcMEVqI",
            url: "https://www.youtube.com/watch?v=AeLDfcMEVqI",
            date: "2025-09-12"
@@ -874,7 +874,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","えと"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "ccnj19WXuj0",
            url: "https://www.youtube.com/watch?v=ccnj19WXuj0",
            date: "2025-09-05"
@@ -884,7 +884,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "MV",
-           collab: "",
+           collab: [],
            videoId: "DRbR_P-Hkcg",
            url: "https://www.youtube.com/watch?v=DRbR_P-Hkcg",
            date: "2025-08-31"
@@ -894,7 +894,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "よろずや",
+           collab: ["よろずや"],
            videoId: "5xnSMSdp4TM",
            url: "https://www.youtube.com/watch?v=5xnSMSdp4TM",
            date: "2025-08-30"
@@ -904,7 +904,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "yyDHI58stwc",
            url: "https://www.youtube.com/watch?v=yyDHI58stwc",
            date: "2025-08-29"
@@ -914,7 +914,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","えと","ヒロ"],
            series: "実写",
-           collab: "",
+           collab: [],
            videoId: "QGAnH7c7ppc",
            url: "https://www.youtube.com/watch?v=QGAnH7c7ppc",
            date: "2025-08-28"
@@ -924,7 +924,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "X0LwzyXs9-s",
            url: "https://www.youtube.com/watch?v=X0LwzyXs9-s",
            date: "2025-08-27"
@@ -934,7 +934,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "cMUMCcMXwBM",
            url: "https://www.youtube.com/watch?v=cMUMCcMXwBM",
            date: "2025-08-26"
@@ -944,7 +944,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "aWKL_RRTMrM",
            url: "https://www.youtube.com/watch?v=aWKL_RRTMrM",
            date: "2025-08-25"
@@ -954,7 +954,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "0v_iOlg9gjw",
            url: "https://www.youtube.com/watch?v=0v_iOlg9gjw",
            date: "2025-08-24"
@@ -964,7 +964,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "h0IujmPauFc",
            url: "https://www.youtube.com/watch?v=h0IujmPauFc",
            date: "2025-08-23"
@@ -974,7 +974,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "ds57POecYR0",
            url: "https://www.youtube.com/watch?v=ds57POecYR0",
            date: "2025-08-23"
@@ -984,7 +984,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "jhdgQ2y-mGk",
            url: "https://www.youtube.com/watch?v=jhdgQ2y-mGk",
            date: "2025-08-23"
@@ -994,7 +994,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "人狼",
-           collab: "",
+           collab: [],
            videoId: "FAb0-N_AmMo",
            url: "https://www.youtube.com/watch?v=FAb0-N_AmMo",
            date: "2025-08-22"
@@ -1004,7 +1004,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "p3Gx2pMOiPc",
            url: "https://www.youtube.com/watch?v=p3Gx2pMOiPc",
            date: "2025-08-21"
@@ -1014,7 +1014,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "PVP",
-           collab: "",
+           collab: [],
            videoId: "UUxTDJ3iNT4",
            url: "https://www.youtube.com/watch?v=UUxTDJ3iNT4",
            date: "2025-08-20"
@@ -1024,7 +1024,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "cSQXTOyotqA",
            url: "https://www.youtube.com/watch?v=cSQXTOyotqA",
            date: "2025-08-19"
@@ -1034,7 +1034,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "BINGO",
-           collab: "",
+           collab: [],
            videoId: "AY7Dc5KqBYY",
            url: "https://www.youtube.com/watch?v=AY7Dc5KqBYY",
            date: "2025-08-18"
@@ -1044,7 +1044,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","たっつん","シヴァ","どぬく","うり"],
            series: "いちごマイクラ",
-           collab: "",
+           collab: [],
            videoId: "JwFTjW9zooc",
            url: "https://www.youtube.com/watch?v=JwFTjW9zooc",
            date: "2025-08-17"
@@ -1054,7 +1054,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "シェアハウス",
-           collab: "",
+           collab: [],
            videoId: "2K3fRdbmpjE",
            url: "https://www.youtube.com/watch?v=2K3fRdbmpjE",
            date: "2025-08-17"
@@ -1064,7 +1064,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","たっつん","シヴァ","どぬく","うり"],
            series: "いちごマイクラ",
-           collab: "",
+           collab: [],
            videoId: "LxySrI40zxI",
            url: "https://www.youtube.com/watch?v=LxySrI40zxI",
            date: "2025-08-16"
@@ -1074,7 +1074,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "監獄かくれんぼ",
-           collab: "",
+           collab: [],
            videoId: "KGRGqz9nKl0",
            url: "https://www.youtube.com/watch?v=KGRGqz9nKl0",
            date: "2025-08-16"
@@ -1084,7 +1084,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","たっつん","シヴァ","どぬく","うり"],
            series: "いちごマイクラ",
-           collab: "",
+           collab: [],
            videoId: "VkDeKRjIqO4",
            url: "https://www.youtube.com/watch?v=VkDeKRjIqO4",
            date: "2025-08-15"
@@ -1094,7 +1094,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "OKXhV7DumSQ",
            url: "https://www.youtube.com/watch?v=OKXhV7DumSQ",
            date: "2025-08-15"
@@ -1104,7 +1104,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","たっつん","シヴァ","どぬく","うり"],
            series: "いちごマイクラ",
-           collab: "",
+           collab: [],
            videoId: "Ne_tJ98rXmk",
            url: "https://www.youtube.com/watch?v=Ne_tJ98rXmk",
            date: "2025-08-14"
@@ -1114,7 +1114,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "建築バトル",
-           collab: "",
+           collab: [],
            videoId: "DZaOX61n_H8",
            url: "https://www.youtube.com/watch?v=DZaOX61n_H8",
            date: "2025-08-14"
@@ -1124,7 +1124,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "人狼",
-           collab: "",
+           collab: [],
            videoId: "7VThwIvIpkw",
            url: "https://www.youtube.com/watch?v=7VThwIvIpkw",
            date: "2025-08-13"
@@ -1134,7 +1134,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "人狼",
-           collab: "",
+           collab: [],
            videoId: "j6T8IOZHER0",
            url: "https://www.youtube.com/watch?v=j6T8IOZHER0",
            date: "2025-08-11"
@@ -1144,7 +1144,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","たっつん","シヴァ","どぬく","うり"],
            series: "いちごマイクラ",
-           collab: "",
+           collab: [],
            videoId: "LB5dewwr2g0",
            url: "https://www.youtube.com/watch?v=LB5dewwr2g0",
            date: "2025-08-10"
@@ -1154,7 +1154,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","シヴァ","どぬく","えと","なおきり"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "8XmvXSVP2qA",
            url: "https://www.youtube.com/watch?v=8XmvXSVP2qA",
            date: "2025-08-10"
@@ -1164,7 +1164,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","たっつん","シヴァ","どぬく","うり"],
            series: "いちごマイクラ",
-           collab: "",
+           collab: [],
            videoId: "-o1uPck9mnA",
            url: "https://www.youtube.com/watch?v=-o1uPck9mnA",
            date: "2025-08-09"
@@ -1174,7 +1174,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "fb_i-t1jits",
            url: "https://www.youtube.com/watch?v=fb_i-t1jits",
            date: "2025-08-09"
@@ -1184,7 +1184,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","たっつん","シヴァ","どぬく","うり"],
            series: "いちごマイクラ",
-           collab: "",
+           collab: [],
            videoId: "pSvpD3MnpGc",
            url: "https://www.youtube.com/watch?v=pSvpD3MnpGc",
            date: "2025-08-08"
@@ -1194,7 +1194,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "GbWdTkKvbyg",
            url: "https://www.youtube.com/watch?v=GbWdTkKvbyg",
            date: "2025-08-08"
@@ -1204,7 +1204,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","たっつん","シヴァ","どぬく","うり"],
            series: "いちごマイクラ",
-           collab: "",
+           collab: [],
            videoId: "lVkh4_Zg_iM",
            url: "https://www.youtube.com/watch?v=lVkh4_Zg_iM",
            date: "2025-08-07"
@@ -1214,7 +1214,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "1FQ7VD83yVQ",
            url: "https://www.youtube.com/watch?v=1FQ7VD83yVQ",
            date: "2025-08-07"
@@ -1224,7 +1224,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","どぬく","うり","えと","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "VQrk6l1XFXA",
            url: "https://www.youtube.com/watch?v=VQrk6l1XFXA",
            date: "2025-08-06"
@@ -1234,7 +1234,7 @@ const videos = [
            type: "配信",
            members: ["じゃぱぱ","たっつん","シヴァ","どぬく","うり"],
            series: "いちごマイクラ",
-           collab: "",
+           collab: [],
            videoId: "aMO9Zlr6Eek",
            url: "https://www.youtube.com/watch?v=aMO9Zlr6Eek",
            date: "2025-08-05"
@@ -1244,7 +1244,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "SZATiYBGvBU",
            url: "https://www.youtube.com/watch?v=SZATiYBGvBU",
            date: "2025-08-05"
@@ -1254,7 +1254,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "PVP",
-           collab: "",
+           collab: [],
            videoId: "9gSAqd3ltz0",
            url: "https://www.youtube.com/watch?v=9gSAqd3ltz0",
            date: "2025-08-04"
@@ -1264,7 +1264,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","ゆあん","えと","ヒロ","なおきり"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "mopFQmnG4d0",
            url: "https://www.youtube.com/watch?v=mopFQmnG4d0",
            date: "2025-08-02"
@@ -1274,7 +1274,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","どぬく","えと"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "k-5d7qwb8Z0",
            url: "https://www.youtube.com/watch?v=k-5d7qwb8Z0",
            date: "2025-08-01"
@@ -1284,7 +1284,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "CSyKD1eWweo",
            url: "https://www.youtube.com/watch?v=CSyKD1eWweo",
            date: "2025-07-31"
@@ -1294,7 +1294,7 @@ const videos = [
            type: "動画",
            members: ["シヴァ"],
            series: "歌ってみた",
-           collab: "",
+           collab: [],
            videoId: "Bb3DZtB1QlA",
            url: "https://www.youtube.com/watch?v=Bb3DZtB1QlA",
            date: "2025-07-21"
@@ -1304,7 +1304,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "映画",
-           collab: "",
+           collab: [],
            videoId: "zQqciVUP7Wc",
            url: "https://www.youtube.com/watch?v=zQqciVUP7Wc",
            date: "2025-07-15"
@@ -1314,7 +1314,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "映画",
-           collab: "",
+           collab: [],
            videoId: "NIPwY8x2TGc",
            url: "https://www.youtube.com/watch?v=NIPwY8x2TGc",
            date: "2025-06-28"
@@ -1324,7 +1324,7 @@ const videos = [
            type: "動画",
            members: ["たっつん","どぬく","ヒロ","もふ"],
            series: "MV",
-           collab: "",
+           collab: [],
            videoId: "v99Z_jmP9d0",
            url: "https://www.youtube.com/watch?v=v99Z_jmP9d0",
            date: "2025-06-26"
@@ -1334,7 +1334,7 @@ const videos = [
            type: "動画",
            members: ["のあ","えと"],
            series: "MV",
-           collab: "",
+           collab: [],
            videoId: "rp2rpFOVEjQ",
            url: "https://www.youtube.com/watch?v=rp2rpFOVEjQ",
            date: "2025-06-22"
@@ -1344,7 +1344,7 @@ const videos = [
            type: "動画",
            members: ["シヴァ","うり","なおきり"],
            series: "MV",
-           collab: "",
+           collab: [],
            videoId: "ixg1vashwy0",
            url: "https://www.youtube.com/watch?v=ixg1vashwy0",
            date: "2025-06-16"
@@ -1354,7 +1354,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","ゆあん"],
            series: "MV",
-           collab: "",
+           collab: [],
            videoId: "mntr_ttYNws",
            url: "https://www.youtube.com/watch?v=mntr_ttYNws",
            date: "2025-06-07"
@@ -1364,7 +1364,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "H7E5tzoup84",
            url: "https://www.youtube.com/watch?v=H7E5tzoup84",
            date: "2025-06-02"
@@ -1374,7 +1374,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "XKMSQGc4i_s",
            url: "https://www.youtube.com/watch?v=XKMSQGc4i_s",
            date: "2025-05-26"
@@ -1384,7 +1384,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "LEFum2OZvEE",
            url: "https://www.youtube.com/watch?v=LEFum2OZvEE",
            date: "2025-05-19"
@@ -1394,7 +1394,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "mVcYL2f2UpQ",
            url: "https://www.youtube.com/watch?v=mVcYL2f2UpQ",
            date: "2025-05-11"
@@ -1404,7 +1404,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "GanWb-UnOBQ",
            url: "https://www.youtube.com/watch?v=GanWb-UnOBQ",
            date: "2025-05-05"
@@ -1414,7 +1414,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "4GgxCpab3Co",
            url: "https://www.youtube.com/watch?v=4GgxCpab3Co",
            date: "2025-05-02"
@@ -1424,7 +1424,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "BINGO",
-           collab: "",
+           collab: [],
            videoId: "Bm_YT9Q6Y8E",
            url: "https://www.youtube.com/watch?v=Bm_YT9Q6Y8E",
            date: "2025-04-13"
@@ -1434,7 +1434,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "DdiipP0sFRw",
            url: "https://www.youtube.com/watch?v=DdiipP0sFRw",
            date: "2025-04-06"
@@ -1444,7 +1444,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "実写",
-           collab: "",
+           collab: [],
            videoId: "SvjEN55rAIQ",
            url: "https://www.youtube.com/watch?v=SvjEN55rAIQ",
            date: "2025-04-05"
@@ -1454,7 +1454,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "eqBrlddPSOM",
            url: "https://www.youtube.com/watch?v=eqBrlddPSOM",
            date: "2025-04-04"
@@ -1464,7 +1464,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","うり","なおきり"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "11V4fAg0kws",
            url: "https://www.youtube.com/watch?v=11V4fAg0kws",
            date: "2025-04-03"
@@ -1474,7 +1474,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "wzGNJ1jh1Rw",
            url: "https://www.youtube.com/watch?v=wzGNJ1jh1Rw",
            date: "2025-04-01"
@@ -1484,7 +1484,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "PVP",
-           collab: "",
+           collab: [],
            videoId: "cyvI9CqjFYs",
            url: "https://www.youtube.com/watch?v=cyvI9CqjFYs",
            date: "2025-03-31"
@@ -1494,7 +1494,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "QLL9PIvqYaY",
            url: "https://www.youtube.com/watch?v=QLL9PIvqYaY",
            date: "2025-03-30"
@@ -1504,7 +1504,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","ゆあん","シヴァ","どぬく","うり","えと","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "AwacAlB7BO4",
            url: "https://www.youtube.com/watch?v=AwacAlB7BO4",
            date: "2025-03-29"
@@ -1514,7 +1514,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "REEReNM1itQ",
            url: "https://www.youtube.com/watch?v=REEReNM1itQ",
            date: "2025-03-28"
@@ -1524,7 +1524,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","たっつん","えと","なおきり"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "lYkv1GkWcZE",
            url: "https://www.youtube.com/watch?v=lYkv1GkWcZE",
            date: "2025-03-27"
@@ -1534,7 +1534,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "KMECIsJtkUs",
            url: "https://www.youtube.com/watch?v=KMECIsJtkUs",
            date: "2025-03-26"
@@ -1544,7 +1544,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "rGrPzAgFPmg",
            url: "https://www.youtube.com/watch?v=rGrPzAgFPmg",
            date: "2025-03-25"
@@ -1554,7 +1554,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "Mjhiw9UF2lU",
            url: "https://www.youtube.com/watch?v=Mjhiw9UF2lU",
            date: "2025-03-24"
@@ -1564,7 +1564,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "XtdArZcK2eI",
            url: "https://www.youtube.com/watch?v=XtdArZcK2eI",
            date: "2025-03-23"
@@ -1574,7 +1574,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","ゆあん","シヴァ","どぬく","うり","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "すとぷり",
+           collab: ["すとぷり"],
            videoId: "qRkemvJxbpA",
            url: "https://www.youtube.com/watch?v=qRkemvJxbpA",
            date: "2025-03-22"
@@ -1584,7 +1584,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "人狼",
-           collab: "",
+           collab: [],
            videoId: "jl5eyMw9V7I",
            url: "https://www.youtube.com/watch?v=jl5eyMw9V7I",
            date: "2025-03-21"
@@ -1594,7 +1594,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "PVP",
-           collab: "いんく",
+           collab: ["いんく"],
            videoId: "km2TCINYwus",
            url: "https://www.youtube.com/watch?v=km2TCINYwus",
            date: "2025-03-20"
@@ -1604,7 +1604,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "TsebNUYpF_w",
            url: "https://www.youtube.com/watch?v=TsebNUYpF_w",
            date: "2025-03-18"
@@ -1614,7 +1614,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "EjvpALsEPpc",
            url: "https://www.youtube.com/watch?v=EjvpALsEPpc",
            date: "2025-03-17"
@@ -1624,7 +1624,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "Y3lklVae_a8",
            url: "https://www.youtube.com/watch?v=Y3lklVae_a8",
            date: "2025-03-16"
@@ -1634,7 +1634,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "temPuMKsavo",
            url: "https://www.youtube.com/watch?v=temPuMKsavo",
            date: "2025-03-15"
@@ -1644,7 +1644,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
            series: "MV",
-           collab: "",
+           collab: [],
            videoId: "_0XuVwRlDEM",
            url: "https://www.youtube.com/watch?v=_0XuVwRlDEM",
            date: "2025-03-14"
@@ -1654,7 +1654,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "xmOVbX5my6E",
            url: "https://www.youtube.com/watch?v=xmOVbX5my6E",
            date: "2025-03-13"
@@ -1664,7 +1664,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","ゆあん","うり","えと","なおきり"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "WgIghGuZXC4",
            url: "https://www.youtube.com/watch?v=WgIghGuZXC4",
            date: "2025-03-12"
@@ -1674,7 +1674,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "BINGO",
-           collab: "",
+           collab: [],
            videoId: "M68fQhGcPsc",
            url: "https://www.youtube.com/watch?v=M68fQhGcPsc",
            date: "2025-03-11"
@@ -1684,7 +1684,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "JI5MZGo3ZnM",
            url: "https://www.youtube.com/watch?v=JI5MZGo3ZnM",
            date: "2025-03-10"
@@ -1694,7 +1694,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "殺人ピエロ",
-           collab: "",
+           collab: [],
            videoId: "V9yoRW7e7qs",
            url: "https://www.youtube.com/watch?v=V9yoRW7e7qs",
            date: "2025-03-08"
@@ -1704,7 +1704,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","ゆあん","シヴァ","うり","えと","なおきり"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "NjoatfbPemo",
            url: "https://www.youtube.com/watch?v=NjoatfbPemo",
            date: "2025-03-07"
@@ -1714,7 +1714,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "E97x0QEjyVw",
            url: "https://www.youtube.com/watch?v=E97x0QEjyVw",
            date: "2025-03-04"
@@ -1724,7 +1724,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
-           collab: "ドズル社",
+           collab: ["ドズル社"],
            videoId: "UNASlMJWFAE",
            url: "https://www.youtube.com/watch?v=UNASlMJWFAE",
            date: "2025-02-21"
@@ -1734,7 +1734,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "鬼ごっこ",
-           collab: "",
+           collab: [],
            videoId: "texIsNZ6GG4",
            url: "https://www.youtube.com/watch?v=texIsNZ6GG4",
            date: "2025-02-14"
@@ -1744,7 +1744,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "6mW2l-m1Wmk",
            url: "https://www.youtube.com/watch?v=6mW2l-m1Wmk",
            date: "2025-02-07"
@@ -1754,7 +1754,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "BAKoEOvMBIk",
            url: "https://www.youtube.com/watch?v=BAKoEOvMBIk",
            date: "2025-02-01"
@@ -1764,7 +1764,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "タワーアタック&ディフェンス",
-           collab: "",
+           collab: [],
            videoId: "sCV-NlChres",
            url: "https://www.youtube.com/watch?v=sCV-NlChres",
            date: "2025-01-31"
@@ -1774,7 +1774,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","たっつん","うり","えと","もふ"],
            series: "リアル鬼ごっこサバイバル",
-           collab: "",
+           collab: [],
            videoId: "TqwiMvUdjBI",
            url: "https://www.youtube.com/watch?v=TqwiMvUdjBI",
            date: "2025-01-24"
@@ -1784,7 +1784,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "BGe0qf_OgwY",
            url: "https://www.youtube.com/watch?v=BGe0qf_OgwY",
            date: "2025-01-14"
@@ -1794,7 +1794,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","どぬく","えと","ヒロ"],
            series: "",
-           collab: "",
+           collab: [],
            videoId: "kpLsa-tGwZ8",
            url: "https://www.youtube.com/watch?v=kpLsa-tGwZ8",
            date: "2025-01-06"
@@ -1804,7 +1804,7 @@ const videos = [
            type: "動画",
            members: [],
            series: "殺人ピエロ",
-           collab: "",
+           collab: [],
            videoId: "kS-weLeODy0",
            url: "https://www.youtube.com/watch?v=kS-weLeODy0",
            date: "2025-01-04"
@@ -1814,7 +1814,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","シヴァ","どぬく","うり","えと","なおきり"],
            series: "人狼",
-           collab: "",
+           collab: [],
            videoId: "PWeZkwzVF4s",
            url: "https://www.youtube.com/watch?v=PWeZkwzVF4s",
            date: "2025-01-03"
@@ -1824,7 +1824,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","もふ"],
            series: "人狼",
-           collab: "",
+           collab: [],
            videoId: "SXU-zP9OkGo",
            url: "https://www.youtube.com/watch?v=SXU-zP9OkGo",
            date: "2025-01-02"
@@ -1834,7 +1834,7 @@ const videos = [
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり"],
            series: "人狼",
-           collab: "",
+           collab: [],
            videoId: "j0TrezZewbc",
            url: "https://www.youtube.com/watch?v=j0TrezZewbc",
            date: "2025-01-01"
