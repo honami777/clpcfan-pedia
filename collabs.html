@@ -146,10 +146,12 @@
     )];
 
     collabNames.forEach(collabName => {
-      const count = videos.filter(video => video.collab === collabName).length;
+      const count = videos.filter(video =>
+  Array.isArray(video.collab) && video.collab.includes(collabName)
+).length;
 
       const link = document.createElement("a");
-      link.href = `collabs.html?collab=${collabName}`;
+      link.href = `collabs.html?collab=${encodeURIComponent(collabName)}`;
       link.className = "collab-button";
       link.textContent = `${collabName}（${count}）`;
 
@@ -158,8 +160,8 @@
 
     if (selectedCollab) {
       const results = videos.filter(video =>
-        video.collab === selectedCollab
-      );
+  Array.isArray(video.collab) && video.collab.includes(selectedCollab)
+);
 
       resultCount.innerHTML =
         `「${selectedCollab}」：${results.length}件`;
@@ -190,7 +192,11 @@
             </h3>
             <p>メンバー：${video.members.join("、")}</p>
             <p>シリーズ：${video.series || "-"}</p>
-            <p>コラボ：${video.collab || "-"}</p>
+            <p>コラボ：${
+  Array.isArray(video.collab) && video.collab.length
+    ? video.collab.join("、")
+    : "-"
+}</p>
             <a href="${video.url}" target="_blank">動画を見る</a>
           </div>
         `;
