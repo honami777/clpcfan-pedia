@@ -266,6 +266,28 @@
     text-decoration: none;
     box-shadow: 0 8px 22px rgba(255, 140, 66, 0.12);
     transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.anniversary-banner::after {
+    content: "✨";
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    animation: sparkle 1.8s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
 }
 
 .anniversary-banner span {
@@ -315,7 +337,7 @@
 <a href="updates.html" class="card">📝 更新履歴</a>
     </div>
 
-    <h2>🆕 最新追加動画</h2>
+    <h2>🆕 最新追加動画 🍑</h2>
     <div id="latest-videos" class="latest-list"></div>
 
     <p class="more-link"> 
