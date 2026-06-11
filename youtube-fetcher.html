@@ -100,6 +100,8 @@
     <input id="manualSeries" type="text" style="width:90%;" placeholder="例：ポケモンコラボ">
 
     <p>collab</p>
+<button type="button" onclick="checkAllCollabs()">全選択</button>
+<button type="button" onclick="clearAllCollabs()">全解除</button>
 
 <div class="member-grid">
   <label><input type="checkbox" id="collab_ドズル社" value="ドズル社">ドズル社</label>
@@ -328,8 +330,14 @@
       const rows = [["title", "type", "members", "series", "collab", "videoId", "date"]];
 
       videos.forEach(v => {
-        rows.push([v.title, v.type, v.members, v.series, v.collab, v.videoId, v.date]);
-      });
+        rows.push([
+    v.title,
+    v.members,
+    v.series,
+    formatCollabText(v.collab),
+    v.videoId,
+    v.date
+]);
 
       return rows;
     }
@@ -433,20 +441,27 @@ function editManualVideo(index) {
   document.getElementById("manualUrl").value = video.url || "";
   document.getElementById("manualSeries").value = video.series || "";
 
-  const collabSelect = document.getElementById("manualCollabSelect");
-  const collabOther = document.getElementById("manualCollabOther");
+  document.querySelectorAll('[id^="collab_"]').forEach(cb => {
+    cb.checked = false;
+});
 
-  if (collabSelect) {
-    const optionExists = [...collabSelect.options].some(
-      option => option.value === video.collab
-    );
+const collabs = Array.isArray(video.collab)
+    ? video.collab
+    : formatArray(video.collab);
 
-    if (optionExists) {
-      collabSelect.value = video.collab || "";
-      if (collabOther) {
-        collabOther.value = "";
-        collabOther.style.display = "none";
-      }
+collabs.forEach(name => {
+    const cb = document.getElementById("collab_" + name);
+
+    if (cb) {
+        cb.checked = true;
+    } else {
+        document.getElementById("manualCollabOther").value +=
+            (document.getElementById("manualCollabOther").value ? "|" : "")
+            + name;
+    }
+});
+
+  
     } else {
       collabSelect.value = "その他";
       if (collabOther) {
@@ -629,8 +644,7 @@ function editManualVideo(index) {
     `collab：${formatCollabText(addedVideo.collab) || "未入力"}`;
 
   clearManualForm();
-      document.querySelectorAll('[id^="collab_"]').forEach(cb => cb.checked = false);
-    
+      
 }
 
     function formatCollabText(collab) {
@@ -643,12 +657,15 @@ function editManualVideo(index) {
 
     
     function clearManualForm() {
-      document.querySelectorAll('[id^="member_"]').forEach(cb => cb.checked = false);
-      document.getElementById("manualSeries").value = "";
-      document.getElementById("manualCollabOther").value = "";
-      document.getElementById("manualUrl").value = "";
-      manualPreviewVideo = null;
-    }
+    document.querySelectorAll('[id^="member_"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('[id^="collab_"]').forEach(cb => cb.checked = false);
+
+    document.getElementById("manualSeries").value = "";
+    document.getElementById("manualCollabOther").value = "";
+    document.getElementById("manualUrl").value = "";
+
+    manualPreviewVideo = null;
+}
 
     function checkAllMembers() {
       document.querySelectorAll('[id^="member_"]').forEach(cb => cb.checked = true);
@@ -667,6 +684,14 @@ function editManualVideo(index) {
 
     renderAddedPreview();
     renderManualVideoList();
+
+  function checkAllCollabs() {
+    document.querySelectorAll('[id^="collab_"]').forEach(cb => cb.checked = true);
+}
+
+function clearAllCollabs() {
+    document.querySelectorAll('[id^="collab_"]').forEach(cb => cb.checked = false);
+}
 
     
   </script>
