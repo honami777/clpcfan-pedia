@@ -330,18 +330,19 @@
       }
     }
 
-    function makeRows(videos) {
+   function makeRows(videos) {
   const rows = [["title", "type", "members", "series", "collab", "videoId", "date"]];
 
   videos.forEach(v => {
     rows.push([
-  v.title,
-  v.members,
-  v.series,
-  formatCollabText(v.collab),
-  v.videoId,
-  v.date
-]);
+      v.title,
+      v.type,
+      v.members,
+      v.series,
+      formatCollabText(v.collab),
+      v.videoId,
+      v.date
+    ]);
   });
 
   return rows;
@@ -513,8 +514,14 @@ function editManualVideo(index) {
       const rows = [["title", "members", "series", "collab", "videoId", "date"]];
 
       manuallyAddedVideos.forEach(v => {
-        rows.push([v.title, v.members, v.series, v.collab, v.videoId, v.date]);
-      });
+        rows.push([
+  v.title,
+  v.members,
+  v.series,
+  formatCollabText(v.collab),
+  v.videoId,
+  v.date
+]);
 
       addedPreviewOutput.value = rows.map(row =>
         row.map(value => String(value).replaceAll("\t", " ")).join("\t")
