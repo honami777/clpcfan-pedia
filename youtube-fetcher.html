@@ -331,17 +331,21 @@
     }
 
     function makeRows(videos) {
-      const rows = [["title", "type", "members", "series", "collab", "videoId", "date"]];
+  const rows = [["title", "type", "members", "series", "collab", "videoId", "date"]];
 
-      videos.forEach(v => {
-        rows.push([
-    v.title,
-    v.members,
-    v.series,
-    formatCollabText(v.collab),
-    v.videoId,
-    v.date
+  videos.forEach(v => {
+    rows.push([
+  v.title,
+  v.members,
+  v.series,
+  formatCollabText(v.collab),
+  v.videoId,
+  v.date
 ]);
+  });
+
+  return rows;
+}
 
       return rows;
     }
@@ -444,49 +448,38 @@ function editManualVideo(index) {
 
   document.getElementById("manualUrl").value = video.url || "";
   document.getElementById("manualSeries").value = video.series || "";
-
-  document.querySelectorAll('[id^="collab_"]').forEach(cb => {
-    cb.checked = false;
-});
-
-const collabs = Array.isArray(video.collab)
-    ? video.collab
-    : formatArray(video.collab);
-
-collabs.forEach(name => {
-    const cb = document.getElementById("collab_" + name);
-
-    if (cb) {
-        cb.checked = true;
-    } else {
-        document.getElementById("manualCollabOther").value +=
-            (document.getElementById("manualCollabOther").value ? "|" : "")
-            + name;
-    }
-});
-
-  
-    } else {
-      collabSelect.value = "その他";
-      if (collabOther) {
-        collabOther.value = video.collab || "";
-        collabOther.style.display = "block";
-      }
-    }
-  }
+  document.getElementById("manualCollabOther").value = "";
 
   document.querySelectorAll('[id^="member_"]').forEach(cb => {
     cb.checked = false;
   });
 
-  const members =
-    Array.isArray(video.members)
-      ? video.members
-      : String(video.members || "").split(",");
+  const members = Array.isArray(video.members)
+    ? video.members
+    : String(video.members || "").split("|");
 
   members.forEach(name => {
     const cb = document.getElementById("member_" + name.trim());
     if (cb) cb.checked = true;
+  });
+
+  document.querySelectorAll('[id^="collab_"]').forEach(cb => {
+    cb.checked = false;
+  });
+
+  const collabs = Array.isArray(video.collab)
+    ? video.collab
+    : formatArray(video.collab);
+
+  collabs.forEach(name => {
+    const cb = document.getElementById("collab_" + name);
+
+    if (cb) {
+      cb.checked = true;
+    } else {
+      const other = document.getElementById("manualCollabOther");
+      other.value += (other.value ? "|" : "") + name;
+    }
   });
 
   document.getElementById("manualPreview").textContent =
