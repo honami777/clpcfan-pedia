@@ -85,10 +85,9 @@
         width: 100%;
     }
 
-    .member-list,
-    .menu {
-        grid-template-columns: 1fr;
-    }
+    .member-list {
+    grid-template-columns: repeat(2, 1fr);
+}
 }
     .home-button {
     position: fixed;
@@ -124,7 +123,7 @@
     <a href="members.html?member=のあ" class="member-button">のあ</a>
     <a href="members.html?member=たっつん" class="member-button">たっつん</a>
 
-    <a href="members.html?member=ゆあんくん" class="member-button">ゆあんくん</a>
+    <a href="members.html?member=ゆあん" class="member-button">ゆあん</a>
     <a href="members.html?member=シヴァ" class="member-button">シヴァ</a>
     <a href="members.html?member=どぬく" class="member-button">どぬく</a>
 
@@ -182,7 +181,11 @@
             </h3>
             <p>メンバー：${video.members.join("、")}</p>
             <p>シリーズ：${video.series || "-"}</p>
-            <p>コラボ：${video.collab || "-"}</p>
+            <p>コラボ：${
+  Array.isArray(video.collab) && video.collab.length
+    ? video.collab.join("、")
+    : "-"
+}</p>
             <a href="${video.url}" target="_blank">動画を見る</a>
           </div>
         `;
