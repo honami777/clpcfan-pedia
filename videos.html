@@ -318,7 +318,19 @@ function showVideos(keyword = "") {
         </span>
       </td>
 
-      <td>${video.members.join("、<br>")}</td>
+      <td>${
+  video.members
+    .reduce((rows, member, index) => {
+      if (index % 2 === 0) {
+        rows.push([member]);
+      } else {
+        rows[rows.length - 1].push(member);
+      }
+      return rows;
+    }, [])
+    .map(row => row.join("、"))
+    .join("<br>")
+}</td>
 <td>${video.series || "-"}</td>
 <td>${
   Array.isArray(video.collab) && video.collab.length
