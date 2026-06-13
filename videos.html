@@ -205,6 +205,54 @@ td a:hover {
     <option value="title">タイトル順</option>
     <option value="series">シリーズ順</option>
 
+    .video-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.video-table th:nth-child(1),
+.video-table td:nth-child(1) {
+  width: 18%;
+}
+
+.video-table th:nth-child(2),
+.video-table td:nth-child(2) {
+  width: 30%;
+}
+
+.video-table th:nth-child(3),
+.video-table td:nth-child(3) {
+  width: 7%;
+  text-align: center;
+}
+
+.video-table th:nth-child(4),
+.video-table td:nth-child(4) {
+  width: 18%;
+}
+
+.video-table th:nth-child(5),
+.video-table td:nth-child(5) {
+  width: 12%;
+}
+
+.video-table th:nth-child(6),
+.video-table td:nth-child(6) {
+  width: 15%;
+}
+
+.video-table td {
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.video-table td:nth-child(4),
+.video-table td:nth-child(6) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+    
         
   </select>
 </div>
