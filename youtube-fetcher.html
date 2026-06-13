@@ -345,9 +345,6 @@
     ]);
   });
 
-  return rows;
-}
-
       return rows;
     }
 
@@ -523,6 +520,8 @@ function editManualVideo(index) {
   v.date
 ]);
 
+});
+      
       addedPreviewOutput.value = rows.map(row =>
         row.map(value => String(value).replaceAll("\t", " ")).join("\t")
       ).join("\n");
