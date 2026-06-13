@@ -162,6 +162,8 @@ td:nth-child(6) {
   background: white;
   font-size: 15px;
   cursor: pointer;
+}
+
 .controls button:hover,
 .controls select:hover {
   background: #fff2e8;
@@ -177,35 +179,8 @@ td:nth-child(6) {
 td a:hover {
   color: #ff8c42;
 }
-    
-  </style>
-</head>
 
-<body>
-  <h1>🎥 動画一覧</h1>
-
-  <p>登録されている動画・配信を一覧で表示します。</p>
-
-  <div id="video-count"></div>
-
-<input
-  type="text"
-  id="search-box"
-  class="search-box"
-  placeholder="タイトル・メンバー・シリーズ・コラボで検索"
->
-
-<div class="controls">
-  <button onclick="setFilter('all')">すべて</button>
-  <button onclick="setFilter('動画')">動画だけ</button>
-  <button onclick="setFilter('配信')">配信だけ</button>
-
-  <select id="sort-select">
-    <option value="default">登録順</option>
-    <option value="title">タイトル順</option>
-    <option value="series">シリーズ順</option>
-
-    .video-table {
+  .video-table {
   table-layout: fixed;
   width: 100%;
 }
@@ -251,13 +226,42 @@ td a:hover {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+    
+  </style>
+</head>
+
+<body>
+  <h1>🎥 動画一覧</h1>
+
+  <p>登録されている動画・配信を一覧で表示します。</p>
+
+  <div id="video-count"></div>
+
+<input
+  type="text"
+  id="search-box"
+  class="search-box"
+  placeholder="タイトル・メンバー・シリーズ・コラボで検索"
+>
+
+<div class="controls">
+  <button onclick="setFilter('all')">すべて</button>
+  <button onclick="setFilter('動画')">動画だけ</button>
+  <button onclick="setFilter('配信')">配信だけ</button>
+
+  <select id="sort-select">
+    <option value="default">登録順</option>
+    <option value="title">タイトル順</option>
+    <option value="series">シリーズ順</option>
+
+    
 
     
         
   </select>
 </div>
      
-  <table>
+ <table class="video-table">
     <thead>
       <tr>
         <th>サムネ</th>
@@ -346,9 +350,13 @@ function showVideos(keyword = "") {
         </span>
       </td>
 
-      <td>${video.members.join("、")}</td>
-      <td>${video.series || "-"}</td>
-      <td>${video.collab || "-"}</td>
+      <td>${video.members.join("、<br>")}</td>
+<td>${video.series || "-"}</td>
+<td>${
+  Array.isArray(video.collab) && video.collab.length
+    ? video.collab.join("、<br>")
+    : "-"
+}</td>
     `;
 
     table.appendChild(row);
