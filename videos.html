@@ -199,6 +199,37 @@ td a:hover {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+
+  .table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.video-table {
+  min-width: 900px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .video-table {
+    min-width: 900px;
+  }
+
+  .table-thumbnail {
+    width: 130px;
+  }
+}
+
+
+
     
   </style>
 </head>
@@ -229,7 +260,8 @@ td a:hover {
   </select>
 </div>
      
- <table class="video-table">
+ <div class="table-wrap">
+  <table class="video-table">
     <thead>
       <tr>
         <th>サムネ</th>
@@ -242,6 +274,7 @@ td a:hover {
     </thead>
     <tbody id="video-table"></tbody>
   </table>
+   </div>
 
   <script src="videos.js"></script>
   <script>
