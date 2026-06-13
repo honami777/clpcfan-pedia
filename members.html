@@ -27,13 +27,22 @@
       margin: 30px 0;
     }
 
-   .member-icon{
-    width: 120px;
-}
 
     .member-button {
     min-height: 170px;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: white;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
     justify-content: center;
+
+    transition: all 0.2s ease;
 }
 
 
@@ -47,7 +56,11 @@
     transform: scale(1.08);
 }
 
-.member-icon{
+.member-icon {
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+    display: block;
     transition: transform 0.2s ease;
 }
 
