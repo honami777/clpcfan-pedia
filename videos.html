@@ -101,7 +101,23 @@ tbody tr:hover {
     z-index: 999;
 }
 
-.home-button:hover {
+.top-button {
+    position: fixed;
+    right: 30px;
+    bottom: 95px;   /* ホームボタンの上 */
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: #ff8c42;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.top-button:hover {
     background: #ff7620;
 }
 
@@ -226,11 +242,7 @@ td a:hover {
   .table-thumbnail {
     width: 130px;
   }
-}
-
-
-
-    
+}    
   </style>
 </head>
 
@@ -396,8 +408,17 @@ sortSelect.addEventListener("change", () => {
 });
 
 showVideos();
+
+  function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
     
   </script>
-  <a href="index.html" class="home-button">🏠</a>
+  <button class="top-button" onclick="scrollToTop()">⬆️</button>
+
+<a href="index.html" class="home-button">🏠</a>
 </body>
 </html>
