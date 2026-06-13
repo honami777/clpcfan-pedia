@@ -203,9 +203,14 @@
         `「${selectedMember}」の出演動画：${results.length}件`;
 
       setTimeout(() => {
-  resultCount.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
+  const y =
+    resultCount.getBoundingClientRect().top +
+    window.pageYOffset -
+    20;
+
+  window.scrollTo({
+    top: y,
+    behavior: "smooth"
   });
 }, 100);
 
