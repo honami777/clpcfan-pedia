@@ -27,10 +27,8 @@
       margin: 30px 0;
     }
 
-   .member-icon {
-    width: 110px;
-    height: 110px;
-    object-fit: contain;
+   .member-icon{
+    width: 120px;
 }
 
     .member-button {
@@ -38,18 +36,22 @@
     justify-content: center;
 }
 
-.member-button {
-    min-height: 170px;
-    justify-content: center;
-}
 
     .member-button:hover {
   background: #fff2e8;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
-    }
 
+  .member-button:hover .member-icon{
+    transform: scale(1.08);
+}
+
+.member-icon{
+    transition: transform 0.2s ease;
+}
+
+    
     #result-count {
       margin-top: 20px;
       margin-bottom: 10px;
