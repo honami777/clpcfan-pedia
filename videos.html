@@ -254,9 +254,10 @@ td a:hover {
   <button onclick="setFilter('配信')">配信だけ</button>
 
   <select id="sort-select">
-    <option value="default">登録順</option>
-    <option value="title">タイトル順</option>
-    <option value="series">シリーズ順</option>     
+<option value="date-desc">投稿日順（新しい順）</option>
+<option value="date-asc">投稿日順（古い順）</option>
+<option value="title">タイトル順</option>
+<option value="series">シリーズ順</option>
   </select>
 </div>
      
@@ -311,13 +312,23 @@ function showVideos(keyword = "") {
     return keywordMatch && typeMatch;
   });
 
-  if (sortSelect.value === "title") {
-    filtered.sort((a, b) => a.title.localeCompare(b.title, "ja"));
-  }
+if (sortSelect.value === "date-desc") {
+  filtered.sort((a, b) => b.date.localeCompare(a.date));
+}
 
-  if (sortSelect.value === "series") {
-    filtered.sort((a, b) => a.series.localeCompare(b.series, "ja"));
-  }
+if (sortSelect.value === "date-asc") {
+  filtered.sort((a, b) => a.date.localeCompare(b.date));
+}
+
+if (sortSelect.value === "title") {
+  filtered.sort((a, b) => a.title.localeCompare(b.title, "ja"));
+}
+
+if (sortSelect.value === "series") {
+  filtered.sort((a, b) =>
+    (a.series || "").localeCompare(b.series || "", "ja")
+  );
+}
 
   const videoTotal = filtered.filter(video => video.type === "動画").length;
   const streamTotal = filtered.filter(video => video.type === "配信").length;
