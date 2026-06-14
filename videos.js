@@ -20,10 +20,10 @@ const videos = [
            date: "2026-05-22"
 },
   {
-           title: "楽園には気をつけろ！？リアルサバイバル37【マインクラフト】",
+           title: "楽園には気をつけろ！？リアル鬼ごっこサバイバル37【マインクラフト】",
            type: "動画",
            members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","えと","ヒロ"],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: [],
            videoId: "iH1ghiTNHsQ",
            url: "https://www.youtube.com/watch?v=iH1ghiTNHsQ",
@@ -400,10 +400,10 @@ const videos = [
            date: "2026-03-15"
 },
   {
-           title: "天使には気を付けろ！？リアルサバイバル36【マインクラフト】",
+           title: "天使には気を付けろ！？リアル鬼ごっこサバイバル36【マインクラフト】",
            type: "動画",
            members: ["じゃぱぱ","のあ","たっつん","どぬく","うり","なおきり"],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: [],
            videoId: "jNZlzaisXEM",
            url: "https://www.youtube.com/watch?v=jNZlzaisXEM",
@@ -590,10 +590,10 @@ const videos = [
            date: "2025-12-27"
 },
   {
-           title: "死んでも復活する鬼！？リアルサバイバル35【ドズル社×からぴち】",
+           title: "死んでも復活する鬼！？リアル鬼ごっこサバイバル35【ドズル社×からぴち】",
            type: "動画",
            members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","もふ"],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: ["ドズル社"],
            videoId: "cd7777hX01Y",
            url: "https://www.youtube.com/watch?v=cd7777hX01Y",
@@ -710,10 +710,10 @@ const videos = [
            date: "2025-12-12"
 },
   {
-           title: "死神の力がヤバすぎる！？リアルサバイバル34【マインクラフト】",
+           title: "死神の力がヤバすぎる！？リアル鬼ごっこサバイバル34【マインクラフト】",
            type: "動画",
            members: [],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: [],
            videoId: "HwNhQyD4_80",
            url: "https://www.youtube.com/watch?v=HwNhQyD4_80",
@@ -730,10 +730,10 @@ const videos = [
            date: "2025-11-28"
 },
   {
-           title: "リーダーがいなくても勝てる！？リアルサバイバル33【マインクラフト】",
+           title: "リーダーがいなくても勝てる！？リアル鬼ごっこサバイバル33【マインクラフト】",
            type: "動画",
            members: [],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: [],
            videoId: "YjfvM6lbiVs",
            url: "https://www.youtube.com/watch?v=YjfvM6lbiVs",
@@ -790,10 +790,10 @@ const videos = [
            date: "2025-10-24"
 },
   {
-           title: "ここは氷の世界！？リアルサバイバル32【マインクラフト】",
+           title: "ここは氷の世界！？リアル鬼ごっこサバイバル32【マインクラフト】",
            type: "動画",
            members: [],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: [],
            videoId: "EvDSmxWReLE",
            url: "https://www.youtube.com/watch?v=EvDSmxWReLE",
@@ -850,10 +850,10 @@ const videos = [
            date: "2025-09-23"
 },
   {
-           title: "氷の騎士！？リアルサバイバル31【マインクラフト】",
+           title: "氷の騎士！？リアル鬼ごっこサバイバル31【マインクラフト】",
            type: "動画",
            members: [],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: [],
            videoId: "_sFBxNOh16A",
            url: "https://www.youtube.com/watch?v=_sFBxNOh16A",
@@ -930,10 +930,10 @@ const videos = [
            date: "2025-08-27"
 },
   {
-           title: "超危険な毒から逃げろ！？リアルサバイバル30【マインクラフト】",
+           title: "超危険な毒から逃げろ！？リアル鬼ごっこサバイバル30【マインクラフト】",
            type: "動画",
            members: [],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: [],
            videoId: "cMUMCcMXwBM",
            url: "https://www.youtube.com/watch?v=cMUMCcMXwBM",
@@ -1210,10 +1210,10 @@ const videos = [
            date: "2025-08-07"
 },
   {
-           title: "巨大なクモの巣に捕まるな！？リアルサバイバル29【マインクラフト】",
+           title: "巨大なクモの巣に捕まるな！？リアル鬼ごっこサバイバル29【マインクラフト】",
            type: "動画",
            members: [],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: [],
            videoId: "1FQ7VD83yVQ",
            url: "https://www.youtube.com/watch?v=1FQ7VD83yVQ",
@@ -1390,7 +1390,7 @@ const videos = [
            date: "2025-05-19"
 },
   {
-           title: "クモの鬼が強すぎる！？リアルサバイバル28【マインクラフト】",
+           title: "クモの鬼が強すぎる！？リアル鬼ごっこサバイバル28【マインクラフト】",
            type: "動画",
            members: [],
            series: "リアル鬼ごっこサバイバル",
@@ -3431,20 +3431,20 @@ const videos = [
            date: "2023-03-31"
 },
   {
-           title: "さぁみんな行くぞ！リアルサバイバル21【マインクラフト】",
+           title: "さぁみんな行くぞ！リアル鬼ごっこサバイバル21【マインクラフト】",
            type: "動画",
            members: ["じゃぱぱ", "のあ", "たっつん", "ゆあん", "どぬく", "うり"],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: [],
            videoId: "R9URhcUxCdM",
            url: "https://www.youtube.com/watch?v=R9URhcUxCdM",
            date: "2023-03-31"
 },
   {
-           title: "【生放送】リアルサバイバルで遊んでみた！",
+           title: "【生放送】リアル鬼ごっこサバイバルで遊んでみた！",
            type: "配信",
            members: ["じゃぱぱ", "のあ", "たっつん", "ゆあん", "どぬく", "うり", "えと"],
-           series: "リアルサバイバル",
+           series: "リアル鬼ごっこサバイバル",
            collab: [],
            videoId: "mDQV88WxyII",
            url: "https://www.youtube.com/watch?v=mDQV88WxyII",
