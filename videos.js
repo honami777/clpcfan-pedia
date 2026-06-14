@@ -3254,7 +3254,7 @@ const videos = [
            title: "最強の看守に見つかるな！！！！！【脱獄ごっこPRO】",
            type: "動画",
            members: ["じゃぱぱ", "のあ", "たっつん", "なおきり"],
-           series: "脱獄ごっこPRO（",
+           series: "脱獄ごっこPRO",
            collab: [],
            videoId: "tfHBsgqX1ko",
            url: "https://www.youtube.com/watch?v=tfHBsgqX1ko",
