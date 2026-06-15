@@ -179,6 +179,20 @@
       const sec = seconds % 60;
       return min === 0 ? `${sec}秒` : `${min}分${sec}秒`;
     }
+
+    function formatDuration(seconds) {
+  if (!seconds) return "";
+
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+
+  if (h > 0) {
+    return `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+  }
+
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
     
     function formatArray(text) {
   if (!text || String(text).trim() === "" || String(text).trim() === "-") {
@@ -383,7 +397,8 @@ return `  {
   collab: ${JSON.stringify(Array.isArray(v.collab) ? v.collab : formatArray(v.collab))},
   videoId: ${JSON.stringify(v.videoId)},
   url: ${JSON.stringify("https://www.youtube.com/watch?v=" + v.videoId)},
-  date: ${JSON.stringify(v.date)}
+  date: ${JSON.stringify(v.date)},
+  duration: ${JSON.stringify(formatDuration(v.durationSeconds))}
 }`;
   });
 
