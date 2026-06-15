@@ -99,6 +99,27 @@
         width: 100%;
       }
     }
+
+    .top-button {
+    position: fixed;
+    right: 30px;
+    bottom: 95px;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: #ff8c42;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.top-button:hover {
+    background: #ff7620;
+}
+   
     .home-button {
     position: fixed;
     right: 30px;
@@ -167,6 +188,17 @@
 
       resultCount.innerHTML =
         `「${selectedCollab}」：${results.length}件`;
+      setTimeout(() => {
+  const y =
+    resultCount.getBoundingClientRect().top +
+    window.pageYOffset -
+    20;
+
+  window.scrollTo({
+    top: y,
+    behavior: "smooth"
+  });
+}, 100);
 
       if (results.length === 0) {
         resultArea.innerHTML = "<p>動画が見つかりませんでした。</p>";
@@ -206,7 +238,16 @@
         resultArea.appendChild(card);
       });
     }
+
+    function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+    
   </script>
-  <a href="index.html" class="home-button">🏠</a>
+  <button class="top-button" onclick="scrollToTop()">⬆️</button>
+<a href="index.html" class="home-button">🏠</a>
 </body>
 </html>
