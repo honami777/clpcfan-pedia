@@ -345,7 +345,7 @@
     }
 
    function makeRows(videos) {
-  const rows = [["title", "type", "members", "series", "collab", "videoId", "date"]];
+  const rows = [["title", "type", "members", "series", "collab", "videoId", "date", "duration"]];
 
   videos.forEach(v => {
     rows.push([
@@ -355,12 +355,13 @@
       v.series,
       formatCollabText(v.collab),
       v.videoId,
-      v.date
+      v.date,
+      formatDuration(v.durationSeconds)
     ]);
   });
 
-      return rows;
-    }
+  return rows;
+}
 
     function renderOutputs() {
       const format = document.getElementById("format").value;
