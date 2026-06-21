@@ -106,6 +106,12 @@ function formatDuration(seconds) {
 
   return `${m}:${String(s).padStart(2, "0")}`;
 }
+  
+  function cleanVideoId(id) {
+  return String(id || "")
+    .replace(/"/g, "")
+    .trim();
+}
 
 async function fetchDurations(videoIds, apiKey) {
   const result = {};
@@ -193,14 +199,16 @@ const code = input.substring(start, end + 1);
     status.textContent = `${targets.length}件のdurationを取得中...`;
 
     const durationMap = await fetchDurations(
-      targets.map(video => video.videoId),
+     targets.map(video => cleanVideoId(video.videoId)),
       apiKey
     );
 
     videos.forEach(video => {
-      if (!video.duration && durationMap[video.videoId]) {
-        video.duration = durationMap[video.videoId];
-      }
+      const cleanId = cleanVideoId(video.videoId);
+
+if (!video.duration && durationMap[cleanId]) {
+  video.duration = durationMap[cleanId];
+}
     });
 
     const js =
