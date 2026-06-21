@@ -4535,7 +4535,7 @@ const videos = [
     title: "最強のセキュリティタワーに挑戦してみた結果!?",
     type: "動画",
     members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","ヒロ","もふ"],
-    series: "タワーアタック＆ディフェンス",
+    series: "タワーアタック&ディフェンス",
     collab: [],
     videoId: "gKsKEFE3Eow",
     url: "https://www.youtube.com/watch?v=gKsKEFE3Eow",
