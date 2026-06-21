@@ -170,9 +170,10 @@ async function addDurations() {
   try {
     status.textContent = "videos.js を読み込み中...";
 
-    const code = input
-      .replace(/^const\\s+videos\\s*=\\s*/, "")
-      .replace(/;\\s*$/, "");
+const start = input.indexOf("[");
+const end = input.lastIndexOf("]");
+
+const code = input.substring(start, end + 1);
 
     const videos = Function(`"use strict"; return (${code});`)();
 
