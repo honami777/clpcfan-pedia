@@ -352,17 +352,46 @@
 
     
 <footer>
-    ※当サイトはカラフルピーチの非公式ファンサイトです。<br>
-    🍑 PichiPedia Ver.1.0
+  ※当サイトはカラフルピーチの非公式ファンサイトです。<br>
+
+  ご意見・お問い合わせ：
+  <a href="https://x.com/pichipedia_info" target="_blank">
+    @pichipedia_info
+  </a>
+  ／
+  contact.pichipedia@gmail.com
+  <br><br>
+
+  🍑 PichiPedia Ver.1.0.0
 </footer>
-    
+
 <script src="videos.js"></script>
 <script>
-    const searchInput = document.querySelector(".search-box");
-    const resultArea = document.getElementById("results");
-    const resultCount = document.getElementById("result-count");
+const searchInput = document.querySelector(".search-box");
+const resultArea = document.getElementById("results");
+const resultCount = document.getElementById("result-count");
+const latestArea = document.getElementById("latest-videos");
 
-    const latestArea = document.getElementById("latest-videos");
+function formatCollab(collab) {
+  if (Array.isArray(collab)) {
+    return collab.length ? collab.join("、") : "-";
+  }
+  return collab || "-";
+}
+
+function scrollToResultCount() {
+  setTimeout(() => {
+    const y =
+      resultCount.getBoundingClientRect().top +
+      window.pageYOffset -
+      20;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth"
+    });
+  }, 100);
+}
 
 function showLatestVideos() {
   latestArea.innerHTML = "";
@@ -388,7 +417,7 @@ function showLatestVideos() {
         <h3>${video.title}</h3>
         <p>📅 ${video.date}</p>
         <p>📚 ${video.series || "-"}</p>
-        <p>🤝 ${video.collab || "-"}</p>
+        <p>🤝 ${formatCollab(video.collab)}</p>
       </div>
     `;
 
@@ -396,109 +425,94 @@ function showLatestVideos() {
   });
 }
 
+function showResults(keyword, shouldScroll = false) {
+  resultArea.innerHTML = "";
 
+  if (!keyword) {
+    resultCount.innerHTML = "";
+    return;
+  }
 
+  const results = videos.filter(video => {
+    const text = [
+      video.title,
+      video.members.join(" "),
+      video.series,
+      Array.isArray(video.collab)
+        ? video.collab.join(" ")
+        : video.collab
+    ].join(" ");
 
+    return text.includes(keyword);
+  });
 
-    
-  function showResults(keyword) {
-    resultArea.innerHTML = "";
+  resultCount.innerHTML =
+    `「${keyword}」の検索結果：${results.length}件`;
 
-      if (!keyword)  {
-        resultCount.innerHTML = "";
-        return;
+  if (results.length === 0) {
+    resultArea.innerHTML = "<p>見つかりませんでした。</p>";
+
+    if (shouldScroll) {
+      scrollToResultCount();
     }
-    const results = videos.filter(video => {
-      const text = [
-        video.title,
-        video.members.join(" "),
-        video.series,
-        Array.isArray(video.collab)
-    ? video.collab.join(" ")
-    : video.collab
-      ].join(" ");
-
-      return text.includes(keyword);
-    });
-
-    if (results.length === 0) {
-        resultCount.innerHTML =
-    `「${keyword}」の検索結果：0件`;
-
-        resultArea.innerHTML =
-            "<p>見つかりませんでした。</p>";
 
     return;
+  }
+
+  results.forEach(video => {
+    const card = document.createElement("div");
+    card.className = "video-card";
+
+    card.innerHTML = `
+      <a href="${video.url}" target="_blank">
+        <img
+          src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
+          alt="${video.title}"
+          class="thumbnail"
+        >
+      </a>
+
+      <div>
+        <span class="badge">
+          ${video.type || "動画"}
+        </span>
+
+        <h3>
+          <a href="${video.url}" target="_blank">
+            ${video.title}
+          </a>
+        </h3>
+
+        <p>メンバー：${video.members.join("、")}</p>
+        <p>シリーズ：${video.series || "-"}</p>
+        <p>コラボ：${formatCollab(video.collab)}</p>
+
+        <a href="${video.url}" target="_blank">
+          動画を見る
+        </a>
+      </div>
+    `;
+
+    resultArea.appendChild(card);
+  });
+
+  if (shouldScroll) {
+    scrollToResultCount();
+  }
 }
 
-resultCount.innerHTML =
-  `「${keyword}」の検索結果：${results.length}件`;
-      
-  results.forEach(video => {
-  const card = document.createElement("div");
-  card.className = "video-card";
-
-  card.innerHTML = `
-<a href="${video.url}" target="_blank">
-  <img
-    src="https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg"
-    alt="${video.title}"
-    class="thumbnail"
-  >
-</a>
-<div>
-
-  <span class="badge">
-    ${video.type || "動画"}
-  </span>
-
-  <h3>
-    <a href="${video.url}" target="_blank">
-      ${video.title}
-    </a>
-  </h3>
-
-  <p>メンバー：${video.members.join("、")}</p>
-  <p>シリーズ：${video.series || "-"}</p>
-  <p>コラボ：${
-  Array.isArray(video.collab)
-    ? (video.collab.length
-        ? video.collab.join("、")
-        : "-")
-    : (video.collab || "-")
-}</p>
-
-  <a href="${video.url}" target="_blank">
-    動画を見る
-  </a>
-
-</div>
-  `;
-
-  resultArea.appendChild(card);
+searchInput.addEventListener("keydown", event => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    showResults(searchInput.value.trim(), true);
+  }
 });
 
-
-setTimeout(() => {
-  const y =
-    resultCount.getBoundingClientRect().top +
-    window.pageYOffset -
-    20;
-
-  window.scrollTo({
-    top: y,
-    behavior: "smooth"
-  });
-}, 100);
-}
-
-  searchInput.addEventListener("input", () => {
-    showResults(searchInput.value.trim());
-  });
-
-  showLatestVideos();
-  showResults("");
+showLatestVideos();
+showResults("");
 </script>
+
+
     
 </body>
 </html>
