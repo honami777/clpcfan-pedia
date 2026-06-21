@@ -150,7 +150,7 @@ function objectToJS(obj) {
   lines.push(`    duration: ${JSON.stringify(obj.duration || "")}`);
   lines.push("  }");
 
-  return lines.join("\\n");
+  return lines.join("\n");
 }
 
 async function addDurations() {
@@ -204,9 +204,9 @@ const code = input.substring(start, end + 1);
     });
 
     const js =
-      "const videos = [\\n" +
-      videos.map(objectToJS).join(",\\n") +
-      "\\n];";
+      "const videos = [\n" +
+      videos.map(objectToJS).join(",\n") +
+      "\n];";
 
     output.value = js;
 
