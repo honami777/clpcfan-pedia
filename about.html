@@ -3,150 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>このサイトについて | ぴちペディア</title>
+  <title>運営について｜ぴちペディア</title>
+
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     body {
+      margin: 0;
       font-family: sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px;
       background: #fffdf7;
+      color: #333;
       line-height: 1.8;
     }
 
-    h1 {
-      color: #ff8c42;
-      margin-bottom: 24px;
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
-    h2 {
+    .page-title {
+      text-align: center;
       color: #ff8c42;
-      margin-top: 34px;
-      margin-bottom: 12px;
+      font-size: 30px;
+      margin-bottom: 32px;
     }
 
-    .box {
-      background: white;
-      border: 1px solid #ffd7bd;
+    .about-card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+
+    .about-section {
+      margin-bottom: 40px;
+    }
+
+    .about-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-section h2 {
+      font-size: 22px;
+      color: #ff8c42;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px dashed #ffd2aa;
+    }
+
+    .about-section p {
+      margin: 0 0 14px;
+    }
+
+    .contact-box {
+      background: #fff7ee;
       border-radius: 16px;
-      padding: 22px;
-      margin-top: 20px;
+      padding: 18px 20px;
+      margin-top: 12px;
     }
 
-    .note {
-      color: #666;
-      font-size: 14px;
+    .contact-box p {
+      margin: 6px 0;
+    }
+
+    .contact-label {
+      font-weight: bold;
+      color: #ff8c42;
     }
 
     a {
-      color: #ff8c42;
-      font-weight: bold;
+      color: #ff7a2f;
       text-decoration: none;
+      font-weight: bold;
     }
 
     a:hover {
       text-decoration: underline;
     }
 
-    footer {
-      margin-top: 50px;
-      color: gray;
-      font-size: 14px;
-      text-align: center;
-      line-height: 1.8;
-    }
+    @media (max-width: 600px) {
+      main {
+        padding: 28px 14px;
+      }
 
-    .home-button {
-      position: fixed;
-      right: 30px;
-      bottom: 30px;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: #ff8c42;
-      color: white;
-      text-decoration: none;
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      z-index: 999;
-    }
+      .page-title {
+        font-size: 26px;
+      }
 
-    .home-button:hover {
-      background: #ff7620;
-      text-decoration: none;
+      .about-card {
+        padding: 24px 18px;
+        border-radius: 18px;
+      }
+
+      .about-section h2 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <h1>🍑 このサイトについて</h1>
 
-  <div class="box">
-    <h2>ぴちペディアとは</h2>
-    <p>
-      「ぴちペディア」は、カラフルピーチの動画・シリーズ・コラボ情報を
-      楽しく探せる非公式ファンサイトです。
-    </p>
-    <p>
-      動画タイトルやメンバー名、シリーズ名、コラボ相手などから、
-      気になる動画を見つけやすくすることを目的に作っています。
-    </p>
-  </div>
+  <main>
+    <h1 class="page-title">運営について</h1>
 
-  <div class="box">
-    <h2>掲載している情報について</h2>
-    <p>
-      掲載している動画情報は、公開されているYouTube動画の情報をもとに整理しています。
-    </p>
-    <p>
-      メンバー・シリーズ・コラボ情報は、サイト管理者が確認しながら手動で分類しているため、
-      内容に誤りや未入力の項目がある場合があります。
-    </p>
-  </div>
+    <div class="about-card">
 
-  <div class="box">
-    <h2>非公式ファンサイトについて</h2>
-    <p>
-      当サイトは、カラフルピーチの公式サイト・公式サービスではありません。
-    </p>
-    <p>
-      カラフルピーチを応援する目的で、個人が制作・運営している非公式ファンサイトです。
-    </p>
-  </div>
+      <section class="about-section">
+        <h2>🍑 ぴちペディアについて</h2>
 
-  <div class="box">
-    <h2>画像・リンクについて</h2>
-    <p>
-      動画サムネイルは、YouTube上で公開されている動画サムネイルを表示しています。
-      各動画へのリンクはYouTubeの動画ページへ移動します。
-    </p>
-    <p class="note">
-      問題がある場合は、掲載内容を確認し、必要に応じて修正・削除します。
-    </p>
-  </div>
+        <p>
+          ぴちペディアは、カラフルピーチの動画・シリーズ・コラボ情報を検索できる非公式ファンサイトです。
+        </p>
 
-  <div class="box">
-    <h2>管理者より</h2>
-    <p>
-      カラフルピーチの動画をもっと探しやすく、振り返りやすくしたいと思い、
-      このサイトを作りました。
-    </p>
-    <p>
-      まだまだデータ追加・デザイン調整中ですが、
-      少しずつ見やすいサイトに育てていきます🍑
-    </p>
-  </div>
+        <p>
+          動画やシリーズ情報を整理し、過去の動画を探しやすくすることを目的として運営しています。
+        </p>
 
-  <footer>
-    ※当サイトはカラフルピーチの非公式ファンサイトです。<br>
-    🍑 PichiPedia Ver.1.0
-  </footer>
+        <p>
+          現在、結成日から現在までに公開されている動画は一通り反映済みです。
+        </p>
 
-  <a href="index.html" class="home-button">🏠</a>
+        <p>
+          今後も新しい動画や関連情報を順次追加し、より便利に利用できるサイトを目指しています。
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2>🍑 当サイトについて</h2>
+
+        <p>
+          当サイトはカラフルピーチおよび関連企業・関係者様とは一切関係のない、個人運営の非公式ファンサイトです。
+        </p>
+
+        <p>
+          掲載している動画タイトル・サムネイル画像・チャンネル名などの権利は、各権利者様に帰属します。
+        </p>
+
+        <p>
+          掲載内容には十分注意しておりますが、問題のある内容や修正が必要な箇所がございましたら、お手数ですがお問い合わせ先までご連絡ください。
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2>🍑 お問い合わせ</h2>
+
+        <p>
+          ご意見・ご要望・掲載内容に関するご連絡は、下記までお願いいたします。
+        </p>
+
+        <div class="contact-box">
+          <p>
+            <span class="contact-label">X（旧Twitter）</span><br>
+            <a href="https://x.com/pichipedia_info" target="_blank" rel="noopener noreferrer">
+              @pichipedia_info
+            </a>
+          </p>
+
+          <p>
+            <span class="contact-label">メール</span><br>
+            <a href="mailto:contact.pichipedia@gmail.com">
+              contact.pichipedia@gmail.com
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2>🍑 更新について</h2>
+
+        <p>
+          ぴちペディアでは、動画・シリーズ・コラボ情報の追加・更新を継続的に行っています。
+        </p>
+
+        <p>
+          新規動画の反映や情報の更新はできる限り迅速に行っていますが、反映までにお時間をいただく場合があります。
+        </p>
+
+        <p>
+          掲載内容に誤りがある場合や、追加してほしい情報がありましたら、お気軽にご連絡ください。
+        </p>
+
+        <p>
+          皆さまのご協力をいただきながら、より探しやすく、振り返りやすいサイトを目指して改善を続けていきます。
+        </p>
+      </section>
+
+    </div>
+  </main>
+
 </body>
 </html>
