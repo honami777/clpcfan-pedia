@@ -101,6 +101,7 @@ function convertCSV(){
            const collab=cols[4] || "";
            const videoId=escapeJS(cols[5] || "");
            const date = escapeJS(cols[6] || "");
+           const duration = escapeJS(cols[7] || "");
 
          output += `  {
            title: "${title}",
@@ -110,7 +111,8 @@ function convertCSV(){
            collab: ${formatArray(collab)},
            videoId: "${videoId}",
            url: "https://www.youtube.com/watch?v=${videoId}",
-           date: "${date}"
+           date: "${date}",
+　　　　　　duration: "${duration}"
 }`;
          
          
