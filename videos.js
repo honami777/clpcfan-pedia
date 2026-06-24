@@ -168,7 +168,7 @@ const videos = [
     title: "おかしな宇宙人だらけの人狼ゲーム【マインクラフト】",
     type: "動画",
     members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
-    series: "",
+    series: "人狼",
     collab: [],
     videoId: "d0_AyOGH7OE",
     url: "https://www.youtube.com/watch?v=d0_AyOGH7OE",
@@ -178,7 +178,7 @@ const videos = [
   {
     title: "【#すごいサバイバル】最終日なのに家できてないんだが",
     type: "配信",
-    members: ["じゃぱぱ"],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
     series: "すごいサバイバル",
     collab: [],
     videoId: "ACDXLaSskyc",
@@ -190,7 +190,7 @@ const videos = [
     title: "嘘つきなBINGOが訳わからなすぎた",
     type: "動画",
     members: ["のあ","たっつん","どぬく","えと","ヒロ","もふ"],
-    series: "",
+    series: "BINGO",
     collab: [],
     videoId: "0Vrq5jNLMl0",
     url: "https://www.youtube.com/watch?v=0Vrq5jNLMl0",
@@ -200,7 +200,7 @@ const videos = [
   {
     title: "【#すごいサバイバル】エンドラ討伐＆庭と内装作る",
     type: "配信",
-    members: ["じゃぱぱ"],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
     series: "すごいサバイバル",
     collab: [],
     videoId: "73j56AuhQzk",
@@ -222,7 +222,7 @@ const videos = [
   {
     title: "【#すごいサバイバル】急げ～！絶対に完成させるお家作り",
     type: "配信",
-    members: ["じゃぱぱ"],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
     series: "すごいサバイバル",
     collab: [],
     videoId: "tr-WbNTs00M",
@@ -244,7 +244,7 @@ const videos = [
   {
     title: "【#すごいサバイバル】鉱石掘って天空の家を作るぞ～！",
     type: "配信",
-    members: ["じゃぱぱ"],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
     series: "すごいサバイバル",
     collab: [],
     videoId: "dpx9_UBVxXs",
@@ -266,7 +266,7 @@ const videos = [
   {
     title: "【#すごいサバイバル】お家が欲しいよ！",
     type: "配信",
-    members: ["じゃぱぱ"],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
     series: "すごいサバイバル",
     collab: [],
     videoId: "qcyy6uONSBI",
@@ -288,7 +288,7 @@ const videos = [
   {
     title: "【#すごいサバイバル】今日から新たな生活が始まる！？",
     type: "配信",
-    members: ["じゃぱぱ"],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
     series: "すごいサバイバル",
     collab: [],
     videoId: "Jct770cQLMA",
@@ -366,7 +366,7 @@ const videos = [
     title: "【感動】1万人が選んだ\"好きなアイテム\"持ってくるまで終われま10【マインクラフト】",
     type: "動画",
     members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
-    series: "",
+    series: "終われま10",
     collab: [],
     videoId: "Tv_d3wlwGCo",
     url: "https://www.youtube.com/watch?v=Tv_d3wlwGCo",
@@ -388,7 +388,7 @@ const videos = [
     title: "仲間の中に“ドラキュラ”がいます。【マインクラフト】",
     type: "動画",
     members: ["のあ","シヴァ","どぬく","うり","えと","もふ"],
-    series: "",
+    series: "人狼",
     collab: [],
     videoId: "9CK9MmlXJY4",
     url: "https://www.youtube.com/watch?v=9CK9MmlXJY4",
@@ -674,7 +674,7 @@ const videos = [
     title: "チーム対抗ガチかくれんぼ！【からぴち×ドズル社】",
     type: "動画",
     members: ["どぬく","ヒロ","なおきり"],
-    series: "",
+    series: "かくれんぼ",
     collab: ["ドズル社"],
     videoId: "U8TNdzAuyWA",
     url: "https://www.youtube.com/watch?v=U8TNdzAuyWA",
@@ -717,7 +717,7 @@ const videos = [
   {
     title: "育成要素が多すぎる！？1日かけて育てた\"オリジナルの馬\"でレースしてみた！！【ドズル社×からぴち】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","ゆあん","うり","えと"],
     series: "",
     collab: ["ドズル社"],
     videoId: "8-E3Z09aajM",
@@ -728,7 +728,7 @@ const videos = [
   {
     title: "歩くお城 vs 止めたい軍団【ドズル社×からぴち】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","ゆあん","シヴァ","どぬく","うり","ヒロ","なおきり"],
     series: "",
     collab: ["ドズル社"],
     videoId: "1u8gQ9s31TQ",
@@ -739,7 +739,7 @@ const videos = [
   {
     title: "死んだふり！？いや倒した！？いやどっち？死んだふりPVP【ドズル社×からぴち】",
     type: "動画",
-    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","なおきり","もふ"],
     series: "PVP",
     collab: ["ドズル社"],
     videoId: "DMP44Jv5kBc",
@@ -750,7 +750,7 @@ const videos = [
   {
     title: "ウホッ！？捕まったらチューされる無人島で調査をする【ドズル社×からぴち】",
     type: "動画",
-    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
+    members: ["じゃぱぱ","のあ","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","もふ"],
     series: "",
     collab: ["ドズル社"],
     videoId: "KdlIYo1slbo",
@@ -772,7 +772,7 @@ const videos = [
   {
     title: "実況者なら\"おもしろくないマップ\"でも面白い動画にできるよね？wwwww【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["たっつん","シヴァ","うり","えと","なおきり","もふ"],
     series: "",
     collab: [],
     videoId: "vir6wJSJttI",
@@ -783,7 +783,7 @@ const videos = [
   {
     title: "死神の力がヤバすぎる！？リアル鬼ごっこサバイバル34【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","ゆあん","シヴァ","えと","ヒロ"],
     series: "リアル鬼ごっこサバイバル",
     collab: [],
     videoId: "HwNhQyD4_80",
@@ -794,7 +794,7 @@ const videos = [
   {
     title: "助けて....読めない。【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","もふ"],
     series: "",
     collab: [],
     videoId: "7qIqHoMEBiw",
@@ -805,7 +805,7 @@ const videos = [
   {
     title: "リーダーがいなくても勝てる！？リアル鬼ごっこサバイバル33【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["のあ","たっつん","ゆあん","どぬく","うり","もふ"],
     series: "リアル鬼ごっこサバイバル",
     collab: [],
     videoId: "YjfvM6lbiVs",
@@ -816,7 +816,7 @@ const videos = [
   {
     title: "遊園地に行くだけのはずが…\"青いアイツ\"が現れて全て終わった。【レインボーフレンズ】【ROBLOX】",
     type: "動画",
-    members: [],
+    members: ["たっつん","ゆあん","どぬく","ヒロ"],
     series: "ROBLOX",
     collab: [],
     videoId: "LGuFEzLo3ss",
@@ -849,7 +849,7 @@ const videos = [
   {
     title: "殺人ピエロの\"相棒\"が現れた【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
     series: "殺人ピエロ",
     collab: [],
     videoId: "WQ6CYmUDz9c",
@@ -860,7 +860,7 @@ const videos = [
   {
     title: "絶対に開いてはいけない絵本に触れてしまいました。【マイクラ肝試し】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","たっつん","ゆあん","もふ"],
     series: "マイクラ肝試し",
     collab: [],
     videoId: "cfcq45wgIIc",
@@ -871,7 +871,7 @@ const videos = [
   {
     title: "ここは氷の世界！？リアル鬼ごっこサバイバル32【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","ゆあん","シヴァ","どぬく","ヒロ","なおきり"],
     series: "リアル鬼ごっこサバイバル",
     collab: [],
     videoId: "EvDSmxWReLE",
@@ -882,7 +882,7 @@ const videos = [
   {
     title: "何も知らない4人が....危険な森の中で『99日間生き残る』【ROBLOX】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","うり","もふ"],
     series: "ROBLOX",
     collab: [],
     videoId: "vub_z5ggFxI",
@@ -893,7 +893,7 @@ const videos = [
   {
     title: "【実写】な〜に考えてるの？みんなでアテタンゴ【ボードゲーム】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","たっつん","ゆあん","どぬく","ヒロ","もふ"],
     series: "実写",
     collab: [],
     videoId: "x6ANrBwJdpU",
@@ -904,7 +904,7 @@ const videos = [
   {
     title: "罰ゲームあり！？友達をつかって悪魔のギャンブルしてみた！【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","たっつん","えと","なおきり"],
     series: "",
     collab: [],
     videoId: "KbU0FpoNSD4",
@@ -915,7 +915,7 @@ const videos = [
   {
     title: "「あり」「なし」どっちなの？【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","シヴァ","えと","ヒロ"],
     series: "",
     collab: [],
     videoId: "4VvE1OqVWb4",
@@ -926,7 +926,7 @@ const videos = [
   {
     title: "どうやら俺たち、童話の世界に来ちまったらしい。【マイクラ肝試し2025】",
     type: "配信",
-    members: [],
+    members: ["じゃぱぱ","たっつん","ゆあん","もふ"],
     series: "マイクラ肝試し",
     collab: [],
     videoId: "JCWZLSzMjBk",
@@ -937,7 +937,7 @@ const videos = [
   {
     title: "氷の騎士！？リアル鬼ごっこサバイバル31【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","シヴァ","どぬく","うり","えと","ヒロ"],
     series: "リアル鬼ごっこサバイバル",
     collab: [],
     videoId: "_sFBxNOh16A",
@@ -948,7 +948,7 @@ const videos = [
   {
     title: "AIが書いたイラストでBINGOってできるの？【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["のあ","たっつん","シヴァ","どぬく","うり","もふ"],
     series: "BINGO",
     collab: [],
     videoId: "AeLDfcMEVqI",
@@ -960,7 +960,7 @@ const videos = [
     title: "カギはどこかな！？巨大たこやき機から脱出せよ【マインクラフト】",
     type: "動画",
     members: ["じゃぱぱ","のあ","たっつん","ゆあん","えと"],
-    series: "",
+    series: "脱出ゲーム",
     collab: [],
     videoId: "ccnj19WXuj0",
     url: "https://www.youtube.com/watch?v=ccnj19WXuj0",
@@ -982,7 +982,7 @@ const videos = [
     title: "しっぽを盗られたら死ぬマインクラフト",
     type: "動画",
     members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
-    series: "",
+    series: "鬼ごっこ",
     collab: ["よろずや"],
     videoId: "5xnSMSdp4TM",
     url: "https://www.youtube.com/watch?v=5xnSMSdp4TM",
@@ -1015,7 +1015,7 @@ const videos = [
     title: "ロボットになってる！？充電鬼っご【マインクラフト】",
     type: "動画",
     members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり"],
-    series: "",
+    series: "鬼ごっこ",
     collab: [],
     videoId: "X0LwzyXs9-s",
     url: "https://www.youtube.com/watch?v=X0LwzyXs9-s",
@@ -1025,7 +1025,7 @@ const videos = [
   {
     title: "超危険な毒から逃げろ！？リアル鬼ごっこサバイバル30【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","どぬく","もふ"],
     series: "リアル鬼ごっこサバイバル",
     collab: [],
     videoId: "cMUMCcMXwBM",
@@ -1113,7 +1113,7 @@ const videos = [
   {
     title: "缶バッチを集めてバックに入れるPVPが熱すぎた！【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","えと","ヒロ","もふ"],
     series: "PVP",
     collab: [],
     videoId: "UUxTDJ3iNT4",
@@ -1124,7 +1124,7 @@ const videos = [
   {
     title: "サババぬき【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","ゆあん","えと","ヒロ","なおきり","もふ"],
     series: "",
     collab: [],
     videoId: "cSQXTOyotqA",
@@ -1135,7 +1135,7 @@ const videos = [
   {
     title: "スーパーアルティメットBINGOってなんすか！？【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","どぬく","うり","えと","ヒロ","もふ"],
     series: "BINGO",
     collab: [],
     videoId: "AY7Dc5KqBYY",
@@ -1179,7 +1179,7 @@ const videos = [
   {
     title: "危険すぎる看守に見つかるな！監獄かくれんぼ【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["のあ","ゆあん","うり","えと"],
     series: "監獄かくれんぼ",
     collab: [],
     videoId: "KGRGqz9nKl0",
@@ -1201,7 +1201,7 @@ const videos = [
   {
     title: "「ことば」を使って戦う！？呪言サバイバル２【マインクラフト】【ぷちひな×いんく×たま】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","たっつん","シヴァ","えと","なおきり"],
     series: "",
     collab: ["ぷちひなフレンズ","いんく","TAMAchan"],
     videoId: "OKXhV7DumSQ",
@@ -1223,7 +1223,7 @@ const videos = [
   {
     title: "マインクラフトで最強のお店を作れるのは誰だ！？",
     type: "動画",
-    members: [],
+    members: ["のあ","たっつん","シヴァ","なおきり","もふ"],
     series: "建築バトル",
     collab: [],
     videoId: "DZaOX61n_H8",
@@ -1289,7 +1289,7 @@ const videos = [
   {
     title: "押したら\"99%\"の確率で⭕️ぬ！？命のボタン【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","もふ"],
     series: "命のボタン",
     collab: [],
     videoId: "fb_i-t1jits",
@@ -1311,7 +1311,7 @@ const videos = [
   {
     title: "どっちが強い！？悪魔 vs 天使【マインクラフト】【ぷちひな×いんく×たま】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","ゆあん","どぬく"],
     series: "",
     collab: ["ぷちひなフレンズ","いんく","TAMAchan"],
     videoId: "GbWdTkKvbyg",
@@ -1333,7 +1333,7 @@ const videos = [
   {
     title: "巨大なクモの巣に捕まるな！？リアル鬼ごっこサバイバル29【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","どぬく","うり","えと","ヒロ"],
     series: "リアル鬼ごっこサバイバル",
     collab: [],
     videoId: "1FQ7VD83yVQ",
@@ -1367,7 +1367,7 @@ const videos = [
     title: "汽車の中で殺人事件が起きました。【マインクラフト】",
     type: "動画",
     members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり","もふ"],
-    series: "",
+    series: "人狼",
     collab: [],
     videoId: "SZATiYBGvBU",
     url: "https://www.youtube.com/watch?v=SZATiYBGvBU",
@@ -1377,7 +1377,7 @@ const videos = [
   {
     title: "バグだらけのPVP",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","たっつん","ゆあん","シヴァ","どぬく","うり","えと","ヒロ","なおきり"],
     series: "PVP",
     collab: [],
     videoId: "9gSAqd3ltz0",
@@ -1498,7 +1498,7 @@ const videos = [
   {
     title: "友達が「本」にされちゃった！？【マインクラフト】",
     type: "動画",
-    members: [],
+    members: ["じゃぱぱ","のあ","たっつん","うり","えと","ヒロ","なおきり","もふ"],
     series: "",
     collab: [],
     videoId: "H7E5tzoup84",
